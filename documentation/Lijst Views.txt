@@ -1,0 +1,17 @@
+Lijst van verschillende views
+-----------------------------
+- Login pagina
+- Inschrijvingen
+- Personenbeheer
+	- Toevoegen / Aanpassen
+	- Verwijderen
+- Groepsreizen
+	- Aanmaken
+	- Aanpassen
+	- Verwijderen
+- Monitorbeheer
+	- Toevoegen / Aanpassen
+	- Verwijderen
+- Bestemmingbeheer
+	- Toevoegen / Aanpassen
+	- Verwijderen
