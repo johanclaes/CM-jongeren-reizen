@@ -1,0 +1,18 @@
+Lijst van verschillende views
+-----------------------------
+- Login pagina oké
+- Inschrijvingen oké
+	-Homescherm + verwijderen oké
+	-Toevoegen / Aanpassen oké
+- Personenbeheer oké
+	- Toevoegen / Aanpassen oké
+	- Verwijderen oké
+- Groepsreizen oké
+	- Aanmaken / Aanpassen oké
+	- Verwijderen oké
+- Monitorbeheer
+	- Toevoegen / Aanpassen
+	- Verwijderen
+- Bestemmingbeheer oké
+	- Toevoegen / Aanpassen oké
+	- Verwijderen oké
