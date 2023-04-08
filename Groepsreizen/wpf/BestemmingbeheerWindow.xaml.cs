@@ -23,5 +23,10 @@ namespace wpf
         {
             InitializeComponent();
         }
+
+        private void btnPersonenbeheer_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

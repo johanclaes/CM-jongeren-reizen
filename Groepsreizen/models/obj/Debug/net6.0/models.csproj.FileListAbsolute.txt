@@ -1,0 +1,14 @@
+C:\Thomas More 2de jaar\Agile en testing\Project\CM-jongeren-reizen\Groepsreizen\models\bin\Debug\net6.0\models.deps.json
+C:\Thomas More 2de jaar\Agile en testing\Project\CM-jongeren-reizen\Groepsreizen\models\bin\Debug\net6.0\models.runtimeconfig.json
+C:\Thomas More 2de jaar\Agile en testing\Project\CM-jongeren-reizen\Groepsreizen\models\bin\Debug\net6.0\models.dll
+C:\Thomas More 2de jaar\Agile en testing\Project\CM-jongeren-reizen\Groepsreizen\models\bin\Debug\net6.0\models.pdb
+C:\Thomas More 2de jaar\Agile en testing\Project\CM-jongeren-reizen\Groepsreizen\models\obj\Debug\net6.0\models.csproj.AssemblyReference.cache
+C:\Thomas More 2de jaar\Agile en testing\Project\CM-jongeren-reizen\Groepsreizen\models\obj\Debug\net6.0\models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Thomas More 2de jaar\Agile en testing\Project\CM-jongeren-reizen\Groepsreizen\models\obj\Debug\net6.0\models.AssemblyInfoInputs.cache
+C:\Thomas More 2de jaar\Agile en testing\Project\CM-jongeren-reizen\Groepsreizen\models\obj\Debug\net6.0\models.AssemblyInfo.cs
+C:\Thomas More 2de jaar\Agile en testing\Project\CM-jongeren-reizen\Groepsreizen\models\obj\Debug\net6.0\models.csproj.CoreCompileInputs.cache
+C:\Thomas More 2de jaar\Agile en testing\Project\CM-jongeren-reizen\Groepsreizen\models\obj\Debug\net6.0\models.dll
+C:\Thomas More 2de jaar\Agile en testing\Project\CM-jongeren-reizen\Groepsreizen\models\obj\Debug\net6.0\refint\models.dll
+C:\Thomas More 2de jaar\Agile en testing\Project\CM-jongeren-reizen\Groepsreizen\models\obj\Debug\net6.0\models.pdb
+C:\Thomas More 2de jaar\Agile en testing\Project\CM-jongeren-reizen\Groepsreizen\models\obj\Debug\net6.0\models.genruntimeconfig.cache
+C:\Thomas More 2de jaar\Agile en testing\Project\CM-jongeren-reizen\Groepsreizen\models\obj\Debug\net6.0\ref\models.dll

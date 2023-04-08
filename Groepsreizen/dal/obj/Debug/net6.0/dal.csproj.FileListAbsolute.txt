@@ -1,0 +1,17 @@
+C:\Thomas More 2de jaar\Agile en testing\Project\CM-jongeren-reizen\Groepsreizen\dal\bin\Debug\net6.0\dal.deps.json
+C:\Thomas More 2de jaar\Agile en testing\Project\CM-jongeren-reizen\Groepsreizen\dal\bin\Debug\net6.0\dal.runtimeconfig.json
+C:\Thomas More 2de jaar\Agile en testing\Project\CM-jongeren-reizen\Groepsreizen\dal\bin\Debug\net6.0\dal.dll
+C:\Thomas More 2de jaar\Agile en testing\Project\CM-jongeren-reizen\Groepsreizen\dal\bin\Debug\net6.0\dal.pdb
+C:\Thomas More 2de jaar\Agile en testing\Project\CM-jongeren-reizen\Groepsreizen\dal\bin\Debug\net6.0\models.dll
+C:\Thomas More 2de jaar\Agile en testing\Project\CM-jongeren-reizen\Groepsreizen\dal\bin\Debug\net6.0\models.pdb
+C:\Thomas More 2de jaar\Agile en testing\Project\CM-jongeren-reizen\Groepsreizen\dal\obj\Debug\net6.0\dal.csproj.AssemblyReference.cache
+C:\Thomas More 2de jaar\Agile en testing\Project\CM-jongeren-reizen\Groepsreizen\dal\obj\Debug\net6.0\dal.GeneratedMSBuildEditorConfig.editorconfig
+C:\Thomas More 2de jaar\Agile en testing\Project\CM-jongeren-reizen\Groepsreizen\dal\obj\Debug\net6.0\dal.AssemblyInfoInputs.cache
+C:\Thomas More 2de jaar\Agile en testing\Project\CM-jongeren-reizen\Groepsreizen\dal\obj\Debug\net6.0\dal.AssemblyInfo.cs
+C:\Thomas More 2de jaar\Agile en testing\Project\CM-jongeren-reizen\Groepsreizen\dal\obj\Debug\net6.0\dal.csproj.CoreCompileInputs.cache
+C:\Thomas More 2de jaar\Agile en testing\Project\CM-jongeren-reizen\Groepsreizen\dal\obj\Debug\net6.0\dal.csproj.CopyComplete
+C:\Thomas More 2de jaar\Agile en testing\Project\CM-jongeren-reizen\Groepsreizen\dal\obj\Debug\net6.0\dal.dll
+C:\Thomas More 2de jaar\Agile en testing\Project\CM-jongeren-reizen\Groepsreizen\dal\obj\Debug\net6.0\refint\dal.dll
+C:\Thomas More 2de jaar\Agile en testing\Project\CM-jongeren-reizen\Groepsreizen\dal\obj\Debug\net6.0\dal.pdb
+C:\Thomas More 2de jaar\Agile en testing\Project\CM-jongeren-reizen\Groepsreizen\dal\obj\Debug\net6.0\dal.genruntimeconfig.cache
+C:\Thomas More 2de jaar\Agile en testing\Project\CM-jongeren-reizen\Groepsreizen\dal\obj\Debug\net6.0\ref\dal.dll

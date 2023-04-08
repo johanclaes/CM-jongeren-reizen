@@ -3,11 +3,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "models", "models\models.csproj", "{DE57B5A5-FEC3-4963-998D-2694FAEEB866}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "models", "models\models.csproj", "{DE57B5A5-FEC3-4963-998D-2694FAEEB866}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dal", "dal\dal.csproj", "{E141E28C-A1D3-47F1-B490-43E9D546977A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dal", "dal\dal.csproj", "{E141E28C-A1D3-47F1-B490-43E9D546977A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wpf", "wpf\wpf.csproj", "{7FF99B11-E3D9-4DBD-B84D-17C486B0ADD3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "wpf", "wpf\wpf.csproj", "{7FF99B11-E3D9-4DBD-B84D-17C486B0ADD3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "script", "script", "{BD21952A-5F8F-4BE3-AB98-D16D12426798}"
+	ProjectSection(SolutionItems) = preProject
+		..\Documentatie\Groepsreizen.sql = ..\Documentatie\Groepsreizen.sql
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
