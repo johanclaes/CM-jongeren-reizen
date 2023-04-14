@@ -15,3 +15,20 @@ C:\Thomas More 2de jaar\Agile en testing\Project\CM-jongeren-reizen\Groepsreizen
 C:\Thomas More 2de jaar\Agile en testing\Project\CM-jongeren-reizen\Groepsreizen\dal\obj\Debug\net6.0\dal.pdb
 C:\Thomas More 2de jaar\Agile en testing\Project\CM-jongeren-reizen\Groepsreizen\dal\obj\Debug\net6.0\dal.genruntimeconfig.cache
 C:\Thomas More 2de jaar\Agile en testing\Project\CM-jongeren-reizen\Groepsreizen\dal\obj\Debug\net6.0\ref\dal.dll
+C:\Users\lende\Documents\thomasmore\jaar 2\agile en testing\project\CM-jongeren-reizen\Groepsreizen\dal\bin\Debug\net6.0\dal.deps.json
+C:\Users\lende\Documents\thomasmore\jaar 2\agile en testing\project\CM-jongeren-reizen\Groepsreizen\dal\bin\Debug\net6.0\dal.runtimeconfig.json
+C:\Users\lende\Documents\thomasmore\jaar 2\agile en testing\project\CM-jongeren-reizen\Groepsreizen\dal\bin\Debug\net6.0\dal.dll
+C:\Users\lende\Documents\thomasmore\jaar 2\agile en testing\project\CM-jongeren-reizen\Groepsreizen\dal\bin\Debug\net6.0\dal.pdb
+C:\Users\lende\Documents\thomasmore\jaar 2\agile en testing\project\CM-jongeren-reizen\Groepsreizen\dal\bin\Debug\net6.0\models.dll
+C:\Users\lende\Documents\thomasmore\jaar 2\agile en testing\project\CM-jongeren-reizen\Groepsreizen\dal\bin\Debug\net6.0\models.pdb
+C:\Users\lende\Documents\thomasmore\jaar 2\agile en testing\project\CM-jongeren-reizen\Groepsreizen\dal\obj\Debug\net6.0\dal.csproj.AssemblyReference.cache
+C:\Users\lende\Documents\thomasmore\jaar 2\agile en testing\project\CM-jongeren-reizen\Groepsreizen\dal\obj\Debug\net6.0\dal.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lende\Documents\thomasmore\jaar 2\agile en testing\project\CM-jongeren-reizen\Groepsreizen\dal\obj\Debug\net6.0\dal.AssemblyInfoInputs.cache
+C:\Users\lende\Documents\thomasmore\jaar 2\agile en testing\project\CM-jongeren-reizen\Groepsreizen\dal\obj\Debug\net6.0\dal.AssemblyInfo.cs
+C:\Users\lende\Documents\thomasmore\jaar 2\agile en testing\project\CM-jongeren-reizen\Groepsreizen\dal\obj\Debug\net6.0\dal.csproj.CoreCompileInputs.cache
+C:\Users\lende\Documents\thomasmore\jaar 2\agile en testing\project\CM-jongeren-reizen\Groepsreizen\dal\obj\Debug\net6.0\dal.csproj.CopyComplete
+C:\Users\lende\Documents\thomasmore\jaar 2\agile en testing\project\CM-jongeren-reizen\Groepsreizen\dal\obj\Debug\net6.0\dal.dll
+C:\Users\lende\Documents\thomasmore\jaar 2\agile en testing\project\CM-jongeren-reizen\Groepsreizen\dal\obj\Debug\net6.0\refint\dal.dll
+C:\Users\lende\Documents\thomasmore\jaar 2\agile en testing\project\CM-jongeren-reizen\Groepsreizen\dal\obj\Debug\net6.0\dal.pdb
+C:\Users\lende\Documents\thomasmore\jaar 2\agile en testing\project\CM-jongeren-reizen\Groepsreizen\dal\obj\Debug\net6.0\dal.genruntimeconfig.cache
+C:\Users\lende\Documents\thomasmore\jaar 2\agile en testing\project\CM-jongeren-reizen\Groepsreizen\dal\obj\Debug\net6.0\ref\dal.dll

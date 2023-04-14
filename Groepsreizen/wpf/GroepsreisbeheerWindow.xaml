@@ -5,8 +5,176 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:wpf"
         mc:Ignorable="d"
-        Title="GroepsreisbeheerWindow" Height="450" Width="800">
+        Title="GroepsreisbeheerWindow" Height="550" Width="900">
     <Grid>
-        
+        <TabControl Height="NaN" Margin="10,10,0,0" Width="NaN">
+            <TabItem  Height="35" Header="Personenbeheer" Margin="7,-2,-11,0">
+                <Grid Background="LightSkyBlue" Margin="0,0,13,0" Width="NaN">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="14*"/>
+                        <ColumnDefinition Width="53*"/>
+                    </Grid.ColumnDefinitions>
+                    <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Height="NaN" Margin="37,137,626,148" Width="NaN" Grid.ColumnSpan="2"/>
+                    <Button Content="Formulier leegmaken" HorizontalAlignment="Left" Margin="495,168,0,0" VerticalAlignment="Top" Width="159" Grid.Column="1"/>
+                    <Button Content="Persoon verwijderen" HorizontalAlignment="Left" Margin="495,124,0,0" VerticalAlignment="Top" Width="159" Grid.Column="1"/>
+                    <Button Content="Persoon aanpassen" HorizontalAlignment="Left" Margin="495,73,0,0" VerticalAlignment="Top" Width="159" Grid.Column="1"/>
+                    <Button Content="Nieuwe persoon aanmaken" HorizontalAlignment="Left" Margin="495,29,0,0" VerticalAlignment="Top" Width="159" Grid.Column="1"/>
+                    <Button Content="Zoek Persoon" HorizontalAlignment="Left" Margin="37,90,0,0" VerticalAlignment="Top" Width="118"/>
+                    <GroupBox Header="Persoon-info" Height="NaN" Margin="163,15,218,25" Width="NaN" Grid.Column="1"/>
+                    <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="190,45,0,0" TextWrapping="Wrap" Text="Naam" VerticalAlignment="Top"/>
+                    <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="190,70,0,0" TextWrapping="Wrap" Text="Voornaam" VerticalAlignment="Top" RenderTransformOrigin="0.587,2.86"/>
+                    <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="190,96,0,0" TextWrapping="Wrap" Text="Geboortedatum" VerticalAlignment="Top" RenderTransformOrigin="0.587,2.86"/>
+                    <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="190,122,0,0" TextWrapping="Wrap" Text="TelefoonNr" VerticalAlignment="Top" RenderTransformOrigin="0.587,2.86"/>
+                    <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="190,216,0,0" TextWrapping="Wrap" Text="Email" VerticalAlignment="Top" RenderTransformOrigin="0.587,2.86"/>
+                    <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="190,241,0,0" TextWrapping="Wrap" Text="Adres" VerticalAlignment="Top" RenderTransformOrigin="0.587,2.86"/>
+                    <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="190,265,0,0" TextWrapping="Wrap" Text="Woonplaats" VerticalAlignment="Top" RenderTransformOrigin="0.587,2.86"/>
+                    <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="190,289,0,0" TextWrapping="Wrap" Text="Allergie" VerticalAlignment="Top" RenderTransformOrigin="0.587,2.86"/>
+                    <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="190,311,0,0" TextWrapping="Wrap" Text="Medicatie" VerticalAlignment="Top" RenderTransformOrigin="0.587,2.86"/>
+                    <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="190,337,0,0" TextWrapping="Wrap" Text="Opmerking" VerticalAlignment="Top" RenderTransformOrigin="0.587,2.86"/>
+                    <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="337,47,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                    <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="336,71,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                    <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="338,99,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                    <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="338,123,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                    <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="344,215,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                    <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="344,242,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                    <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="344,266,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                    <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="344,288,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                    <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="344,310,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                    <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="344,334,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                    <CheckBox Grid.Column="1" Content="WebAdmin" HorizontalAlignment="Center" Margin="0,391,0,0" VerticalAlignment="Top"/>
+                    <CheckBox Grid.Column="1" Content="Is-Lid" HorizontalAlignment="Left" Margin="188,153,0,0" VerticalAlignment="Top"/>
+                    <CheckBox Grid.Column="1" Content="HoofdmonitorBrevet" HorizontalAlignment="Left" Margin="187,179,0,0" VerticalAlignment="Top"/>
+                    <CheckBox Grid.Column="1" Content="Rolstoel" HorizontalAlignment="Left" Margin="326,179,0,0" VerticalAlignment="Top" IsChecked="True"/>
+                    <CheckBox Grid.Column="1" Content="MonitorBrevet" HorizontalAlignment="Left" Margin="324,155,0,0" VerticalAlignment="Top"/>
+                    <TextBox Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="91,56,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="37,59,0,0" TextWrapping="Wrap" Text="Naam: " VerticalAlignment="Top"/>
+                    <Label Grid.Column="1" Content="error" HorizontalAlignment="Left" Margin="536,321,0,0" VerticalAlignment="Top"/>
+                </Grid>
+            </TabItem>
+            <TabItem Height="35" Header="Inschrijvingen" Margin="30,-2,-34,0">
+                <Grid Background="LightYellow">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="49*"/>
+                        <ColumnDefinition Width="836*"/>
+                    </Grid.ColumnDefinitions>
+                    <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Height="NaN" Margin="13,115,666,215" Grid.Column="1" Width="NaN"/>
+                    <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Height="NaN" Margin="194,115,485,215" Grid.Column="1" Width="NaN"/>
+                    <Button Grid.Column="1" Content="Zoek-Persoon" HorizontalAlignment="Left" Margin="14,83,0,0" VerticalAlignment="Top" Width="155"/>
+                    <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="16,55,0,0" TextWrapping="Wrap" Text="Verhoeven" VerticalAlignment="Top" Width="120"/>
+                    <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Height="NaN" Margin="13,301,666,119" Grid.Column="1" Width="NaN"/>
+                    <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="16,276,0,0" TextWrapping="Wrap" Text="Ingeschreven voor" VerticalAlignment="Top"/>
+                    <Button Grid.Column="1" Content="Maak Reservering" HorizontalAlignment="Left" Margin="377,118,0,0" VerticalAlignment="Top" Width="157"/>
+                    <Button Grid.Column="1" Content="Registreer Betaling" HorizontalAlignment="Left" Margin="377,150,0,0" VerticalAlignment="Top" Width="157"/>
+                    <Button Grid.Column="1" Content="Annuleer-Reservering" HorizontalAlignment="Left" Margin="377,183,0,0" VerticalAlignment="Top" Width="157"/>
+                    <Label Grid.Column="1" Content="errorlist" HorizontalAlignment="Left" Margin="606,276,0,0" VerticalAlignment="Top"/>
+                    <ComboBox Grid.Column="1" HorizontalAlignment="Left" Margin="200,42,0,0" VerticalAlignment="Top" Width="150"/>
+                    <ComboBox Grid.Column="1" HorizontalAlignment="Left" Margin="198,78,0,0" VerticalAlignment="Top" Width="152"/>
+                </Grid>
+            </TabItem>
+            <TabItem Height="35" Header="Groepsreizen" VerticalAlignment="Top" Margin="54,-2,-54,0" RenderTransformOrigin="0.719,0.55">
+                <Grid Background="YellowGreen">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="122*"/>
+                        <ColumnDefinition Width="99*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button Content="Zoek-op-naam" HorizontalAlignment="Left" Margin="251,46,0,0" VerticalAlignment="Top" Width="105" Grid.Column="1"/>
+                    <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Height="NaN" Margin="78,81,181,300" Width="NaN" Grid.Column="1"/>
+                    <Button Content="Voeg-toe-aan-Monitorlijst" HorizontalAlignment="Left" Margin="221,124,0,0" VerticalAlignment="Top" Width="145" Grid.Column="1"/>
+                    <Button Content="Verwijder-uit-monitorlijst" HorizontalAlignment="Left" Margin="225,226,0,0" VerticalAlignment="Top" Width="141" Grid.Column="1"/>
+                    <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Height="NaN" Margin="80,198,181,177" Width="NaN" Grid.Column="1"/>
+                    <ComboBox HorizontalAlignment="Left" Margin="101,381,0,0" VerticalAlignment="Top" Width="153" Grid.Column="1"/>
+                    <GroupBox Header="Hoofdmonitoren-Selecteren&#xA;" Margin="59,342,23,39" Height="NaN" Width="NaN" Grid.Column="1"/>
+                    <GroupBox Header="Monitoren-Selecteren&#xA;" Margin="59,0,23,154" Height="NaN" Width="NaN" Grid.Column="1"/>
+                    <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="84,46,0,0" TextWrapping="Wrap" Text="an" VerticalAlignment="Top" Width="120"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="290,27,0,0" TextWrapping="Wrap" Text="Naam:" VerticalAlignment="Top"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="290,55,0,0" TextWrapping="Wrap" Text="Deelnameprijs:" VerticalAlignment="Top"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="290,79,0,0" TextWrapping="Wrap" Text="Thema" VerticalAlignment="Top"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="290,105,0,0" TextWrapping="Wrap" Text="Bestemming" VerticalAlignment="Top"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="290,135,0,0" TextWrapping="Wrap" Text="StartDatum" VerticalAlignment="Top"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="290,159,0,0" TextWrapping="Wrap" Text="EindDatum" VerticalAlignment="Top"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="290,183,0,0" TextWrapping="Wrap" Text="MinimumLeeftijd" VerticalAlignment="Top"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="290,211,0,0" TextWrapping="Wrap" Text="MaximumLeeftijd" VerticalAlignment="Top"/>
+                    <TextBox Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="396,28,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                    <TextBox Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="396,54,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                    <TextBox Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="396,80,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                    <TextBox Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="396,134,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                    <TextBox Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="396,160,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                    <TextBox Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="396,184,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                    <TextBox Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="396,212,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                    <CheckBox Content="Volzet" HorizontalAlignment="Left" Margin="350,251,0,0" VerticalAlignment="Top"/>
+                    <CheckBox Content="Inschrijving-Gestopt" HorizontalAlignment="Left" Margin="350,280,0,0" VerticalAlignment="Top"/>
+                    <ComboBox Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="397,101,0,0" VerticalAlignment="Top" Width="120"/>
+                    <TextBox HorizontalAlignment="Left" Margin="126,42,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="48,43,0,0" TextWrapping="Wrap" Text="Zoekterm" VerticalAlignment="Top"/>
+                    <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Height="NaN" Margin="32,112,242,189" Width="NaN"/>
+                    <Button Content="Maak-lijst-Groepsreizen" HorizontalAlignment="Left" Margin="36,77,0,0" VerticalAlignment="Top" Width="150"/>
+                    <Button Content="Maak-nieuwe-reis" HorizontalAlignment="Left" Margin="36,319,0,0" VerticalAlignment="Top" Width="150"/>
+                    <Button Content="Update-reis" HorizontalAlignment="Left" Margin="201,319,0,0" VerticalAlignment="Top" Width="150"/>
+                    <Label Content="error" HorizontalAlignment="Left" Margin="99,403,0,0" VerticalAlignment="Top"/>
+                </Grid>
+            </TabItem>
+            <TabItem Height="35" Header="Opleidingsbeheer" VerticalAlignment="Top" Margin="69,-2,-69,0" Background="{x:Null}" BorderBrush="Violet">
+                <Grid Background="Bisque">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="16*"/>
+                        <ColumnDefinition Width="205*"/>
+                    </Grid.ColumnDefinitions>
+                    <GroupBox Header="Nieuwe-Cursus" Height="NaN" Margin="590,10,14,383" Width="NaN" Grid.Column="1"/>
+                    <TextBox HorizontalAlignment="Left" Margin="633,36,0,0" TextWrapping="Wrap" Text="naam-nieuwe-cursus" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
+                    <Button Content="Cursus Toevoegen" HorizontalAlignment="Left" Margin="632,63,0,0" VerticalAlignment="Top" Width="118" Grid.Column="1"/>
+                    <GroupBox Header="Nieuwe-Cursus" Margin="10,10,646,81" Width="NaN" Height="NaN" Grid.ColumnSpan="2"/>
+                    <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="188,133,432,49" Width="NaN" Height="NaN" Grid.Column="1"/>
+                    <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="431,133,231,49" Width="NaN" Height="NaN" Grid.Column="1"/>
+                    <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="616,134,36,49" Width="NaN" Height="NaN" Grid.Column="1"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="619,107,0,0" TextWrapping="Wrap" Text="Lijst-van-deelnemers" VerticalAlignment="Top" Grid.Column="1"/>
+                    <Button Content="Voeg deelnemer toe" HorizontalAlignment="Left" Margin="432,442,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                    <Button Content="Zoek deelnemer" HorizontalAlignment="Left" Margin="431,104,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                    <TextBox HorizontalAlignment="Left" Margin="430,78,0,0" TextWrapping="Wrap" Text="naam" VerticalAlignment="Top" Width="90" Grid.Column="1"/>
+                    <Button Content="Opleiding Aanmaken" HorizontalAlignment="Left" Margin="50,373,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+                    <Calendar HorizontalAlignment="Left" Margin="33,72,0,0" VerticalAlignment="Top" Height="133" Width="170" Grid.ColumnSpan="2"/>
+                    <Calendar HorizontalAlignment="Left" Margin="34,233,0,0" VerticalAlignment="Top" Height="135" Width="174" Grid.ColumnSpan="2"/>
+                    <ComboBox HorizontalAlignment="Left" Margin="21,29,0,0" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
+                    <Button Content="Maak lijst cursussen" HorizontalAlignment="Left" Margin="188,104,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                    <Label Content="errorlist" HorizontalAlignment="Left" Margin="16,417,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.226,-0.176" Height="39" Width="105" Grid.ColumnSpan="2"/>
+                    <TextBox HorizontalAlignment="Left" Margin="190,78,0,0" TextWrapping="Wrap" Text="nog niet goed" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="35,215,0,0" TextWrapping="Wrap" Text="EindDatum" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="33,55,0,0" TextWrapping="Wrap" Text="BeginDatum" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+                </Grid>
+            </TabItem>
+            <TabItem Height="35" Header="Bestemmingen" VerticalAlignment="Top" Margin="84,-2,-84,0">
+                <Grid Background="LightBlue" RenderTransformOrigin="0.412,0.485" Margin="6,0,-6,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="197*"/>
+                        <ColumnDefinition Width="195*"/>
+                    </Grid.ColumnDefinitions>
+                    <GroupBox Header="Bestemming" Margin="10,10,137,120" Width="NaN" Height="NaN"/>
+                    <GroupBox Header="BestemmingsType" Height="NaN" Margin="133,10,33,326" Width="NaN" Grid.Column="1"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="32,41,0,0" TextWrapping="Wrap" Text="Bestemmingstype" VerticalAlignment="Top"/>
+                    <TextBox HorizontalAlignment="Left" Margin="172,109,0,0" TextWrapping="Wrap" Text="gemeente" VerticalAlignment="Top" Width="120"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="33,75,0,0" TextWrapping="Wrap" Text="Land" VerticalAlignment="Top"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="34,107,0,0" TextWrapping="Wrap" Text="Gemeente" VerticalAlignment="Top"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="38,149,0,0" TextWrapping="Wrap" Text="Straat" VerticalAlignment="Top"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="34,186,0,0" TextWrapping="Wrap" Text="Capaciteit" VerticalAlignment="Top"/>
+                    <Button Content="Maak-Nieuwe-Reisbestemming " HorizontalAlignment="Left" Margin="46,272,0,0" VerticalAlignment="Top"/>
+                    <Button Content="Reisbestemming-Aanpassen" HorizontalAlignment="Left" Margin="46,308,0,0" VerticalAlignment="Top" Width="173"/>
+                    <TextBox HorizontalAlignment="Left" Margin="172,151,0,0" TextWrapping="Wrap" Text="veldstraat" VerticalAlignment="Top" Width="120"/>
+                    <TextBox HorizontalAlignment="Left" Margin="172,187,0,0" TextWrapping="Wrap" Text="120" VerticalAlignment="Top" Width="120"/>
+                    <ComboBox HorizontalAlignment="Left" Margin="172,67,0,0" VerticalAlignment="Top" Width="120"/>
+                    <ComboBox HorizontalAlignment="Left" Margin="172,35,0,0" VerticalAlignment="Top" Width="120"/>
+                    <Button Grid.Column="1" Content="Bestemmingstype Toevoegen" HorizontalAlignment="Left" Margin="175,108,0,0" VerticalAlignment="Top"/>
+                    <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="175,46,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="159" Height="32"/>
+                    <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Height="NaN" Margin="344,208,278,120" Width="NaN" Grid.ColumnSpan="2"/>
+                    <ComboBox Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="345,165,0,0" VerticalAlignment="Top" Width="120"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="350,134,0,0" TextWrapping="Wrap" Text="Maak-Lijst-per-Land" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="120"/>
+                    <Label Grid.Column="1" Content="error" HorizontalAlignment="Left" Margin="270,386,0,0" VerticalAlignment="Top"/>
+                </Grid>
+            </TabItem>
+            <TabItem Height="35" Header="Logout" VerticalAlignment="Top" Margin="96,-2,-96,0" RenderTransformOrigin="0.635,0.58" BorderBrush="GreenYellow">
+                <Grid Background="#FFE5E5E5">
+
+                </Grid>
+            </TabItem>
+        </TabControl>
+
     </Grid>
 </Window>
