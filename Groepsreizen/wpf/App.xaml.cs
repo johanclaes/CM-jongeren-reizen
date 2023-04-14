@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using wpf.Viewmodels;
 
 namespace wpf
 {
@@ -13,5 +14,12 @@ namespace wpf
     /// </summary>
     public partial class App : Application
     {
+        private void Application_Startup(object sender, StartupEventArgs e)
+        {
+            var vm = new GroepsreisbeheerViewmodel();
+            var view = new GroepsreisbeheerWindow();
+            view.DataContext = vm;
+            view.Show();
+        }
     }
 }
