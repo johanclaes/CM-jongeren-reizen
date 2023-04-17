@@ -7,45 +7,18 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="BestemmingbeheerWindow.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="GroepsreisbeheerWindow.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="InschrijvingenWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="LoginWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="OpleidingbeheerWindow.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="PersonenbeheerWindow.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="BestemmingbeheerWindow.xaml">
-      <SubType>Designer</SubType>
-    </Page>
     <Page Update="GroepsreisbeheerWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="InschrijvingenWindow.xaml">
-      <SubType>Designer</SubType>
-    </Page>
     <Page Update="LoginWindow.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="MainWindow.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="OpleidingbeheerWindow.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="PersonenbeheerWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
