@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace wpf.Viewmodels
+namespace wpf.ViewModels
 {
-    class GroepsreisbeheerViewmodel
+    public class GroepsreisbeheerViewmodel
     {
+
     }
 }

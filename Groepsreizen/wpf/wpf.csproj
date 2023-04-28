@@ -21,4 +21,9 @@
     <ProjectReference Include="..\models\models.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="UserControls\" />
+    <Folder Include="Views\" />
+  </ItemGroup>
+
 </Project>

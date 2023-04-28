@@ -80,23 +80,11 @@ C:\Thomas More 2de jaar\Agile en testing\Project\CM-jongeren-reizen\Groepsreizen
 C:\Thomas More 2de jaar\Agile en testing\Project\CM-jongeren-reizen\Groepsreizen\wpf\bin\Debug\net6.0-windows\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 C:\Thomas More 2de jaar\Agile en testing\Project\CM-jongeren-reizen\Groepsreizen\wpf\bin\Debug\net6.0-windows\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
 C:\Thomas More 2de jaar\Agile en testing\Project\CM-jongeren-reizen\Groepsreizen\wpf\obj\Debug\net6.0-windows\wpf.csproj.AssemblyReference.cache
-C:\Thomas More 2de jaar\Agile en testing\Project\CM-jongeren-reizen\Groepsreizen\wpf\obj\Debug\net6.0-windows\BestemmingbeheerWindow.g.cs
-C:\Thomas More 2de jaar\Agile en testing\Project\CM-jongeren-reizen\Groepsreizen\wpf\obj\Debug\net6.0-windows\GroepsreisbeheerWindow.g.cs
-C:\Thomas More 2de jaar\Agile en testing\Project\CM-jongeren-reizen\Groepsreizen\wpf\obj\Debug\net6.0-windows\InschrijvingenWindow.g.cs
 C:\Thomas More 2de jaar\Agile en testing\Project\CM-jongeren-reizen\Groepsreizen\wpf\obj\Debug\net6.0-windows\LoginWindow.g.cs
-C:\Thomas More 2de jaar\Agile en testing\Project\CM-jongeren-reizen\Groepsreizen\wpf\obj\Debug\net6.0-windows\MainWindow.g.cs
-C:\Thomas More 2de jaar\Agile en testing\Project\CM-jongeren-reizen\Groepsreizen\wpf\obj\Debug\net6.0-windows\OpleidingbeheerWindow.g.cs
-C:\Thomas More 2de jaar\Agile en testing\Project\CM-jongeren-reizen\Groepsreizen\wpf\obj\Debug\net6.0-windows\PersonenbeheerWindow.g.cs
 C:\Thomas More 2de jaar\Agile en testing\Project\CM-jongeren-reizen\Groepsreizen\wpf\obj\Debug\net6.0-windows\App.g.cs
 C:\Thomas More 2de jaar\Agile en testing\Project\CM-jongeren-reizen\Groepsreizen\wpf\obj\Debug\net6.0-windows\wpf_MarkupCompile.cache
 C:\Thomas More 2de jaar\Agile en testing\Project\CM-jongeren-reizen\Groepsreizen\wpf\obj\Debug\net6.0-windows\wpf_MarkupCompile.lref
-C:\Thomas More 2de jaar\Agile en testing\Project\CM-jongeren-reizen\Groepsreizen\wpf\obj\Debug\net6.0-windows\BestemmingbeheerWindow.baml
-C:\Thomas More 2de jaar\Agile en testing\Project\CM-jongeren-reizen\Groepsreizen\wpf\obj\Debug\net6.0-windows\GroepsreisbeheerWindow.baml
-C:\Thomas More 2de jaar\Agile en testing\Project\CM-jongeren-reizen\Groepsreizen\wpf\obj\Debug\net6.0-windows\InschrijvingenWindow.baml
 C:\Thomas More 2de jaar\Agile en testing\Project\CM-jongeren-reizen\Groepsreizen\wpf\obj\Debug\net6.0-windows\LoginWindow.baml
-C:\Thomas More 2de jaar\Agile en testing\Project\CM-jongeren-reizen\Groepsreizen\wpf\obj\Debug\net6.0-windows\MainWindow.baml
-C:\Thomas More 2de jaar\Agile en testing\Project\CM-jongeren-reizen\Groepsreizen\wpf\obj\Debug\net6.0-windows\OpleidingbeheerWindow.baml
-C:\Thomas More 2de jaar\Agile en testing\Project\CM-jongeren-reizen\Groepsreizen\wpf\obj\Debug\net6.0-windows\PersonenbeheerWindow.baml
 C:\Thomas More 2de jaar\Agile en testing\Project\CM-jongeren-reizen\Groepsreizen\wpf\obj\Debug\net6.0-windows\wpf.g.resources
 C:\Thomas More 2de jaar\Agile en testing\Project\CM-jongeren-reizen\Groepsreizen\wpf\obj\Debug\net6.0-windows\wpf.GeneratedMSBuildEditorConfig.editorconfig
 C:\Thomas More 2de jaar\Agile en testing\Project\CM-jongeren-reizen\Groepsreizen\wpf\obj\Debug\net6.0-windows\wpf.AssemblyInfoInputs.cache
@@ -193,3 +181,8 @@ C:\Users\lende\Documents\thomasmore\jaar 2\agile en testing\project\CM-jongeren-
 C:\Users\lende\Documents\thomasmore\jaar 2\agile en testing\project\CM-jongeren-reizen\Groepsreizen\wpf\obj\Debug\net6.0-windows\wpf.csproj.CopyComplete
 C:\Users\lende\Documents\thomasmore\jaar 2\agile en testing\project\CM-jongeren-reizen\Groepsreizen\wpf\obj\Debug\net6.0-windows\wpf.genruntimeconfig.cache
 C:\Users\lende\Documents\thomasmore\jaar 2\agile en testing\project\CM-jongeren-reizen\Groepsreizen\wpf\obj\Debug\net6.0-windows\ref\wpf.dll
+C:\Thomas More 2de jaar\Agile en testing\Project\CM-jongeren-reizen\Groepsreizen\wpf\obj\Debug\net6.0-windows\Views\GroepsreisbeheerWindow.g.cs
+C:\Thomas More 2de jaar\Agile en testing\Project\CM-jongeren-reizen\Groepsreizen\wpf\obj\Debug\net6.0-windows\Views\GroepsreisbeheerWindow.baml
+C:\Thomas More 2de jaar\Agile en testing\Project\CM-jongeren-reizen\Groepsreizen\wpf\obj\Debug\net6.0-windows\UserControls\Personen.g.cs
+C:\Thomas More 2de jaar\Agile en testing\Project\CM-jongeren-reizen\Groepsreizen\wpf\obj\Debug\net6.0-windows\UserControls\Personen.baml
+C:\Thomas More 2de jaar\Agile en testing\Project\CM-jongeren-reizen\Groepsreizen\wpf\obj\Debug\net6.0-windows\GeneratedInternalTypeHelper.g.cs
