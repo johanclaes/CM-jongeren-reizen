@@ -10,9 +10,45 @@
     <Compile Update="LoginWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="MainWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UserControls\Bestemmingen.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UserControls\Groepsreizen.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UserControls\Inschrijvingen.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UserControls\Opleidingen.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UserControls\Personen.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="LoginWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UserControls\Bestemmingen.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UserControls\Groepsreizen.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UserControls\Inschrijvingen.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UserControls\Opleidingen.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UserControls\Personen.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

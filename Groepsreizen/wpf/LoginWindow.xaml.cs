@@ -23,5 +23,12 @@ namespace wpf
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow window = new MainWindow();
+
+            window.Show();
+        }
     }
 }

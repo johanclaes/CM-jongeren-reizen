@@ -101,13 +101,8 @@ C:\Thomas More 2de jaar\Agile en testing\Project\CM-jongeren-reizen\Groepsreizen
 C:\Thomas More 2de jaar\Agile en testing\Project\CM-jongeren-reizen\Groepsreizen\wpf\bin\Debug\net6.0-windows\dal.pdb
 C:\Thomas More 2de jaar\Agile en testing\Project\CM-jongeren-reizen\Groepsreizen\wpf\bin\Debug\net6.0-windows\models.pdb
 C:\Users\lende\Documents\thomasmore\jaar 2\agile en testing\project\CM-jongeren-reizen\Groepsreizen\wpf\obj\Debug\net6.0-windows\wpf.csproj.AssemblyReference.cache
-C:\Users\lende\Documents\thomasmore\jaar 2\agile en testing\project\CM-jongeren-reizen\Groepsreizen\wpf\obj\Debug\net6.0-windows\BestemmingbeheerWindow.g.cs
-C:\Users\lende\Documents\thomasmore\jaar 2\agile en testing\project\CM-jongeren-reizen\Groepsreizen\wpf\obj\Debug\net6.0-windows\GroepsreisbeheerWindow.g.cs
-C:\Users\lende\Documents\thomasmore\jaar 2\agile en testing\project\CM-jongeren-reizen\Groepsreizen\wpf\obj\Debug\net6.0-windows\InschrijvingenWindow.g.cs
 C:\Users\lende\Documents\thomasmore\jaar 2\agile en testing\project\CM-jongeren-reizen\Groepsreizen\wpf\obj\Debug\net6.0-windows\LoginWindow.g.cs
 C:\Users\lende\Documents\thomasmore\jaar 2\agile en testing\project\CM-jongeren-reizen\Groepsreizen\wpf\obj\Debug\net6.0-windows\MainWindow.g.cs
-C:\Users\lende\Documents\thomasmore\jaar 2\agile en testing\project\CM-jongeren-reizen\Groepsreizen\wpf\obj\Debug\net6.0-windows\OpleidingbeheerWindow.g.cs
-C:\Users\lende\Documents\thomasmore\jaar 2\agile en testing\project\CM-jongeren-reizen\Groepsreizen\wpf\obj\Debug\net6.0-windows\PersonenbeheerWindow.g.cs
 C:\Users\lende\Documents\thomasmore\jaar 2\agile en testing\project\CM-jongeren-reizen\Groepsreizen\wpf\obj\Debug\net6.0-windows\App.g.cs
 C:\Users\lende\Documents\thomasmore\jaar 2\agile en testing\project\CM-jongeren-reizen\Groepsreizen\wpf\obj\Debug\net6.0-windows\wpf_MarkupCompile.cache
 C:\Users\lende\Documents\thomasmore\jaar 2\agile en testing\project\CM-jongeren-reizen\Groepsreizen\wpf\obj\Debug\net6.0-windows\wpf_MarkupCompile.lref
@@ -166,13 +161,8 @@ C:\Users\lende\Documents\thomasmore\jaar 2\agile en testing\project\CM-jongeren-
 C:\Users\lende\Documents\thomasmore\jaar 2\agile en testing\project\CM-jongeren-reizen\Groepsreizen\wpf\bin\Debug\net6.0-windows\models.dll
 C:\Users\lende\Documents\thomasmore\jaar 2\agile en testing\project\CM-jongeren-reizen\Groepsreizen\wpf\bin\Debug\net6.0-windows\dal.pdb
 C:\Users\lende\Documents\thomasmore\jaar 2\agile en testing\project\CM-jongeren-reizen\Groepsreizen\wpf\bin\Debug\net6.0-windows\models.pdb
-C:\Users\lende\Documents\thomasmore\jaar 2\agile en testing\project\CM-jongeren-reizen\Groepsreizen\wpf\obj\Debug\net6.0-windows\BestemmingbeheerWindow.baml
-C:\Users\lende\Documents\thomasmore\jaar 2\agile en testing\project\CM-jongeren-reizen\Groepsreizen\wpf\obj\Debug\net6.0-windows\GroepsreisbeheerWindow.baml
-C:\Users\lende\Documents\thomasmore\jaar 2\agile en testing\project\CM-jongeren-reizen\Groepsreizen\wpf\obj\Debug\net6.0-windows\InschrijvingenWindow.baml
 C:\Users\lende\Documents\thomasmore\jaar 2\agile en testing\project\CM-jongeren-reizen\Groepsreizen\wpf\obj\Debug\net6.0-windows\LoginWindow.baml
 C:\Users\lende\Documents\thomasmore\jaar 2\agile en testing\project\CM-jongeren-reizen\Groepsreizen\wpf\obj\Debug\net6.0-windows\MainWindow.baml
-C:\Users\lende\Documents\thomasmore\jaar 2\agile en testing\project\CM-jongeren-reizen\Groepsreizen\wpf\obj\Debug\net6.0-windows\OpleidingbeheerWindow.baml
-C:\Users\lende\Documents\thomasmore\jaar 2\agile en testing\project\CM-jongeren-reizen\Groepsreizen\wpf\obj\Debug\net6.0-windows\PersonenbeheerWindow.baml
 C:\Users\lende\Documents\thomasmore\jaar 2\agile en testing\project\CM-jongeren-reizen\Groepsreizen\wpf\obj\Debug\net6.0-windows\wpf.g.resources
 C:\Users\lende\Documents\thomasmore\jaar 2\agile en testing\project\CM-jongeren-reizen\Groepsreizen\wpf\obj\Debug\net6.0-windows\wpf.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\lende\Documents\thomasmore\jaar 2\agile en testing\project\CM-jongeren-reizen\Groepsreizen\wpf\obj\Debug\net6.0-windows\wpf.AssemblyInfoInputs.cache
@@ -186,3 +176,18 @@ C:\Thomas More 2de jaar\Agile en testing\Project\CM-jongeren-reizen\Groepsreizen
 C:\Thomas More 2de jaar\Agile en testing\Project\CM-jongeren-reizen\Groepsreizen\wpf\obj\Debug\net6.0-windows\UserControls\Personen.g.cs
 C:\Thomas More 2de jaar\Agile en testing\Project\CM-jongeren-reizen\Groepsreizen\wpf\obj\Debug\net6.0-windows\UserControls\Personen.baml
 C:\Thomas More 2de jaar\Agile en testing\Project\CM-jongeren-reizen\Groepsreizen\wpf\obj\Debug\net6.0-windows\GeneratedInternalTypeHelper.g.cs
+C:\Users\lende\Documents\thomasmore\jaar 2\agile en testing\project\CM-jongeren-reizen\Groepsreizen\wpf\obj\Debug\net6.0-windows\UserControls\Bestemmingen.g.cs
+C:\Users\lende\Documents\thomasmore\jaar 2\agile en testing\project\CM-jongeren-reizen\Groepsreizen\wpf\obj\Debug\net6.0-windows\UserControls\Groepsreizen.g.cs
+C:\Users\lende\Documents\thomasmore\jaar 2\agile en testing\project\CM-jongeren-reizen\Groepsreizen\wpf\obj\Debug\net6.0-windows\UserControls\Inschrijvingen.g.cs
+C:\Users\lende\Documents\thomasmore\jaar 2\agile en testing\project\CM-jongeren-reizen\Groepsreizen\wpf\obj\Debug\net6.0-windows\UserControls\Opleidingen.g.cs
+C:\Users\lende\Documents\thomasmore\jaar 2\agile en testing\project\CM-jongeren-reizen\Groepsreizen\wpf\obj\Debug\net6.0-windows\UserControls\Personen.g.cs
+C:\Users\lende\Documents\thomasmore\jaar 2\agile en testing\project\CM-jongeren-reizen\Groepsreizen\wpf\obj\Debug\net6.0-windows\GeneratedInternalTypeHelper.g.cs
+C:\Users\lende\Documents\thomasmore\jaar 2\agile en testing\project\CM-jongeren-reizen\Groepsreizen\wpf\bin\Debug\net6.0-windows\MaterialDesignColors.dll
+C:\Users\lende\Documents\thomasmore\jaar 2\agile en testing\project\CM-jongeren-reizen\Groepsreizen\wpf\bin\Debug\net6.0-windows\MaterialDesignThemes.Wpf.dll
+C:\Users\lende\Documents\thomasmore\jaar 2\agile en testing\project\CM-jongeren-reizen\Groepsreizen\wpf\bin\Debug\net6.0-windows\Microsoft.Xaml.Behaviors.dll
+C:\Users\lende\Documents\thomasmore\jaar 2\agile en testing\project\CM-jongeren-reizen\Groepsreizen\wpf\obj\Debug\net6.0-windows\UserControls\Bestemmingen.baml
+C:\Users\lende\Documents\thomasmore\jaar 2\agile en testing\project\CM-jongeren-reizen\Groepsreizen\wpf\obj\Debug\net6.0-windows\UserControls\Groepsreizen.baml
+C:\Users\lende\Documents\thomasmore\jaar 2\agile en testing\project\CM-jongeren-reizen\Groepsreizen\wpf\obj\Debug\net6.0-windows\UserControls\Inschrijvingen.baml
+C:\Users\lende\Documents\thomasmore\jaar 2\agile en testing\project\CM-jongeren-reizen\Groepsreizen\wpf\obj\Debug\net6.0-windows\UserControls\Opleidingen.baml
+C:\Users\lende\Documents\thomasmore\jaar 2\agile en testing\project\CM-jongeren-reizen\Groepsreizen\wpf\obj\Debug\net6.0-windows\UserControls\Personen.baml
+C:\Users\lende\Documents\thomasmore\jaar 2\agile en testing\project\CM-jongeren-reizen\Groepsreizen\wpf\obj\Debug\net6.0-windows\App.baml

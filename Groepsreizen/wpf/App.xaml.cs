@@ -17,7 +17,7 @@ namespace wpf
         private void Application_Startup(object sender, StartupEventArgs e)
         {
             //var vm = new PersonenViewModel();
-            //var view = new GroepsreisbeheerWindow();
+            //var view = new LoginWindow();
             //view.DataContext = vm;
             //view.Show();
         }
