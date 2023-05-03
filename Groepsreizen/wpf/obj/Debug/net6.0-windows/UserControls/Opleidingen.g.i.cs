@@ -189,7 +189,7 @@ namespace wpf.UserControls {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/wpf;component/usercontrols/opleidingen.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/wpf;V1.0.0.0;component/usercontrols/opleidingen.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\UserControls\Opleidingen.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

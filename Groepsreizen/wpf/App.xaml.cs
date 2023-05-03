@@ -5,7 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
-using wpf.ViewModels;
+using wpf.Viewmodels;
 
 namespace wpf
 {
@@ -16,10 +16,10 @@ namespace wpf
     {
         private void Application_Startup(object sender, StartupEventArgs e)
         {
-            //var vm = new PersonenViewModel();
-            //var view = new LoginWindow();
-            //view.DataContext = vm;
-            //view.Show();
+            var vm = new LoginViewModel();
+            var view = new LoginWindow();
+            view.DataContext = vm;
+            view.Show();
         }
     }
 }

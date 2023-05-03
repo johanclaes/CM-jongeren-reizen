@@ -5,7 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:wpf"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:viewmodel="clr-namespace:wpf.Viewmodels"
         mc:Ignorable="d"
+        MouseDown="Window_MouseDown"
         Title="LoginScherm_Groepsreizen" Height="450" Width="800">
     <Grid Background="LightSkyBlue" >
         <Grid.Effect>
@@ -33,7 +35,8 @@
 
             <TextBox Grid.Row="3"
                  Grid.Column="1"
-                 Style="{StaticResource MaterialDesignFilledTextBox}" />
+                 Style="{StaticResource MaterialDesignFilledTextBox}"
+                     Text="{Binding Email}"/>
 
             <TextBlock Grid.Row="2"
                   Grid.Column="0"
@@ -41,7 +44,8 @@
 
             <PasswordBox Grid.Row="3"
                      Grid.Column="2"
-                     Style="{StaticResource MaterialDesignFilledPasswordBox}" />
+                     Style="{StaticResource MaterialDesignFilledPasswordBox}"
+                         Password="{Binding Paswoord}"/>
 
             <Button
                 Content="Aanmelden"
