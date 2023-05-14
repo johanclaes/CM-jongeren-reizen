@@ -63,30 +63,53 @@ namespace wpf.Viewmodels
         //Constructor
         public LoginViewModel()
         {
-            userRepository = new UserRepository();
-            LoginCommand = new ViewModelCommand(ExecuteLoginCommand, CanExecuteLoginCommand);
+            //userRepository = new UserRepository();
+            //LoginCommand = new ViewModelCommand(ExecuteLoginCommand, CanExecuteLoginCommand);
         }
-        private bool CanExecuteLoginCommand(object obj)
+        //private bool CanExecuteLoginCommand(object obj)
+        //{
+        //    //bool validData;
+        //    //if (string.IsNullOrWhiteSpace(Username) || Username.Length < 3 ||
+        //    //    Paswoord == null || Paswoord.Length < 3)
+        //    //    validData = false;
+        //    //else
+        //    //    validData = true;
+        //    //return validData;
+        //}
+        //private void ExecuteLoginCommand(object obj)
+        //{
+        //    var isValidUser = userRepository.AuthenticateUser(new NetworkCredential(Email, Paswoord));
+        //    if (isValidUser)
+        //    {
+        //        Thread.CurrentPrincipal = new GenericPrincipal(
+        //            new GenericIdentity(Username), null);
+        //    }
+        //    else
+        //    {
+        //        ErrorMessage = "* Invalid username or password";
+        //    }
+        //}
+
+        public override string this[string columnName]
         {
-            bool validData;
-            if (string.IsNullOrWhiteSpace(Username) || Username.Length < 3 ||
-                Paswoord == null || Paswoord.Length < 3)
-                validData = false;
-            else
-                validData = true;
-            return validData;
-        }
-        private void ExecuteLoginCommand(object obj)
-        {
-            var isValidUser = userRepository.AuthenticateUser(new NetworkCredential(Email, Paswoord));
-            if (isValidUser)
+            get
             {
-                Thread.CurrentPrincipal = new GenericPrincipal(
-                    new GenericIdentity(Username), null);
+                return "";
             }
-            else
+        }
+
+        public override bool CanExecute(object parameter)
+        {
+            switch (parameter.ToString())
             {
-                ErrorMessage = "* Invalid username or password";
+            }
+            return true;
+        }
+
+        public override void Execute(object parameter)
+        {
+            switch (parameter.ToString())
+            {
             }
         }
     }

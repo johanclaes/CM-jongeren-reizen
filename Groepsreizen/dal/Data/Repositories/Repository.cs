@@ -38,8 +38,7 @@ namespace dal.Data.Repositories
             Context.Entry(entity).State = EntityState.Deleted;
         }
 
-        //uitbreiding
-
+        //Uitbreiding
         public IEnumerable<T> Ophalen(Expression<Func<T, bool>> voorwaarden,
            params Expression<Func<T, object>>[] includes)
         {

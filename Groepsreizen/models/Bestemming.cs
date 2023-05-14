@@ -15,6 +15,7 @@ namespace models
         [Required]
         public int Id { get; set; }
 
+        [Required]
         public string Naam { get; set; }
 
         [Required]
@@ -22,6 +23,8 @@ namespace models
 
         [Required]
         public string Gemeente { get; set; }
+
+        [Required]
         public string Straat { get; set; }
 
         [Required]

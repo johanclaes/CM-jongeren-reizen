@@ -20,11 +20,11 @@ namespace models
 
         [Required]
         public decimal Deelneemprijs { get; set; }
-        public string Thema { get; set; }
+        public string? Thema { get; set; }
 
         [Required]
         public int BestemmingId { get; set; }
-        public decimal Budget { get; set; }
+        public decimal? Budget { get; set; }
 
         [Required]
         [DataType(DataType.Date)]
@@ -39,7 +39,7 @@ namespace models
 
         [Required]
         public int Maximumleeftijd { get; set; }
-        public decimal OverschotBudget { get; set; }
+        public decimal? OverschotBudget { get; set; }
 
         [Required]
         public bool PlaatsenVrij { get; set; }

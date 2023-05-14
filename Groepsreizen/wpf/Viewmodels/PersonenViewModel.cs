@@ -4,66 +4,79 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using models;
+using dal;
+using dal.Data.UnitOfWork;
 
 namespace wpf.ViewModels
 {
     public class PersonenViewModel : BaseViewModel
     {
-        private string _naamPersoon;
-        private ObservableCollection<Gebruiker> _personen;
-        private Gebruiker _persoon;
-        private Gebruiker _persoonRecord;
-        private string _foutmeldingPersonen;
+        private IUnitOfWork _unitOfWork = new UnitOfWork(new GroepsreizenContext());
 
-        public string NaamPersoon 
+        private string _naamGebruiker;
+        private ObservableCollection<Gebruiker> _gebruikers;
+        private Gebruiker _geselecteerdeGebruiker;
+        private Gebruiker _gebruikerRecord;
+        private string _foutmeldingen;
+
+        public string NaamGebruiker
         {
-            get { return _naamPersoon; }
+            get { return _naamGebruiker; }
             set
             {
-                _naamPersoon = value;
+                _naamGebruiker = value;
                 NotifyPropertyChanged();
             }
         }
 
-        public ObservableCollection<Gebruiker> Personen
+        public ObservableCollection<Gebruiker> Gebruikers
         {
-            get { return _personen; }
+            get { return _gebruikers; }
             set
             {
-                _personen = value;
+                _gebruikers = value;
                 NotifyPropertyChanged();
             }
         }
 
-        public Gebruiker Persoon
+        public Gebruiker GeselecteerdeGebruiker
         {
-            get { return _persoon; }
+            get { return _geselecteerdeGebruiker; }
             set
             {
-                _persoon = value;
+                _geselecteerdeGebruiker = value;
+                GebruikerRecord = GeselecteerdeGebruiker;
+                Foutmeldingen = "";
                 NotifyPropertyChanged();
             }
         }
 
-        public Gebruiker PersoonRecord
+        public Gebruiker GebruikerRecord
         {
-            get { return _persoonRecord; }
+            get { return _gebruikerRecord; }
             set
             {
-                _persoonRecord = value;
+                _gebruikerRecord = value;
                 NotifyPropertyChanged();
             }
         }
 
-        public string FoutmeldingPersonen
+        public string Foutmeldingen
         {
-            get { return _foutmeldingPersonen; }
+            get { return _foutmeldingen; }
             set
             {
-                _foutmeldingPersonen = value;
+                _foutmeldingen = value;
                 NotifyPropertyChanged();
             }
+        }
+
+        public PersonenViewModel() 
+        {
+            GebruikerRecord = new Gebruiker();
+            Foutmeldingen = "";
         }
 
         public override string this[string columnName]
@@ -78,9 +91,10 @@ namespace wpf.ViewModels
         {
             switch (parameter.ToString())
             {
-                case "PersoonAanmaken": return true;
-                case "PersoonAanpassen": return true;
-                case "PersoonVerwijderen": return true;
+                case "ZoekGebruiker": return true;
+                case "GebruikerAanmaken": return true;
+                case "GebruikerAanpassen": return GeselecteerdeGebruiker != null;
+                case "GebruikerVerwijderen": return GeselecteerdeGebruiker != null;
                 case "FormulierLeegmaken": return true;
             }
             return true;
@@ -90,16 +104,89 @@ namespace wpf.ViewModels
         {
             switch (parameter.ToString())
             {
-                case "PersoonAanmaken": PersoonAanmaken(); break;
-                case "PersoonAanpassen": PersoonAanpassen(); break;
-                case "PersoonVerwijderen": PersoonVerwijderen(); break;
+                case "ZoekGebruiker": ZoekGebruiker(); break;
+                case "GebruikerAanmaken": GebruikerAanmaken(); break;
+                case "GebruikerAanpassen": GebruikerAanpassen(); break;
+                case "GebruikerVerwijderen": GebruikerVerwijderen(); break;
                 case "FormulierLeegmaken": FormulierLeegmaken(); break;
             }
         }
 
-        public void PersoonAanmaken() { }
-        public void PersoonAanpassen() { }
-        public void PersoonVerwijderen() { }
-        public void FormulierLeegmaken() { }
+        public void ZoekGebruiker()
+        {
+            if (string.IsNullOrWhiteSpace(NaamGebruiker))
+                Gebruikers = new ObservableCollection<Gebruiker>(_unitOfWork.GebruikerRepo.Ophalen());
+            else
+                Gebruikers = new ObservableCollection<Gebruiker>(_unitOfWork.GebruikerRepo.Ophalen(x => x.Naam.Contains(NaamGebruiker) || x.Voornaam.Contains(NaamGebruiker)));
+        }
+
+        public void GebruikerAanmaken()
+        {
+            if (GebruikerRecord.IsGeldig())
+            {
+                _unitOfWork.GebruikerRepo.Toevoegen(GebruikerRecord);
+                int oke = _unitOfWork.Save();
+
+                FoutmeldingNaSave(oke, "Orderlijn is niet toegevoegd!", "De gebruiker is toegevoegd!");
+            }
+        }
+
+        public void GebruikerAanpassen()
+        {
+            if (GeselecteerdeGebruiker != null)
+            {
+                _unitOfWork.GebruikerRepo.ToevoegenOfAanpassen(GebruikerRecord);
+                int oke = _unitOfWork.Save();
+
+                FoutmeldingNaSave(oke, "De gebruiker is niet aangepast!", "De gebruiker is aangepast!");
+            }
+            else
+            {
+                Foutmeldingen = "Eerst een gebruiker selecteren!";
+            }
+        }
+
+        public void GebruikerVerwijderen() 
+        {
+            if (GeselecteerdeGebruiker != null)
+            {
+                _unitOfWork.GebruikerRepo.Verwijderen(GeselecteerdeGebruiker.Id);
+                int oke = _unitOfWork.Save();
+                FoutmeldingNaSave(oke, "De gebruiker is niet verwijderd!", "De gebruiker is verwijderd!");
+            }
+            else
+            {
+                Foutmeldingen = "Eerst een gebruiker selecteren!";
+            }
+        }
+
+        public void FormulierLeegmaken()
+        {
+            GeselecteerdeGebruiker = null;
+            Foutmeldingen = "";
+
+            if (GeselecteerdeGebruiker != null)
+            {
+                GebruikerRecord = GeselecteerdeGebruiker;
+            }
+            else
+            {
+                GebruikerRecord = new Gebruiker();
+            }
+        }
+
+        private void FoutmeldingNaSave(int ok, string foutmelding, string succesmelding) 
+        {
+            if (ok > 0)
+            {
+                FormulierLeegmaken();
+                MessageBox.Show(succesmelding);
+                ZoekGebruiker();
+            }
+            else
+            {
+                Foutmeldingen = foutmelding;
+            }
+        }
     }
 }

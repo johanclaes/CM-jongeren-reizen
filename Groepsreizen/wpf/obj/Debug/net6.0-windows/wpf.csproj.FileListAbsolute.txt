@@ -171,8 +171,6 @@ C:\Users\lende\Documents\thomasmore\jaar 2\agile en testing\project\CM-jongeren-
 C:\Users\lende\Documents\thomasmore\jaar 2\agile en testing\project\CM-jongeren-reizen\Groepsreizen\wpf\obj\Debug\net6.0-windows\wpf.csproj.CopyComplete
 C:\Users\lende\Documents\thomasmore\jaar 2\agile en testing\project\CM-jongeren-reizen\Groepsreizen\wpf\obj\Debug\net6.0-windows\wpf.genruntimeconfig.cache
 C:\Users\lende\Documents\thomasmore\jaar 2\agile en testing\project\CM-jongeren-reizen\Groepsreizen\wpf\obj\Debug\net6.0-windows\ref\wpf.dll
-C:\Thomas More 2de jaar\Agile en testing\Project\CM-jongeren-reizen\Groepsreizen\wpf\obj\Debug\net6.0-windows\Views\GroepsreisbeheerWindow.g.cs
-C:\Thomas More 2de jaar\Agile en testing\Project\CM-jongeren-reizen\Groepsreizen\wpf\obj\Debug\net6.0-windows\Views\GroepsreisbeheerWindow.baml
 C:\Thomas More 2de jaar\Agile en testing\Project\CM-jongeren-reizen\Groepsreizen\wpf\obj\Debug\net6.0-windows\UserControls\Personen.g.cs
 C:\Thomas More 2de jaar\Agile en testing\Project\CM-jongeren-reizen\Groepsreizen\wpf\obj\Debug\net6.0-windows\UserControls\Personen.baml
 C:\Thomas More 2de jaar\Agile en testing\Project\CM-jongeren-reizen\Groepsreizen\wpf\obj\Debug\net6.0-windows\GeneratedInternalTypeHelper.g.cs
@@ -191,3 +189,17 @@ C:\Users\lende\Documents\thomasmore\jaar 2\agile en testing\project\CM-jongeren-
 C:\Users\lende\Documents\thomasmore\jaar 2\agile en testing\project\CM-jongeren-reizen\Groepsreizen\wpf\obj\Debug\net6.0-windows\UserControls\Opleidingen.baml
 C:\Users\lende\Documents\thomasmore\jaar 2\agile en testing\project\CM-jongeren-reizen\Groepsreizen\wpf\obj\Debug\net6.0-windows\UserControls\Personen.baml
 C:\Users\lende\Documents\thomasmore\jaar 2\agile en testing\project\CM-jongeren-reizen\Groepsreizen\wpf\obj\Debug\net6.0-windows\App.baml
+C:\Thomas More 2de jaar\Agile en testing\Project\CM-jongeren-reizen\Groepsreizen\wpf\obj\Debug\net6.0-windows\MainWindow.g.cs
+C:\Thomas More 2de jaar\Agile en testing\Project\CM-jongeren-reizen\Groepsreizen\wpf\obj\Debug\net6.0-windows\UserControls\Bestemmingen.g.cs
+C:\Thomas More 2de jaar\Agile en testing\Project\CM-jongeren-reizen\Groepsreizen\wpf\obj\Debug\net6.0-windows\UserControls\Groepsreizen.g.cs
+C:\Thomas More 2de jaar\Agile en testing\Project\CM-jongeren-reizen\Groepsreizen\wpf\obj\Debug\net6.0-windows\UserControls\Inschrijvingen.g.cs
+C:\Thomas More 2de jaar\Agile en testing\Project\CM-jongeren-reizen\Groepsreizen\wpf\obj\Debug\net6.0-windows\UserControls\Opleidingen.g.cs
+C:\Thomas More 2de jaar\Agile en testing\Project\CM-jongeren-reizen\Groepsreizen\wpf\bin\Debug\net6.0-windows\MaterialDesignColors.dll
+C:\Thomas More 2de jaar\Agile en testing\Project\CM-jongeren-reizen\Groepsreizen\wpf\bin\Debug\net6.0-windows\MaterialDesignThemes.Wpf.dll
+C:\Thomas More 2de jaar\Agile en testing\Project\CM-jongeren-reizen\Groepsreizen\wpf\bin\Debug\net6.0-windows\Microsoft.Xaml.Behaviors.dll
+C:\Thomas More 2de jaar\Agile en testing\Project\CM-jongeren-reizen\Groepsreizen\wpf\obj\Debug\net6.0-windows\App.baml
+C:\Thomas More 2de jaar\Agile en testing\Project\CM-jongeren-reizen\Groepsreizen\wpf\obj\Debug\net6.0-windows\MainWindow.baml
+C:\Thomas More 2de jaar\Agile en testing\Project\CM-jongeren-reizen\Groepsreizen\wpf\obj\Debug\net6.0-windows\UserControls\Bestemmingen.baml
+C:\Thomas More 2de jaar\Agile en testing\Project\CM-jongeren-reizen\Groepsreizen\wpf\obj\Debug\net6.0-windows\UserControls\Groepsreizen.baml
+C:\Thomas More 2de jaar\Agile en testing\Project\CM-jongeren-reizen\Groepsreizen\wpf\obj\Debug\net6.0-windows\UserControls\Inschrijvingen.baml
+C:\Thomas More 2de jaar\Agile en testing\Project\CM-jongeren-reizen\Groepsreizen\wpf\obj\Debug\net6.0-windows\UserControls\Opleidingen.baml

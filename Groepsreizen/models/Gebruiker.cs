@@ -25,7 +25,7 @@ namespace models
         [DataType(DataType.Date)]
         public DateTime Geboortedatum { get; set; }
         public bool IsLid { get; set; }
-        public string Telefoonnummer { get; set; }
+        public string? Telefoonnummer { get; set; }
         public bool Monitorbrevet { get; set; }
         public bool Hoofdmonitorbrevet { get; set; }
         public bool Webadmin { get; set; }
@@ -38,11 +38,11 @@ namespace models
 
         [Required]
         public string Woonplaats { get; set; }
-        public string Allergie { get; set; }
-        public string Medicatie { get; set; }
-        public bool Rolstoel { get; set; }
-        public string Opmerking { get; set; }
-        public string Paswoord { get; set; }
+        public string? Allergie { get; set; }
+        public string? Medicatie { get; set; }
+        public bool? Rolstoel { get; set; }
+        public string? Opmerking { get; set; }
+        public string? Paswoord { get; set; }
 
         //Navigatieproperties
         public List<GebruikerOpleiding> GebruikerOpleidingen { get; set; }

@@ -12,7 +12,7 @@ namespace models
     {
         public override string ToString()
         {
-            return $"{Voornaam} {Naam} - {Geboortedatum}";
+            return $"{Voornaam} {Naam} - {Geboortedatum.ToShortDateString()}";
         }
 
         public override string this[string columnName]

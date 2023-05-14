@@ -93,7 +93,6 @@ namespace dal.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Allergie")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Email")
@@ -110,7 +109,6 @@ namespace dal.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("Medicatie")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("Monitorbrevet")
@@ -121,18 +119,15 @@ namespace dal.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Opmerking")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Paswoord")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("Rolstoel")
+                    b.Property<bool?>("Rolstoel")
                         .HasColumnType("bit");
 
                     b.Property<string>("Telefoonnummer")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Voornaam")
@@ -191,7 +186,7 @@ namespace dal.Migrations
                     b.Property<int>("BestemmingId")
                         .HasColumnType("int");
 
-                    b.Property<decimal>("Budget")
+                    b.Property<decimal?>("Budget")
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<decimal>("Deelneemprijs")
@@ -213,7 +208,7 @@ namespace dal.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<decimal>("OverschotBudget")
+                    b.Property<decimal?>("OverschotBudget")
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<bool>("PlaatsenVrij")
@@ -223,7 +218,6 @@ namespace dal.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Thema")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");

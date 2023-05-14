@@ -5,6 +5,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace wpf.ViewModels
 {
@@ -136,7 +137,10 @@ namespace wpf.ViewModels
             }
         }
 
-        public void ZoekReis() { }
+        public void ZoekReis()
+        {
+            
+        }
         public void UpdateReis() { }
         public void MaakNieuweReis() { }
         public void MaakVeldenLeeg() { }
