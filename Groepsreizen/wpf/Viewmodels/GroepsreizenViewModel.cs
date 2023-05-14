@@ -117,6 +117,7 @@ namespace wpf.ViewModels
                 case "MaakNieuweReis": return true;
                 case "MaakVeldenLeeg": return true;
                 case "ZoekMonitor": return true;
+                case "ZoekMonitorViaOpleiding": return true;
                 case "VoegMonitorToe": return true;
                 case "VerwijderMonitor": return true;
             }
