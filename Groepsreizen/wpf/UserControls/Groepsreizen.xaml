@@ -74,7 +74,10 @@
             <GroupBox Header="Monitoren Selecteren">
                 <StackPanel>
                     <TextBox Name="txtNaamMonitor" Text="{Binding NaamMonitor}" Width="120" Margin="3"></TextBox>
-                    <Button Name="btnZoekMonitor" Command="{Binding}" CommandParameter="ZoekMonitor" >Zoek op naam</Button>
+                    <StackPanel Orientation="Horizontal">
+                        <Button Name="btnZoekMonitor" Command="{Binding}" CommandParameter="ZoekMonitor" Margin="1">Zoek op naam</Button>
+                        <Button Name="btnZoekViaOpleiding" Command="{Binding}" CommandParameter="ZoekMonitorViaOpleiding" Margin="1" >Via opleiding</Button>
+                    </StackPanel>
                     <ListBox Name="lstMonitoren" Background="Beige" Height="80" Margin="5"/>
                     <Button Name="btnVoegMonitortoe" Command="{Binding}" CommandParameter="VoegMonitorToe">Voeg toe aan monitorlijst</Button>
                     <ListBox Name="lstMonitorenGroepsreis" Background="Beige" Height="80" Margin="5"/>

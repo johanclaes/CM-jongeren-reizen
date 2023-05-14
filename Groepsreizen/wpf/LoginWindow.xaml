@@ -42,10 +42,12 @@
                   Grid.Column="0"
                    Text="Password" />
 
-            <!--<PasswordBox Grid.Row="3"
+            <PasswordBox Grid.Row="3"
                      Grid.Column="2"
                      Style="{StaticResource MaterialDesignFilledPasswordBox}"
-                         Password="{Binding Paswoord}"/>-->
+                         />
+            <!--Password="{Binding Paswoord}"-->
+            
 
             <Button
                 Content="Aanmelden"

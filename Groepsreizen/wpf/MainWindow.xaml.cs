@@ -73,5 +73,10 @@ namespace wpf
             control5.Visibility = Visibility.Visible;
 
         }
+
+        private void btnUitloggen_Click(object sender, RoutedEventArgs e)
+        {
+            App.Current.Shutdown();
+        }
     }
 }
