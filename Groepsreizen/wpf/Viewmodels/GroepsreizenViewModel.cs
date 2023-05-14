@@ -132,6 +132,7 @@ namespace wpf.ViewModels
                 case "MaakNieuweReis": MaakNieuweReis(); break;
                 case "MaakVeldenLeeg": MaakVeldenLeeg(); break;
                 case "ZoekMonitor": ZoekMonitor(); break;
+                case "ZoekMonitorViaOpleiding": ZoekMonitorViaOpleiding(); break;
                 case "VoegMonitorToe": VoegMonitorToe(); break;
                 case "VerwijderMonitor": VerwijderMonitor(); break;
             }
@@ -144,8 +145,13 @@ namespace wpf.ViewModels
         public void UpdateReis() { }
         public void MaakNieuweReis() { }
         public void MaakVeldenLeeg() { }
-        public void ZoekMonitor() { }
-        public void VoegMonitorToe() { }
+        public void ZoekMonitor() { MessageBox.Show("test2"); }
+
+        public void ZoekMonitorViaOpleiding() 
+        {
+            MessageBox.Show("test1");
+        }
+        public void VoegMonitorToe() { MessageBox.Show("test3"); }
         public void VerwijderMonitor() { }
     }
 }
