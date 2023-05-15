@@ -1,20 +1,26 @@
-﻿using models;
+﻿using dal.Data.UnitOfWork;
+using dal;
+using models;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using models.Partials;
 
 namespace wpf.ViewModels
 {
     public class InschrijvingenViewModel : BaseViewModel
     {
-        private string _naamDeelnemer;
-        private ObservableCollection<Gebruiker> _gezochteDeelnemers;
-        private Gebruiker _selectedDeelnemer;
-        private ObservableCollection<Groepsreis> _ingeschrevenReizen;
-        private Groepsreis _selectedIngeschrevenReis;
+        private IUnitOfWork _unitOfWork = new UnitOfWork(new GroepsreizenContext());
+
+        private string _naamGebruiker;
+        private ObservableCollection<Gebruiker> _gebruikers;
+        private Gebruiker _geselecteerdeGebruiker;
+        private ObservableCollection<Groepsreis> _groepsreizen;
+        private ObservableCollection<Inschrijving> _ingeschrevenReizen;
+        private Inschrijving _selectedIngeschrevenReis;
         private ObservableCollection<Bestemming> _landen;
         private Bestemming _selectedLand;
         private ObservableCollection<Bestemming> _gemeentes;
@@ -23,37 +29,49 @@ namespace wpf.ViewModels
         private Groepsreis _selectedReis;
         private string _errorInschrijving;
 
-        public string NaamDeelnemer
+        public string NaamGebruiker
         {
-            get { return _naamDeelnemer; }
+            get { return _naamGebruiker; }
             set
             {
-                _naamDeelnemer = value;
+                _naamGebruiker = value;
                 NotifyPropertyChanged();
             }
         }
 
-        public ObservableCollection<Gebruiker> GezochteDeelnemers
+        public ObservableCollection<Gebruiker> Gebruikers
         {
-            get { return _gezochteDeelnemers; }
+            get { return _gebruikers; }
             set
             {
-                _gezochteDeelnemers = value;
+                _gebruikers = value;
                 NotifyPropertyChanged();
             }
         }
 
-        public Gebruiker SelectedDeelnemer
+        public Gebruiker GeselecteerdeGebruiker
         {
-            get { return _selectedDeelnemer; }
+            get { return _geselecteerdeGebruiker; }
             set
             {
-                _selectedDeelnemer = value;
+                _geselecteerdeGebruiker = value;
+                Groepsreizen = new ObservableCollection<Groepsreis>(_unitOfWork.GroepsreisRepo.Ophalen());
+                IngeschrevenReizen = new ObservableCollection<Inschrijving>(_unitOfWork.InschrijvingRepo.Ophalen(x => x.GebruikerId == GeselecteerdeGebruiker.Id));
                 NotifyPropertyChanged();
             }
         }
 
-        public ObservableCollection<Groepsreis> IngeschrevenReizen
+        public ObservableCollection<Groepsreis> Groepsreizen
+        {
+            get { return _groepsreizen; }
+            set
+            {
+                _groepsreizen = value;
+                NotifyPropertyChanged();
+            }
+        }
+
+        public ObservableCollection<Inschrijving> IngeschrevenReizen
         {
             get { return _ingeschrevenReizen; }
             set
@@ -63,7 +81,7 @@ namespace wpf.ViewModels
             }
         }
 
-        public Groepsreis SelectedIngeschrevenReis
+        public Inschrijving SelectedIngeschrevenReis
         {
             get { return _selectedIngeschrevenReis; }
             set
@@ -143,6 +161,12 @@ namespace wpf.ViewModels
             }
         }
 
+        public InschrijvingenViewModel() 
+        {
+            Landen = new ObservableCollection<Bestemming>(_unitOfWork.BestemmingRepo.Ophalen());
+            Gemeentes = new ObservableCollection<Bestemming>(_unitOfWork.BestemmingRepo.Ophalen());
+        }
+
         public override string this[string columnName]
         {
             get
@@ -155,7 +179,7 @@ namespace wpf.ViewModels
         {
             switch (parameter.ToString())
             {
-                case "ZoekDeelnemer": return true;
+                case "ZoekGebruikers": return true;
                 case "MaakReservering": return true;
                 case "ReserveerBetaling": return true;
                 case "AnnuleerInschrijving": return true;
@@ -167,14 +191,20 @@ namespace wpf.ViewModels
         {
             switch (parameter.ToString())
             {
-                case "ZoekDeelnemer": ZoekDeelnemer(); break;
+                case "ZoekGebruikers": ZoekGebruikers(); break;
                 case "MaakReservering": MaakReservering(); break;
                 case "ReserveerBetaling": ReserveerBetaling(); break;
                 case "AnnuleerInschrijving": AnnuleerInschrijving(); break;
             }
         }
 
-        public void ZoekDeelnemer() { }
+        public void ZoekGebruikers() 
+        {
+            if (string.IsNullOrWhiteSpace(NaamGebruiker))
+                Gebruikers = new ObservableCollection<Gebruiker>(_unitOfWork.GebruikerRepo.Ophalen());
+            else
+                Gebruikers = new ObservableCollection<Gebruiker>(_unitOfWork.GebruikerRepo.Ophalen(x => x.Naam.Contains(NaamGebruiker) || x.Voornaam.Contains(NaamGebruiker)));
+        }
         public void MaakReservering() { }
         public void ReserveerBetaling() { }
         public void AnnuleerInschrijving() { }

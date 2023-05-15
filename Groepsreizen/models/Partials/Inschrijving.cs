@@ -11,7 +11,7 @@ namespace models
     {
         public override string ToString()
         {
-            return $"{Gebruiker.Voornaam} {Gebruiker.Naam} {Groepsreis.Naam}";
+            return $"{Gebruiker.Voornaam} {Gebruiker.Naam} - {Groepsreis.Naam} - {Groepsreis.Startdatum.ToShortDateString()}";
         }
 
         public override string this[string columnName]

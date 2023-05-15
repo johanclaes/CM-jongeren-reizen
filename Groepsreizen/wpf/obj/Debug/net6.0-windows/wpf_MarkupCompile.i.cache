@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\fb922\Desktop\agile\project\CM-jongeren-reizen\Groepsreizen\wpf\obj\Debug\net6.0-windows\
+C:\Thomas More 2de jaar\Agile en testing\Project\CM-jongeren-reizen\Groepsreizen\wpf\obj\Debug\net6.0-windows\
 wpf
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-C:\Users\fb922\Desktop\agile\project\CM-jongeren-reizen\Groepsreizen\wpf\App.xaml
+C:\Thomas More 2de jaar\Agile en testing\Project\CM-jongeren-reizen\Groepsreizen\wpf\App.xaml
 7-942170310
 
-201226978383
-227-2042525605
+201457044316
+227357324986
 LoginWindow.xaml;MainWindow.xaml;UserControls\Bestemmingen.xaml;UserControls\Groepsreizen.xaml;UserControls\Inschrijvingen.xaml;UserControls\Opleidingen.xaml;UserControls\Personen.xaml;
 
-False
+True
 

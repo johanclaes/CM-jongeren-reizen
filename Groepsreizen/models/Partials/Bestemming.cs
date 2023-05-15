@@ -14,6 +14,16 @@ namespace models
             return $"{Naam} {Bestemmingstype.Naam}";
         }
 
+        public string ToStringGemeente() 
+        {
+            return $"{Gemeente}";
+        }
+
+        public string ToStringLand()
+        {
+            return $"{Land}";
+        }
+
         public override string this[string columnName]
         {
             get

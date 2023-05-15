@@ -9,7 +9,6 @@ namespace models
 {
     public partial class Groepsreis : BasisKlasse
     {
-
         public override string ToString()
         {
             return $"{Bestemming.ToString()} - {Startdatum}";
