@@ -11,7 +11,7 @@ namespace models
     {
         public override string ToString()
         {
-            return $"{Naam} {Bestemmingstype.Naam}";
+            return $"{Land}";
         }
 
         public string ToStringGemeente() 

@@ -50,7 +50,7 @@
                 <TextBlock Grid.Row="1" Grid.Column="0">Voornaam</TextBlock>
                 <TextBox Name="txtVoornaam" Text="{Binding GebruikerRecord.Voornaam, ValidatesOnDataErrors=True}" Grid.Row="1" Grid.Column="1"/>
                 <TextBlock Grid.Row="2" Grid.Column="0">Geboortedatum</TextBlock>
-                <TextBox Name="txtGeboortedatum" Text="{Binding GebruikerRecord.Geboortedatum, ValidatesOnDataErrors=True}" Grid.Row="2" Grid.Column="1"></TextBox>
+                <DatePicker Name="dateGeboortedatum" Text="{Binding GebruikerRecord.Geboortedatum, ValidatesOnDataErrors=True}" Grid.Row="2" Grid.Column="1"></DatePicker>
                 <TextBlock Grid.Row="3" Grid.Column="0">TelefoonNr</TextBlock>
                 <TextBox Name="txtTelefoonnr" Text="{Binding GebruikerRecord.Telefoonnummer, ValidatesOnDataErrors=True}" Grid.Row="3" Grid.Column="1"/>
                 <TextBlock Grid.Row="4" Grid.Column="0">Email</TextBlock>

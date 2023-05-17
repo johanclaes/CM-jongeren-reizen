@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using models.Partials;
+using Microsoft.Toolkit.Collections;
 
 namespace wpf.ViewModels
 {
@@ -21,7 +22,7 @@ namespace wpf.ViewModels
         private ObservableCollection<Groepsreis> _groepsreizen;
         private ObservableCollection<Inschrijving> _ingeschrevenReizen;
         private Inschrijving _selectedIngeschrevenReis;
-        private ObservableCollection<Bestemming> _landen;
+        private ObservableCollection<string> _landen;
         private Bestemming _selectedLand;
         private ObservableCollection<Bestemming> _gemeentes;
         private Bestemming _selectedGemeente;
@@ -91,7 +92,7 @@ namespace wpf.ViewModels
             }
         }
 
-        public ObservableCollection<Bestemming> Landen
+        public ObservableCollection<string> Landen
         {
             get { return _landen; }
             set
@@ -163,8 +164,12 @@ namespace wpf.ViewModels
 
         public InschrijvingenViewModel() 
         {
-            Landen = new ObservableCollection<Bestemming>(_unitOfWork.BestemmingRepo.Ophalen());
-            Gemeentes = new ObservableCollection<Bestemming>(_unitOfWork.BestemmingRepo.Ophalen());
+            //Landen = new ObservableCollection<IGrouping<string, string>>(_unitOfWork.BestemmingRepo.Ophalen().GroupBy(x => x.Land));
+            Landen = new ObservableCollection<string>(_unitOfWork.BestemmingRepo.Ophalen().Select(x => x.Land).Distinct());
+
+            //var landenbestemming = new ObservableCollection<Bestemming>(_unitOfWork.BestemmingRepo.Ophalen());
+            //Landen = (ObservableCollection<Bestemming>)landenbestemming.GroupBy(x => x.Land);
+            //Gemeentes = new ObservableCollection<Bestemming>(_unitOfWork.BestemmingRepo.Ophalen());
         }
 
         public override string this[string columnName]

@@ -8,6 +8,7 @@ using System.Windows;
 using models;
 using dal;
 using dal.Data.UnitOfWork;
+using wpf.UserControls;
 
 namespace wpf.ViewModels
 {
@@ -127,7 +128,7 @@ namespace wpf.ViewModels
                 _unitOfWork.GebruikerRepo.Toevoegen(GebruikerRecord);
                 int oke = _unitOfWork.Save();
 
-                FoutmeldingNaSave(oke, "Orderlijn is niet toegevoegd!", "De gebruiker is toegevoegd!");
+                FoutmeldingNaSave(oke, "De gebruiker is niet toegevoegd!", "De gebruiker is toegevoegd!");
             }
         }
 
@@ -164,6 +165,8 @@ namespace wpf.ViewModels
         {
             GeselecteerdeGebruiker = null;
             Foutmeldingen = "";
+            MainWindow window = new MainWindow();
+            window.personen2.dateGeboortedatum.SelectedDate = DateTime.Now;
 
             if (GeselecteerdeGebruiker != null)
             {

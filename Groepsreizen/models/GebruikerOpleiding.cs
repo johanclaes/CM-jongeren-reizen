@@ -21,14 +21,6 @@ namespace models
         [Required]
         public int OpleidingId { get; set; }
 
-        [Required]
-        [DataType(DataType.Date)]
-        public DateTime Startdatum { get; set; }
-
-        [Required]
-        [DataType(DataType.Date)]
-        public DateTime Einddatum { get; set; }
-
         //Navigatieproperty
         public Gebruiker Gebruiker { get; set; }
         public Opleiding Opleiding { get; set; }

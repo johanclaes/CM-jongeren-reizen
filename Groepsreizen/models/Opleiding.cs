@@ -16,9 +16,18 @@ namespace models
         public int Id { get; set; }
 
         [Required]
-        public string Naam { get; set; }
+        public int OpleidingTypeId { get; set; }
+
+        [Required]
+        [DataType(DataType.Date)]
+        public DateTime Startdatum { get; set; }
+
+        [Required]
+        [DataType(DataType.Date)]
+        public DateTime Einddatum { get; set; }
 
         //Navigatieproperties
         public List<GebruikerOpleiding> GebruikerOpleidingen { get; set; }
+        public OpleidingType OpleidingType { get; set; }
     }
 }
