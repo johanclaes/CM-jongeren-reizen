@@ -15,6 +15,11 @@ namespace models
             return $"{Voornaam} {Naam} - {Geboortedatum.ToShortDateString()}";
         }
 
+        public string ToStringNaam() 
+        {
+            return $"{Voornaam} {Naam}";
+        }
+
         public override string this[string columnName]
         {
             get

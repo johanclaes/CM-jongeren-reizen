@@ -13,10 +13,7 @@ namespace models
         {
             get
             {
-                if (columnName == "Naam" && string.IsNullOrWhiteSpace(Naam))
-                {
-                    return "Naam moet ingevuld zijn.";
-                }
+                
 
                 return "";
             }

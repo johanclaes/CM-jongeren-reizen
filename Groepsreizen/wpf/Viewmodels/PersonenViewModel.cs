@@ -8,6 +8,7 @@ using System.Windows;
 using models;
 using dal;
 using dal.Data.UnitOfWork;
+using wpf.UserControls;
 
 namespace wpf.ViewModels
 {
@@ -91,7 +92,7 @@ namespace wpf.ViewModels
         {
             switch (parameter.ToString())
             {
-                case "ZoekGebruiker": return true;
+                case "ZoekGebruikers": return true;
                 case "GebruikerAanmaken": return true;
                 case "GebruikerAanpassen": return GeselecteerdeGebruiker != null;
                 case "GebruikerVerwijderen": return GeselecteerdeGebruiker != null;
@@ -104,7 +105,7 @@ namespace wpf.ViewModels
         {
             switch (parameter.ToString())
             {
-                case "ZoekGebruiker": ZoekGebruiker(); break;
+                case "ZoekGebruikers": ZoekGebruikers(); break;
                 case "GebruikerAanmaken": GebruikerAanmaken(); break;
                 case "GebruikerAanpassen": GebruikerAanpassen(); break;
                 case "GebruikerVerwijderen": GebruikerVerwijderen(); break;
@@ -112,7 +113,7 @@ namespace wpf.ViewModels
             }
         }
 
-        public void ZoekGebruiker()
+        public void ZoekGebruikers()
         {
             if (string.IsNullOrWhiteSpace(NaamGebruiker))
                 Gebruikers = new ObservableCollection<Gebruiker>(_unitOfWork.GebruikerRepo.Ophalen());
@@ -127,7 +128,7 @@ namespace wpf.ViewModels
                 _unitOfWork.GebruikerRepo.Toevoegen(GebruikerRecord);
                 int oke = _unitOfWork.Save();
 
-                FoutmeldingNaSave(oke, "Orderlijn is niet toegevoegd!", "De gebruiker is toegevoegd!");
+                FoutmeldingNaSave(oke, "De gebruiker is niet toegevoegd!", "De gebruiker is toegevoegd!");
             }
         }
 
@@ -164,6 +165,8 @@ namespace wpf.ViewModels
         {
             GeselecteerdeGebruiker = null;
             Foutmeldingen = "";
+            MainWindow window = new MainWindow();
+            window.personen2.dateGeboortedatum.SelectedDate = DateTime.Now;
 
             if (GeselecteerdeGebruiker != null)
             {
@@ -181,7 +184,7 @@ namespace wpf.ViewModels
             {
                 FormulierLeegmaken();
                 MessageBox.Show(succesmelding);
-                ZoekGebruiker();
+                ZoekGebruikers();
             }
             else
             {

@@ -19,9 +19,9 @@
 
         <StackPanel Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" Margin="10">
             <TextBlock Margin="5">Geef op te zoeken naam:</TextBlock>
-            <TextBox Name="txtNaamPersoon" Text="{Binding NaamGebruiker}" Margin="20" ></TextBox>
-            <Button Name="btnZoekPersoon" Command="{Binding}" CommandParameter="ZoekGebruiker" Content="Zoek gebruikers" Margin="10"/>
-            <ListBox Name="lstPersonen" ItemsSource="{Binding Gebruikers}" SelectedItem="{Binding GeselecteerdeGebruiker}" Background="beige" Height="300"></ListBox>
+            <TextBox Name="txtNaamGebruiker" Text="{Binding NaamGebruiker}" Margin="20" ></TextBox>
+            <Button Name="btnZoekGebruikers" Command="{Binding}" CommandParameter="ZoekGebruikers" Content="Zoek gebruikers" Margin="10"/>
+            <ListBox Name="lstGebruikers" ItemsSource="{Binding Gebruikers}" SelectedItem="{Binding GeselecteerdeGebruiker}" Background="beige" Height="300"></ListBox>
         </StackPanel>
 
         <GroupBox Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" Header="Persoongegevens" Background="Ivory" Margin="5">
@@ -50,7 +50,7 @@
                 <TextBlock Grid.Row="1" Grid.Column="0">Voornaam</TextBlock>
                 <TextBox Name="txtVoornaam" Text="{Binding GebruikerRecord.Voornaam, ValidatesOnDataErrors=True}" Grid.Row="1" Grid.Column="1"/>
                 <TextBlock Grid.Row="2" Grid.Column="0">Geboortedatum</TextBlock>
-                <TextBox Name="txtGeboortedatum" Text="{Binding GebruikerRecord.Geboortedatum, ValidatesOnDataErrors=True}" Grid.Row="2" Grid.Column="1"></TextBox>
+                <DatePicker Name="dateGeboortedatum" Text="{Binding GebruikerRecord.Geboortedatum, ValidatesOnDataErrors=True}" Grid.Row="2" Grid.Column="1"></DatePicker>
                 <TextBlock Grid.Row="3" Grid.Column="0">TelefoonNr</TextBlock>
                 <TextBox Name="txtTelefoonnr" Text="{Binding GebruikerRecord.Telefoonnummer, ValidatesOnDataErrors=True}" Grid.Row="3" Grid.Column="1"/>
                 <TextBlock Grid.Row="4" Grid.Column="0">Email</TextBlock>

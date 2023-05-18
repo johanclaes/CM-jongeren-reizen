@@ -642,6 +642,19 @@
           }
         }
       },
+      "Microsoft.Toolkit/7.1.2": {
+        "type": "package",
+        "compile": {
+          "lib/net5.0/Microsoft.Toolkit.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0/Microsoft.Toolkit.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
       "Microsoft.Win32.Registry/5.0.0": {
         "type": "package",
         "dependencies": {
@@ -2187,6 +2200,32 @@
         "microsoft.sqlserver.server.nuspec"
       ]
     },
+    "Microsoft.Toolkit/7.1.2": {
+      "sha512": "0yBm7zWDU8jI93UySLeXTJnzl1PPl80+E+myEy6W2UIQsEgGpiWSMcKkV5/1F7dfHWcydBMveMjXZKt1/ocV2A==",
+      "type": "package",
+      "path": "microsoft.toolkit/7.1.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "License.md",
+        "ThirdPartyNotices.txt",
+        "lib/net5.0/Microsoft.Toolkit.dll",
+        "lib/net5.0/Microsoft.Toolkit.pdb",
+        "lib/net5.0/Microsoft.Toolkit.xml",
+        "lib/netstandard1.4/Microsoft.Toolkit.dll",
+        "lib/netstandard1.4/Microsoft.Toolkit.pdb",
+        "lib/netstandard1.4/Microsoft.Toolkit.xml",
+        "lib/netstandard2.0/Microsoft.Toolkit.dll",
+        "lib/netstandard2.0/Microsoft.Toolkit.pdb",
+        "lib/netstandard2.0/Microsoft.Toolkit.xml",
+        "lib/netstandard2.1/Microsoft.Toolkit.dll",
+        "lib/netstandard2.1/Microsoft.Toolkit.pdb",
+        "lib/netstandard2.1/Microsoft.Toolkit.xml",
+        "microsoft.toolkit.7.1.2.nupkg.sha512",
+        "microsoft.toolkit.nuspec"
+      ]
+    },
     "Microsoft.Win32.Registry/5.0.0": {
       "sha512": "dDoKi0PnDz31yAyETfRntsLArTlVAVzUzCIvvEDsDsucrl33Dl8pIJG06ePTJTI3tGpeyHS9Cq7Foc/s4EeKcg==",
       "type": "package",
@@ -3687,24 +3726,25 @@
       "Microsoft.EntityFrameworkCore >= 7.0.4",
       "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.4",
       "Microsoft.EntityFrameworkCore.Tools >= 7.0.4",
+      "Microsoft.Toolkit >= 7.1.2",
       "dal >= 1.0.0",
       "models >= 1.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\fb922\\.nuget\\packages\\": {}
+    "C:\\Users\\chris\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\fb922\\Desktop\\agile\\project\\CM-jongeren-reizen\\Groepsreizen\\wpf\\wpf.csproj",
+      "projectUniqueName": "C:\\Thomas More 2de jaar\\Agile en testing\\Project\\CM-jongeren-reizen\\Groepsreizen\\wpf\\wpf.csproj",
       "projectName": "wpf",
-      "projectPath": "C:\\Users\\fb922\\Desktop\\agile\\project\\CM-jongeren-reizen\\Groepsreizen\\wpf\\wpf.csproj",
-      "packagesPath": "C:\\Users\\fb922\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\fb922\\Desktop\\agile\\project\\CM-jongeren-reizen\\Groepsreizen\\wpf\\obj\\",
+      "projectPath": "C:\\Thomas More 2de jaar\\Agile en testing\\Project\\CM-jongeren-reizen\\Groepsreizen\\wpf\\wpf.csproj",
+      "packagesPath": "C:\\Users\\chris\\.nuget\\packages\\",
+      "outputPath": "C:\\Thomas More 2de jaar\\Agile en testing\\Project\\CM-jongeren-reizen\\Groepsreizen\\wpf\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\fb922\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\chris\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3718,11 +3758,11 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "projectReferences": {
-            "C:\\Users\\fb922\\Desktop\\agile\\project\\CM-jongeren-reizen\\Groepsreizen\\dal\\dal.csproj": {
-              "projectPath": "C:\\Users\\fb922\\Desktop\\agile\\project\\CM-jongeren-reizen\\Groepsreizen\\dal\\dal.csproj"
+            "C:\\Thomas More 2de jaar\\Agile en testing\\Project\\CM-jongeren-reizen\\Groepsreizen\\dal\\dal.csproj": {
+              "projectPath": "C:\\Thomas More 2de jaar\\Agile en testing\\Project\\CM-jongeren-reizen\\Groepsreizen\\dal\\dal.csproj"
             },
-            "C:\\Users\\fb922\\Desktop\\agile\\project\\CM-jongeren-reizen\\Groepsreizen\\models\\models.csproj": {
-              "projectPath": "C:\\Users\\fb922\\Desktop\\agile\\project\\CM-jongeren-reizen\\Groepsreizen\\models\\models.csproj"
+            "C:\\Thomas More 2de jaar\\Agile en testing\\Project\\CM-jongeren-reizen\\Groepsreizen\\models\\models.csproj": {
+              "projectPath": "C:\\Thomas More 2de jaar\\Agile en testing\\Project\\CM-jongeren-reizen\\Groepsreizen\\models\\models.csproj"
             }
           }
         }
@@ -3758,6 +3798,10 @@
             "suppressParent": "All",
             "target": "Package",
             "version": "[7.0.4, )"
+          },
+          "Microsoft.Toolkit": {
+            "target": "Package",
+            "version": "[7.1.2, )"
           }
         },
         "imports": [
@@ -3779,7 +3823,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }

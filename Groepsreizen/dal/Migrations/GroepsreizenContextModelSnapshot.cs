@@ -154,17 +154,11 @@ namespace dal.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<DateTime>("Einddatum")
-                        .HasColumnType("datetime2");
-
                     b.Property<int>("GebruikerId")
                         .HasColumnType("int");
 
                     b.Property<int>("OpleidingId")
                         .HasColumnType("int");
-
-                    b.Property<DateTime>("Startdatum")
-                        .HasColumnType("datetime2");
 
                     b.HasKey("Id");
 
@@ -287,13 +281,37 @@ namespace dal.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<DateTime>("Einddatum")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("OpleidingTypeId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("Startdatum")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("OpleidingTypeId");
+
+                    b.ToTable("Opleidingen");
+                });
+
+            modelBuilder.Entity("models.OpleidingType", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
                     b.Property<string>("Naam")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Opleidingen");
+                    b.ToTable("OpleidingTypes");
                 });
 
             modelBuilder.Entity("models.Bestemming", b =>
@@ -375,6 +393,17 @@ namespace dal.Migrations
                     b.Navigation("Groepsreis");
                 });
 
+            modelBuilder.Entity("models.Opleiding", b =>
+                {
+                    b.HasOne("models.OpleidingType", "OpleidingType")
+                        .WithMany("Opleidingen")
+                        .HasForeignKey("OpleidingTypeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("OpleidingType");
+                });
+
             modelBuilder.Entity("models.Bestemming", b =>
                 {
                     b.Navigation("Groepsreizen");
@@ -402,6 +431,11 @@ namespace dal.Migrations
             modelBuilder.Entity("models.Opleiding", b =>
                 {
                     b.Navigation("GebruikerOpleidingen");
+                });
+
+            modelBuilder.Entity("models.OpleidingType", b =>
+                {
+                    b.Navigation("Opleidingen");
                 });
 #pragma warning restore 612, 618
         }
