@@ -11,17 +11,7 @@ namespace models
     {
         public override string ToString()
         {
-            return $"{Land}";
-        }
-
-        public string ToStringGemeente() 
-        {
-            return $"{Gemeente}";
-        }
-
-        public string ToStringLand()
-        {
-            return $"{Land}";
+            return $"{Naam}";
         }
 
         public override string this[string columnName]
