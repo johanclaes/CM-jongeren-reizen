@@ -19,9 +19,9 @@
 
         <StackPanel Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" Margin="10">
             <TextBlock Margin="5">Geef op te zoeken naam:</TextBlock>
-            <TextBox Name="txtNaamGebruiker" Text="{Binding NaamGebruiker}" Margin="20" ></TextBox>
-            <Button Name="btnZoekGebruikers" Command="{Binding}" CommandParameter="ZoekGebruikers" Content="Zoek gebruikers" Margin="10"/>
-            <ListBox Name="lstGebruikers" ItemsSource="{Binding Gebruikers}" SelectedItem="{Binding GeselecteerdeGebruiker}" Background="beige" Height="300"></ListBox>
+            <TextBox Name="txtNaamGebruiker" Text="{Binding NaamGebruiker}" AutomationProperties.AutomationId="NaamGebruiker" Margin="20" ></TextBox>
+            <Button Name="btnZoekGebruikers" Command="{Binding}" CommandParameter="ZoekGebruikers" AutomationProperties.AutomationId="ZoekGebruikers" Content="Zoek gebruikers" Margin="10"/>
+            <ListBox Name="lstGebruikers" ItemsSource="{Binding Gebruikers}" SelectedItem="{Binding GeselecteerdeGebruiker}" AutomationProperties.AutomationId="lstGebruikers" Background="beige" Height="300"></ListBox>
         </StackPanel>
 
         <GroupBox Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" Header="Persoongegevens" Background="Ivory" Margin="5">
@@ -45,39 +45,39 @@
                     <ColumnDefinition Width="150"/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <TextBlock Grid.Row="0" Grid.Column="0">Naam</TextBlock>
-                <TextBox Name="txtFamilienaam" Text="{Binding GebruikerRecord.Naam, ValidatesOnDataErrors=True}" Grid.Row="0" Grid.Column="1"/>
-                <TextBlock Grid.Row="1" Grid.Column="0">Voornaam</TextBlock>
-                <TextBox Name="txtVoornaam" Text="{Binding GebruikerRecord.Voornaam, ValidatesOnDataErrors=True}" Grid.Row="1" Grid.Column="1"/>
-                <TextBlock Grid.Row="2" Grid.Column="0">Geboortedatum</TextBlock>
-                <DatePicker Name="dateGeboortedatum" Text="{Binding GebruikerRecord.Geboortedatum, ValidatesOnDataErrors=True}" Grid.Row="2" Grid.Column="1"></DatePicker>
-                <TextBlock Grid.Row="3" Grid.Column="0">TelefoonNr</TextBlock>
-                <TextBox Name="txtTelefoonnr" Text="{Binding GebruikerRecord.Telefoonnummer, ValidatesOnDataErrors=True}" Grid.Row="3" Grid.Column="1"/>
-                <TextBlock Grid.Row="4" Grid.Column="0">Email</TextBlock>
-                <TextBox Name="txtEmail" Text="{Binding GebruikerRecord.Email, ValidatesOnDataErrors=True}" Grid.Row="4" Grid.Column="1"/>
-                <TextBlock Grid.Row="5" Grid.Column="0">Adres</TextBlock>
-                <TextBox Name="txtAdres" Text="{Binding GebruikerRecord.Adres, ValidatesOnDataErrors=True}" Grid.Row="5" Grid.Column="1"/>
-                <TextBlock Grid.Row="6" Grid.Column="0">Woonplaats</TextBlock>
-                <TextBox Name="txtWoonplaats" Text="{Binding GebruikerRecord.Woonplaats, ValidatesOnDataErrors=True}" Grid.Row="6" Grid.Column="1"/>
-                <TextBlock Grid.Row="7" Grid.Column="0">Allergie</TextBlock>
-                <TextBox Name="txtAllergie" Text="{Binding GebruikerRecord.Allergie, ValidatesOnDataErrors=True}" Grid.Row="7" Grid.Column="1"/>
-                <TextBlock Grid.Row="8" Grid.Column="0">Medicatie</TextBlock>
-                <TextBox Name="txtMedicatie" Text="{Binding GebruikerRecord.Medicatie, ValidatesOnDataErrors=True}" Grid.Row="8" Grid.Column="1"/>
-                <CheckBox  Name="cbIsLid" IsChecked="{Binding GebruikerRecord.IsLid, ValidatesOnDataErrors=True}"  Grid.Row="9" Grid.Column="0" Margin="1">Is-Lid</CheckBox>
-                <CheckBox Name="cbRolstoel" IsChecked="{Binding GebruikerRecord.Rolstoel, ValidatesOnDataErrors=True}" Grid.Row="9" Grid.Column="1" Margin="1">Rolstoel</CheckBox>
-                <CheckBox Name="cbMonitorBrevet" IsChecked="{Binding GebruikerRecord.MonitorBrevet, ValidatesOnDataErrors=True}" Grid.Row="10" Grid.Column="0" Margin="1">MonitorBrevet</CheckBox>
-                <CheckBox Name="cbHoofdMonitorBrevet" IsChecked="{Binding GebruikerRecord.Hoofdmonitorbrevet, ValidatesOnDataErrors=True}" Grid.Row="11" Grid.Column="0" Grid.ColumnSpan="2" Margin="1">HoofdMonitorBrevet</CheckBox>
-                <CheckBox Name="cbWebAdmin" IsChecked="{Binding GebruikerRecord.Webadmin, ValidatesOnDataErrors=True}" Grid.Row="10" Grid.Column="1"  Margin="1">WebAdmin</CheckBox>
+                <TextBlock Grid.Row="0" Grid.Column="0" VerticalAlignment="Center">Naam</TextBlock>
+                <TextBox Name="txtFamilienaam" Text="{Binding GebruikerRecord.Naam, ValidatesOnDataErrors=True}" AutomationProperties.AutomationId="Naam" Grid.Row="0" Grid.Column="1"/>
+                <TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center">Voornaam</TextBlock>
+                <TextBox Name="txtVoornaam" Text="{Binding GebruikerRecord.Voornaam, ValidatesOnDataErrors=True}" AutomationProperties.AutomationId="Voornaam" Grid.Row="1" Grid.Column="1"/>
+                <TextBlock Grid.Row="2" Grid.Column="0" VerticalAlignment="Center">Geboortedatum</TextBlock>
+                <DatePicker Name="dateGeboortedatum" Text="{Binding GebruikerRecord.Geboortedatum, ValidatesOnDataErrors=True}" AutomationProperties.AutomationId="Geboortedatum" Grid.Row="2" Grid.Column="1"></DatePicker>
+                <TextBlock Grid.Row="3" Grid.Column="0" VerticalAlignment="Center">TelefoonNr</TextBlock>
+                <TextBox Name="txtTelefoonnr" Text="{Binding GebruikerRecord.Telefoonnummer, ValidatesOnDataErrors=True}" AutomationProperties.AutomationId="Telefoonnummer" Grid.Row="3" Grid.Column="1"/>
+                <TextBlock Grid.Row="4" Grid.Column="0" VerticalAlignment="Center">Email</TextBlock>
+                <TextBox Name="txtEmail" Text="{Binding GebruikerRecord.Email, ValidatesOnDataErrors=True}" AutomationProperties.AutomationId="Email" Grid.Row="4" Grid.Column="1"/>
+                <TextBlock Grid.Row="5" Grid.Column="0" VerticalAlignment="Center">Adres</TextBlock>
+                <TextBox Name="txtAdres" Text="{Binding GebruikerRecord.Adres, ValidatesOnDataErrors=True}" AutomationProperties.AutomationId="Adres" Grid.Row="5" Grid.Column="1"/>
+                <TextBlock Grid.Row="6" Grid.Column="0" VerticalAlignment="Center">Woonplaats</TextBlock>
+                <TextBox Name="txtWoonplaats" Text="{Binding GebruikerRecord.Woonplaats, ValidatesOnDataErrors=True}" AutomationProperties.AutomationId="Woonplaats" Grid.Row="6" Grid.Column="1"/>
+                <TextBlock Grid.Row="7" Grid.Column="0" VerticalAlignment="Center">Allergie</TextBlock>
+                <TextBox Name="txtAllergie" Text="{Binding GebruikerRecord.Allergie, ValidatesOnDataErrors=True}" AutomationProperties.AutomationId="Allergie" Grid.Row="7" Grid.Column="1"/>
+                <TextBlock Grid.Row="8" Grid.Column="0" VerticalAlignment="Center">Medicatie</TextBlock>
+                <TextBox Name="txtMedicatie" Text="{Binding GebruikerRecord.Medicatie, ValidatesOnDataErrors=True}" AutomationProperties.AutomationId="Medicatie" Grid.Row="8" Grid.Column="1"/>
+                <CheckBox  Name="cbIsLid" IsChecked="{Binding GebruikerRecord.IsLid, ValidatesOnDataErrors=True}" AutomationProperties.AutomationId="IsLid" Grid.Row="9" Grid.Column="0" Margin="1">Is-Lid</CheckBox>
+                <CheckBox Name="cbRolstoel" IsChecked="{Binding GebruikerRecord.Rolstoel, ValidatesOnDataErrors=True}" AutomationProperties.AutomationId="Rolstoel" Grid.Row="9" Grid.Column="1" Margin="1">Rolstoel</CheckBox>
+                <CheckBox Name="cbMonitorBrevet" IsChecked="{Binding GebruikerRecord.MonitorBrevet, ValidatesOnDataErrors=True}" AutomationProperties.AutomationId="MonitorBrevet" Grid.Row="10" Grid.Column="0" Margin="1">MonitorBrevet</CheckBox>
+                <CheckBox Name="cbHoofdMonitorBrevet" IsChecked="{Binding GebruikerRecord.Hoofdmonitorbrevet, ValidatesOnDataErrors=True}" AutomationProperties.AutomationId="Hoofdmonitorbrevet" Grid.Row="11" Grid.Column="0" Grid.ColumnSpan="2" Margin="1">HoofdMonitorBrevet</CheckBox>
+                <CheckBox Name="cbWebAdmin" IsChecked="{Binding GebruikerRecord.Webadmin, ValidatesOnDataErrors=True}" AutomationProperties.AutomationId="WebAdmin" Grid.Row="10" Grid.Column="1"  Margin="1">WebAdmin</CheckBox>
                 <TextBlock Grid.Row="13" Grid.Column="0">Opmerking</TextBlock>
-                <TextBox Name="txtOpmerkingen" Text="{Binding GebruikerRecord.Opmerking, ValidatesOnDataErrors=True}" TextWrapping="Wrap" AcceptsReturn="True" Grid.Row="13" Grid.Column="1"/>
+                <TextBox Name="txtOpmerkingen" Text="{Binding GebruikerRecord.Opmerking, ValidatesOnDataErrors=True}" AutomationProperties.AutomationId="Opmerking" TextWrapping="Wrap" AcceptsReturn="True" Grid.Row="13" Grid.Column="1"/>
             </Grid>
         </GroupBox>
 
         <StackPanel Grid.Row="0" Grid.Column="2" Margin="5">
-            <Button x:Name="btnNiewePersoonAanmaken" Command="{Binding}" CommandParameter="GebruikerAanmaken" Content="Persoon aanmaken" Margin="10"/>
-            <Button x:Name="btnPersoonAanpassen" Command="{Binding}" CommandParameter="GebruikerAanpassen" Content="Persoon aanpassen" Margin="10" />
-            <Button x:Name="btnPersoonVerwijderen" Command="{Binding}" CommandParameter="GebruikerVerwijderen" Content="Persoon verwijderen" Margin="10" />
-            <Button x:Name="btnFormulierLeegmaken" Command="{Binding}" CommandParameter="FormulierLeegmaken" Content="Formulier leegmaken" Margin="10"/>
+            <Button x:Name="btnNiewePersoonAanmaken" Command="{Binding}" CommandParameter="GebruikerAanmaken" AutomationProperties.AutomationId="GebruikerAanmaken" Content="Aanmaken" Margin="10"/>
+            <Button x:Name="btnPersoonAanpassen" Command="{Binding}" CommandParameter="GebruikerAanpassen" Content="Aanpassen" Margin="10" />
+            <Button x:Name="btnPersoonVerwijderen" Command="{Binding}" CommandParameter="GebruikerVerwijderen" Content="Verwijderen" Margin="10" />
+            <Button x:Name="btnFormulierLeegmaken" Command="{Binding}" CommandParameter="FormulierLeegmaken" AutomationProperties.AutomationId="FormulierLeegmaken" Content="Formulier leegmaken" Margin="10"/>
         </StackPanel>
 
 

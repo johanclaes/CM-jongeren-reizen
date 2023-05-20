@@ -14,6 +14,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "script", "script", "{BD2195
 		..\Documentatie\Groepsreizen.sql = ..\Documentatie\Groepsreizen.sql
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Groepsreizen Tests", "Groepsreizen Tests\Groepsreizen Tests.csproj", "{E5CFD75F-42D7-49C5-B42C-332D6FFA418A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -32,6 +34,10 @@ Global
 		{7FF99B11-E3D9-4DBD-B84D-17C486B0ADD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7FF99B11-E3D9-4DBD-B84D-17C486B0ADD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7FF99B11-E3D9-4DBD-B84D-17C486B0ADD3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5CFD75F-42D7-49C5-B42C-332D6FFA418A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5CFD75F-42D7-49C5-B42C-332D6FFA418A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5CFD75F-42D7-49C5-B42C-332D6FFA418A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5CFD75F-42D7-49C5-B42C-332D6FFA418A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

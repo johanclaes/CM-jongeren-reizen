@@ -93,7 +93,7 @@ namespace wpf.ViewModels
             switch (parameter.ToString())
             {
                 case "ZoekGebruikers": return true;
-                case "GebruikerAanmaken": return true;
+                case "GebruikerAanmaken": return GebruikerRecord != null;
                 case "GebruikerAanpassen": return GeselecteerdeGebruiker != null;
                 case "GebruikerVerwijderen": return GeselecteerdeGebruiker != null;
                 case "FormulierLeegmaken": return true;
@@ -183,8 +183,8 @@ namespace wpf.ViewModels
             if (ok > 0)
             {
                 FormulierLeegmaken();
-                MessageBox.Show(succesmelding);
                 ZoekGebruikers();
+                //MessageBox.Show(succesmelding);
             }
             else
             {

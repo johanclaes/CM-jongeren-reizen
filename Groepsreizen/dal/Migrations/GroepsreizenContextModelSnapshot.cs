@@ -124,7 +124,7 @@ namespace dal.Migrations
                     b.Property<string>("Paswoord")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool?>("Rolstoel")
+                    b.Property<bool>("Rolstoel")
                         .HasColumnType("bit");
 
                     b.Property<string>("Telefoonnummer")

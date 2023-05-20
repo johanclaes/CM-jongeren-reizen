@@ -47,15 +47,15 @@
                      Style="{StaticResource MaterialDesignFilledPasswordBox}"
                          />
             <!--Password="{Binding Paswoord}"-->
-            
+
 
             <Button
                 Content="Aanmelden"
                 IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
                 Style="{StaticResource MaterialDesignRaisedLightButton}"
                 ToolTip="Resource name: MaterialDesignRaisedLightButton"
-                Click="Button_Click"/>
-
+                Click="Button_Click"
+                AutomationProperties.AutomationId="Aanmelden"/>
         </StackPanel>
 
     </Grid>
