@@ -40,7 +40,7 @@ namespace models
         public string Woonplaats { get; set; }
         public string? Allergie { get; set; }
         public string? Medicatie { get; set; }
-        public bool? Rolstoel { get; set; }
+        public bool Rolstoel { get; set; }
         public string? Opmerking { get; set; }
         public string? Paswoord { get; set; }
 

@@ -21,7 +21,7 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <Button x:Name="btnPersonen" Grid.Row="0" Grid.Column="0" Background="DarkSalmon" Content="Personen" Margin="2" Click="btnPersonen_Click" ></Button>
+        <Button x:Name="btnPersonen" Grid.Row="0" Grid.Column="0" Background="DarkSalmon" Content="Personen" Margin="2" AutomationProperties.AutomationId="Personen" Click="btnPersonen_Click" ></Button>
         <Button x:Name="btnInschrijvingen" Grid.Row="0" Grid.Column="1" Background="blue" Content="Inschrijvingen" Margin="2" Click="btnInschrijvingen_Click"   ></Button>
         <Button x:Name="btnGroepsreizen" Grid.Row="0" Grid.Column="2"  Background="HotPink" Content="Groepsreizen" Margin="2" Click="btnGroepsreizen_Click"   ></Button>
         <Button x:Name="btnOpleidingen" Grid.Row="0" Grid.Column="3" Background="Purple" Content="Opleidingen" Margin="2" Click="btnOpleidingen_Click" ></Button>

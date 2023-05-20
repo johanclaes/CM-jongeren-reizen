@@ -42,7 +42,7 @@ namespace models
                 }
                 if (columnName == "Adres" && string.IsNullOrWhiteSpace(Adres))
                 {
-                    return "Adres moet groter dan 0 zijn.";
+                    return "Adres mag niet leeg zijn.";
                 }
                 if (columnName == "Woonplaats" && string.IsNullOrWhiteSpace(Woonplaats))
                 {
