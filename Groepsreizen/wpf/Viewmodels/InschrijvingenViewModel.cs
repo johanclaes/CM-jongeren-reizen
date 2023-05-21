@@ -130,10 +130,6 @@ namespace wpf.ViewModels
             {
                 _geselecteerdeGemeente = value;
                 GezochteReizen = new ObservableCollection<Groepsreis>(_unitOfWork.GroepsreisRepo.Ophalen(x => x.Bestemming.Land == GeselecteerdLand && x.Bestemming.Gemeente == GeselecteerdeGemeente));
-                if (GezochteReizen.Count == 0)
-                {
-                    MessageBox.Show("Momenteel zijn er geen groepsreizen op deze locatie. Gelieve een andere te selecteren.", "Foutmelding", MessageBoxButton.OK, MessageBoxImage.Error);
-                }
                 NotifyPropertyChanged();
             }
         }

@@ -76,7 +76,7 @@ namespace wpf.ViewModels
 
         public PersonenViewModel() 
         {
-            GebruikerRecord = new Gebruiker();
+            //GebruikerRecord = new Gebruiker();
             Foutmeldingen = "";
         }
 
@@ -93,7 +93,7 @@ namespace wpf.ViewModels
             switch (parameter.ToString())
             {
                 case "ZoekGebruikers": return true;
-                case "GebruikerAanmaken": return GebruikerRecord != null;
+                case "GebruikerAanmaken": return true;
                 case "GebruikerAanpassen": return GeselecteerdeGebruiker != null;
                 case "GebruikerVerwijderen": return GeselecteerdeGebruiker != null;
                 case "FormulierLeegmaken": return true;
@@ -123,6 +123,8 @@ namespace wpf.ViewModels
 
         public void GebruikerAanmaken()
         {
+            GebruikerRecord = new Gebruiker();
+
             if (GebruikerRecord.IsGeldig())
             {
                 _unitOfWork.GebruikerRepo.Toevoegen(GebruikerRecord);
@@ -165,8 +167,6 @@ namespace wpf.ViewModels
         {
             GeselecteerdeGebruiker = null;
             Foutmeldingen = "";
-            MainWindow window = new MainWindow();
-            window.personen2.dateGeboortedatum.SelectedDate = DateTime.Now;
 
             if (GeselecteerdeGebruiker != null)
             {
@@ -174,7 +174,7 @@ namespace wpf.ViewModels
             }
             else
             {
-                GebruikerRecord = new Gebruiker();
+                //GebruikerRecord = new Gebruiker();
             }
         }
 
