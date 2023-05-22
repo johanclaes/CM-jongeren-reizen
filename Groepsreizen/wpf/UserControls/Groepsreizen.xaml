@@ -49,23 +49,23 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <TextBlock Grid.Row="0" Grid.Column="0">Naam:</TextBlock>
-            <TextBox Name="txtNaamGroepsreis" Text="{Binding NaamReis}" Grid.Row="0" Grid.Column="1"></TextBox>
+            <TextBox Name="txtNaamGroepsreis" Text="{Binding GroepsreisRecord.Naam}" Grid.Row="0" Grid.Column="1"></TextBox>
             <TextBlock Grid.Row="1" Grid.Column="0">DeelnamePrijs:</TextBlock>
-            <TextBox Name="txtDeelnameprijs" Text="{Binding Deelnameprijs}" Grid.Row="1" Grid.Column="1"></TextBox>
+            <TextBox Name="txtDeelnameprijs" Text="{Binding GroepsreisRecord.Deelneemprijs}" Grid.Row="1" Grid.Column="1"></TextBox>
             <TextBlock Grid.Row="2" Grid.Column="0">Thema:</TextBlock>
             <TextBox Name="txtThema" Text="{Binding Thema}" Grid.Row="2" Grid.Column="1"></TextBox>
             <TextBlock Grid.Row="3" Grid.Column="0">Bestemming:</TextBlock>
-            <ComboBox Name="cmbBestemmingGroepsreis" Text="{Binding BestemmingGroepsreis}" Grid.Row="3" Grid.Column="1"></ComboBox>
+            <ComboBox Name="cmbBestemmingGroepsreis" ItemsSource="{Binding Bestemmingen}" SelectedItem="{Binding SelectedBestemming}" Grid.Row="3" Grid.Column="1"></ComboBox>
             <TextBlock Grid.Row="4" Grid.Column="0">Startdatum:</TextBlock>
-            <TextBox Name="txtStartdatum" Text="{Binding Startdatum}" Grid.Row="4" Grid.Column="1"></TextBox>
+            <TextBox Name="txtStartdatum" Text="{Binding GroepsreisRecord.Startdatum}" Grid.Row="4" Grid.Column="1"></TextBox>
             <TextBlock Grid.Row="5" Grid.Column="0">Einddatum:</TextBlock>
-            <TextBox Name="txtEinddatum" Text="{Binding Einddatum}" Grid.Row="5" Grid.Column="1"></TextBox>
+            <TextBox Name="txtEinddatum" Text="{Binding GroepsreisRecord.Einddatum}" Grid.Row="5" Grid.Column="1"></TextBox>
             <TextBlock Grid.Row="6" Grid.Column="0">MinimumLeeftijd:</TextBlock>
-            <TextBox Name="txtMinimumLeeftijd" Text="{Binding Minimumleeftijd}" Grid.Row="6" Grid.Column="1"></TextBox>
+            <TextBox Name="txtMinimumLeeftijd" Text="{Binding GroepsreisRecord.Minimumleeftijd}" Grid.Row="6" Grid.Column="1"></TextBox>
             <TextBlock Grid.Row="7" Grid.Column="0">MaximumLeeftijd:</TextBlock>
-            <TextBox Name="txtMaximumLeeftijd" Text="{Binding Maximumleeftijd}" Grid.Row="7" Grid.Column="1"></TextBox>
-            <CheckBox Name="cbVolzet" IsChecked="{Binding IsVolzet}" Grid.Row="8" Grid.Column="0">Volzet</CheckBox>
-            <CheckBox Name="cbInschrijvingGestopt" IsChecked="{Binding IsInschrijvingGestopt}" Grid.Row="8" Grid.Column="1">Inschrijving Gestopt</CheckBox>
+            <TextBox Name="txtMaximumLeeftijd" Text="{Binding GroepsreisRecord.Maximumleeftijd}" Grid.Row="7" Grid.Column="1"></TextBox>
+            <CheckBox Name="cbVolzet" IsChecked="{Binding GroepsreisRecord.PlaatsenVrij}" Grid.Row="8" Grid.Column="0">Volzet</CheckBox>
+            <CheckBox Name="cbInschrijvingGestopt" IsChecked="{Binding GroepsreisRecord.InschrijvingGestopt}" Grid.Row="8" Grid.Column="1">Inschrijving Gestopt</CheckBox>
         </Grid>
 
         <Label Background="LightCyan" Content="{Binding ErrorGroepsreizen}" Grid.Row="2" Grid.Column="1" Margin="2" Visibility="Visible"></Label>

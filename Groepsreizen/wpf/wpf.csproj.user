@@ -16,6 +16,9 @@
     <Compile Update="UserControls\Bestemmingen.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="UserControls\BindiblePasswordBox.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="UserControls\Groepsreizen.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -37,6 +40,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UserControls\Bestemmingen.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UserControls\BindiblePasswordBox.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UserControls\Groepsreizen.xaml">

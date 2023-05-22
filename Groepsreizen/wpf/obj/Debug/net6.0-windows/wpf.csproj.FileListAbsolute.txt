@@ -377,3 +377,5 @@ C:\Users\lende\Documents\thomasmore\jaar 2\agile en testing\project2\CM-jongeren
 C:\Users\lende\Documents\thomasmore\jaar 2\agile en testing\project2\CM-jongeren-reizen\Groepsreizen\wpf\obj\Debug\net6.0-windows\wpf.pdb
 C:\Users\lende\Documents\thomasmore\jaar 2\agile en testing\project2\CM-jongeren-reizen\Groepsreizen\wpf\obj\Debug\net6.0-windows\wpf.genruntimeconfig.cache
 C:\Users\lende\Documents\thomasmore\jaar 2\agile en testing\project2\CM-jongeren-reizen\Groepsreizen\wpf\obj\Debug\net6.0-windows\ref\wpf.dll
+C:\Users\lende\Documents\thomasmore\jaar 2\agile en testing\project2\CM-jongeren-reizen\Groepsreizen\wpf\obj\Debug\net6.0-windows\UserControls\BindiblePasswordBox.g.cs
+C:\Users\lende\Documents\thomasmore\jaar 2\agile en testing\project2\CM-jongeren-reizen\Groepsreizen\wpf\obj\Debug\net6.0-windows\UserControls\BindiblePasswordBox.baml

@@ -3,9 +3,9 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:wpf"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:viewmodel="clr-namespace:wpf.Viewmodels"
+        xmlns:local="clr-namespace:wpf.UserControls"
         mc:Ignorable="d"
         MouseDown="Window_MouseDown"
         Title="LoginScherm_Groepsreizen" Height="450" Width="800">
@@ -42,11 +42,7 @@
                   Grid.Column="0"
                    Text="Password" />
 
-            <PasswordBox Grid.Row="3"
-                     Grid.Column="2"
-                     Style="{StaticResource MaterialDesignFilledPasswordBox}"
-                         />
-            <!--Password="{Binding Paswoord}"-->
+            <local:BindiblePasswordBox Password="{Binding Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged }" Grid.Column="3" Grid.Row="2"></local:BindiblePasswordBox>
 
 
             <Button
