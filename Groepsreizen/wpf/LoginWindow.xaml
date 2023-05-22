@@ -49,7 +49,7 @@
                 IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
                 Style="{StaticResource MaterialDesignRaisedLightButton}"
                 ToolTip="Resource name: MaterialDesignRaisedLightButton"
-                Command="{Binding}" CommandParameter="LoginCommand"/>
+                Click="Button_Click"/>
         </StackPanel>
 
     </Grid>

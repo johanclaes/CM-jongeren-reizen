@@ -245,7 +245,7 @@ namespace wpf.UserControls {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/wpf;component/usercontrols/personen.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/wpf;V1.0.0.0;component/usercontrols/personen.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\UserControls\Personen.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

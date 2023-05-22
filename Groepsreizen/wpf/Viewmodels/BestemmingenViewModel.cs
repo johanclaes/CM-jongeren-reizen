@@ -264,6 +264,7 @@ namespace wpf.ViewModels
             SelectedBestemmingsType = null;
             SelectedLand1 = null;
             BestemmingRecord = null;
+            BestemmingRecord = new Bestemming();
             SelectedLand2 = null;
             NieuwBestemmingtype = null;
 

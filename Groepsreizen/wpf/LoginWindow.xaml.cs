@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using wpf.UserControls;
+using wpf.ViewModels;
 
 namespace wpf
 {
@@ -22,6 +24,13 @@ namespace wpf
         public LoginWindow()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+           MainWindow window = new MainWindow();
+            this.Visibility = Visibility.Collapsed;
+            window.Show();
         }
     }
 }

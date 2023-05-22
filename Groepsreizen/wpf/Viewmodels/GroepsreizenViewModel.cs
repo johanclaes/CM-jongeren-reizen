@@ -26,8 +26,11 @@ namespace wpf.ViewModels
         private Gebruiker _selectedHoofdmonitoren;
         private ObservableCollection<Bestemming> _bestemmingen;
         private Bestemming _geselecteerdeBestemming;
+        private OpleidingType _opleidingType;
         private ObservableCollection<OpleidingType> _opleidingTypes;
-
+        private ObservableCollection<Opleiding> _opleidingen;
+        private ObservableCollection<GebruikerOpleiding> _gebruikerOpleiding;
+        private ObservableCollection<Gebruiker> _gebruikers;
         public string NaamReis
         {
             get { return _naamReis; }
@@ -141,12 +144,58 @@ namespace wpf.ViewModels
                 NotifyPropertyChanged();
             }
         }
-        public ObservableCollection<OpleidingType> Opleiding
+        public ObservableCollection<OpleidingType> OpleidingsTypes
         {
             get { return _opleidingTypes; }
             set
             {
                 _opleidingTypes = value;
+                NotifyPropertyChanged();
+            }
+        }
+
+        public OpleidingType OpleidingsType
+        {
+            get { return _opleidingType; }
+            set
+            {
+                _opleidingType = value;
+                NotifyPropertyChanged();
+            }
+        }
+        public ObservableCollection<GebruikerOpleiding> GebruikerOpleiding
+        {
+            get
+            {
+                return _gebruikerOpleiding;
+            }
+            set
+            {
+                _gebruikerOpleiding = value;
+                NotifyPropertyChanged();
+            }
+        }
+        public ObservableCollection<Opleiding> Opleidingen
+        {
+            get
+            {
+                return _opleidingen;
+            }
+            set
+            {
+                _opleidingen = value;
+                NotifyPropertyChanged();
+            }
+        }
+        public ObservableCollection<Gebruiker> Gebruikers
+        {
+            get
+            {
+                return _gebruikers;
+            }
+            set
+            {
+                _gebruikers = value;
                 NotifyPropertyChanged();
             }
         }
@@ -208,7 +257,6 @@ namespace wpf.ViewModels
         {
             if (NaamMonitor != null)
             {
-                Opleiding = new ObservableCollection<OpleidingType>(_unitOfWork.OpleidingTypeRepo.Ophalen(x => x.Naam.Contains(NaamMonitor)));
                 Monitoren = new ObservableCollection<Gebruiker>(_unitOfWork.GebruikerRepo.Ophalen(x => x.Monitorbrevet == true));
             }
             else
@@ -221,8 +269,33 @@ namespace wpf.ViewModels
         {
             if (NaamMonitor != null)
             {
-
-                
+                //OpleidingsType = _unitOfWork.OpleidingTypeRepo.Ophalen(x => x.Naam.Contains(NaamMonitor)).FirstOrDefault();
+                //Opleidingen = new ObservableCollection<Opleiding>(_unitOfWork.OpleidingRepo.Ophalen(x => x.OpleidingTypeId.Equals(OpleidingsType.Id)));
+                //GebruikerOpleiding = new ObservableCollection<GebruikerOpleiding>(_unitOfWork.GebruikerOpleidingRepo.Ophalen());
+                //Gebruikers = new ObservableCollection<Gebruiker>()
+                //List<int> PKOpleidingLijst = new List<int>();
+                //foreach (var item in Opleidingen)
+                //{
+                //    if(item.OpleidingTypeId == OpleidingsType.Id)
+                //    {
+                //        PKOpleidingLijst.Add(item.Id);
+                //    }
+                //}
+                //foreach (var item in GebruikerOpleiding)
+                //{
+                //    if (PKOpleidingLijst.Contains(item.OpleidingId))
+                //    {
+                //        Gebruiker monitor = new Gebruiker();
+                //        monitor = _unitOfWork.GebruikerRepo.Ophalen(x => x.Id.Equals(item.GebruikerId)).FirstOrDefault();
+                //        Gebruikers.Add(monitor); 
+                //    }
+                //}
+                //Gebruikers = new ObservableCollection<Gebruiker>(_unitOfWork.GebruikerRepo.Ophalen(x => x.Id.Equals(GebruikerOpleiding)));
+                OpleidingsTypes = new ObservableCollection<OpleidingType>(_unitOfWork.OpleidingTypeRepo.Ophalen());
+                OpleidingsType = _unitOfWork.OpleidingTypeRepo.Ophalen(x => x.Naam.Contains(NaamMonitor)).FirstOrDefault();
+                Opleidingen = new ObservableCollection<Opleiding>(_unitOfWork.OpleidingRepo.Ophalen(x => x.Id == OpleidingsType.Id));
+                GebruikerOpleiding = new ObservableCollection<GebruikerOpleiding>(_unitOfWork.GebruikerOpleidingRepo.Ophalen());
+                Gebruikers = new ObservableCollection<Gebruiker>(_unitOfWork.GebruikerRepo.Ophalen(x => x.Id == GebruikerOpleiding.Gebr )
             }
         }
         public void VoegMonitorToe() { MessageBox.Show("test3"); }
