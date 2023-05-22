@@ -50,7 +50,7 @@
                 <TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center">Voornaam</TextBlock>
                 <TextBox Name="txtVoornaam" Text="{Binding GebruikerRecord.Voornaam, ValidatesOnDataErrors=True}" AutomationProperties.AutomationId="Voornaam" Grid.Row="1" Grid.Column="1"/>
                 <TextBlock Grid.Row="2" Grid.Column="0" VerticalAlignment="Center">Geboortedatum</TextBlock>
-                <DatePicker Name="dateGeboortedatum" Text="{Binding GebruikerRecord.Geboortedatum, ValidatesOnDataErrors=True}" AutomationProperties.AutomationId="Geboortedatum" Grid.Row="2" Grid.Column="1"></DatePicker>
+                <DatePicker Name="dateGeboortedatum" Text="{Binding GebruikerRecord.Geboortedatum, ValidatesOnDataErrors=True, Mode=TwoWay}" AutomationProperties.AutomationId="Geboortedatum" Grid.Row="2" Grid.Column="1"></DatePicker>
                 <TextBlock Grid.Row="3" Grid.Column="0" VerticalAlignment="Center">TelefoonNr</TextBlock>
                 <TextBox Name="txtTelefoonnr" Text="{Binding GebruikerRecord.Telefoonnummer, ValidatesOnDataErrors=True}" AutomationProperties.AutomationId="Telefoonnummer" Grid.Row="3" Grid.Column="1"/>
                 <TextBlock Grid.Row="4" Grid.Column="0" VerticalAlignment="Center">Email</TextBlock>
