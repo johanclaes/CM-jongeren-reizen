@@ -222,7 +222,7 @@ namespace wpf.ViewModels
             if (NaamMonitor != null)
             {
 
-                Monitoren = new ObservableCollection<Gebruiker>(_unitOfWork.);
+                
             }
         }
         public void VoegMonitorToe() { MessageBox.Show("test3"); }

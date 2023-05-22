@@ -7,7 +7,6 @@
         xmlns:viewmodel="clr-namespace:wpf.Viewmodels"
         xmlns:local="clr-namespace:wpf.UserControls"
         mc:Ignorable="d"
-        MouseDown="Window_MouseDown"
         Title="LoginScherm_Groepsreizen" Height="450" Width="800">
     <Grid Background="LightSkyBlue" >
         <Grid.Effect>
@@ -50,8 +49,7 @@
                 IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
                 Style="{StaticResource MaterialDesignRaisedLightButton}"
                 ToolTip="Resource name: MaterialDesignRaisedLightButton"
-                Click="Button_Click"
-                AutomationProperties.AutomationId="Aanmelden"/>
+                Command="{Binding}" CommandParameter="LoginCommand"/>
         </StackPanel>
 
     </Grid>
