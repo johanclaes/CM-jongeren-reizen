@@ -42,10 +42,10 @@ namespace models
                 {
                     return "Fotonaam moet ingevuld zijn.";
                 }
-                if (columnName == "BestemmingstypeId" && BestemmingstypeId <= 0)
-                {
-                    return "Bestemmingstype moet ingevuld zijn.";
-                }
+                //if (columnName == "BestemmingstypeId" && BestemmingstypeId <= 0)
+                //{
+                //    return "Bestemmingstype moet ingevuld zijn.";
+                //}
 
                 return "";
             }
