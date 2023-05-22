@@ -40,9 +40,15 @@ namespace Groepsreizen_Tests.Data.UnitOfWork
         }
 
         [Test]
-        public void BestemmingVerwijderenTest() 
+        public void GebruikerVerwijderenTest() 
         {
-            
+            Gebruiker Gebruiker;
+
+            Gebruiker = unitOfWork.GebruikerRepo.Ophalen(x => x.Voornaam.Contains("Chris")).FirstOrDefault();
+
+            unitOfWork.GebruikerRepo.Verwijderen(Gebruiker);
+
+            Assert.IsNull(Gebruiker);
         }
     }
 }

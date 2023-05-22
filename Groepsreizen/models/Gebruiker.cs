@@ -23,6 +23,7 @@ namespace models
 
         [Required]
         [DataType(DataType.Date)]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy/dd/MM}")]
         public DateTime Geboortedatum { get; set; }
         public bool IsLid { get; set; }
         public string? Telefoonnummer { get; set; }
