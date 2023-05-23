@@ -8,5 +8,9 @@ namespace models
 {
     public partial class GebruikerOpleiding
     {
+        public override string ToString()
+        {
+            return $"{Gebruiker.Voornaam} {Gebruiker.Naam}";
+        }
     }
 }

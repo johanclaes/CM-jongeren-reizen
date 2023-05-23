@@ -78,7 +78,7 @@
                         <Button Name="btnZoekMonitor" Command="{Binding}" CommandParameter="ZoekMonitor" Margin="1">Zoek op naam</Button>
                         <Button Name="btnZoekViaOpleiding" Command="{Binding}" CommandParameter="ZoekMonitorViaOpleiding" Margin="1" >Via opleiding</Button>
                     </StackPanel>
-                    <ListBox Name="lstMonitoren" ItemsSource="{Binding GezochteGebruikers}" SelectedItem="{Binding SelectedGebruiker}" Background="Beige" Height="80" Margin="5" SelectionChanged="lstMonitoren_SelectionChanged"/>
+                    <ListBox Name="lstMonitoren" ItemsSource="{Binding GebruikerOpleiding}" SelectedItem="{Binding SelectedGebruiker}" Background="Beige" Height="80" Margin="5"/>
                     <Button Name="btnVoegMonitortoe" Command="{Binding}" CommandParameter="VoegMonitorToe">Voeg toe aan monitorlijst</Button>
                     <ListBox Name="lstMonitorenGroepsreis" Background="Beige" Height="80" Margin="5"/>
                     <Button Name="btnVerwijderMonitorGroepsreis" Command="{Binding}" CommandParameter="VerwijderMonitor">Verwijder van monitorlijst</Button>

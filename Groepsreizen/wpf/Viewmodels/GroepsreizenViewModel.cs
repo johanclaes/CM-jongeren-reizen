@@ -293,9 +293,12 @@ namespace wpf.ViewModels
                 //Gebruikers = new ObservableCollection<Gebruiker>(_unitOfWork.GebruikerRepo.Ophalen(x => x.Id.Equals(GebruikerOpleiding)));
                 OpleidingsTypes = new ObservableCollection<OpleidingType>(_unitOfWork.OpleidingTypeRepo.Ophalen());
                 OpleidingsType = _unitOfWork.OpleidingTypeRepo.Ophalen(x => x.Naam.Contains(NaamMonitor)).FirstOrDefault();
-                Opleidingen = new ObservableCollection<Opleiding>(_unitOfWork.OpleidingRepo.Ophalen(x => x.Id == OpleidingsType.Id));
+                Opleidingen = new ObservableCollection<Opleiding>(_unitOfWork.OpleidingRepo.Ophalen());
+                Opleidingen = new ObservableCollection<Opleiding>(_unitOfWork.OpleidingRepo.Ophalen(x => x.OpleidingTypeId == OpleidingsType.Id));
+                Gebruikers = new ObservableCollection<Gebruiker>(_unitOfWork.GebruikerRepo.Ophalen());
                 GebruikerOpleiding = new ObservableCollection<GebruikerOpleiding>(_unitOfWork.GebruikerOpleidingRepo.Ophalen());
-                Gebruikers = new ObservableCollection<Gebruiker>(_unitOfWork.GebruikerRepo.Ophalen(x => x.Id == GebruikerOpleiding.Gebr )
+                GebruikerOpleiding = new ObservableCollection<GebruikerOpleiding>(_unitOfWork.GebruikerOpleidingRepo.Ophalen().Where(x => x.Opleiding.OpleidingTypeId == OpleidingsType.Id));
+                
             }
         }
         public void VoegMonitorToe() { MessageBox.Show("test3"); }
