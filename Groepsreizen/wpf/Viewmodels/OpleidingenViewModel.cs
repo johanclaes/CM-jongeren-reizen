@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using wpf.UserControls;
 
 namespace wpf.ViewModels
 {
@@ -24,6 +25,7 @@ namespace wpf.ViewModels
         private ObservableCollection<int> _jaren;
         private int _selectedJaar;
         private ObservableCollection<Opleiding> _opleidingen;
+        private ObservableCollection<Opleiding> _opleidingen2;
         private Opleiding _selectedOpleiding;
         private string _soortOpleiding;
         private string _deelnemer;
@@ -140,6 +142,16 @@ namespace wpf.ViewModels
             set
             {
                 _opleidingen = value;
+                NotifyPropertyChanged();
+            }
+        }
+
+        public ObservableCollection<Opleiding> Opleidingen2
+        {
+            get { return _opleidingen2; }
+            set
+            {
+                _opleidingen2 = value;
                 NotifyPropertyChanged();
             }
         }
@@ -409,27 +421,60 @@ namespace wpf.ViewModels
 
             // als beide voorgaande verschillend van null, dan pas komt de knop Voegdeelnemer toe beschikbaar.
 
-            // de GebruikerOpleiding heeft 2 FK: 1 verwijzend naar PK-gebruiken en 1 verwijzend naar PK-opleiding
+            // de GebruikerOpleiding heeft 2 FK: 1 verwijzend naar PK-gebruiker en 1 verwijzend naar PK-opleiding
 
             if (SelectedDeelnemer != null && SelectedOpleiding != null)
             {
-                GebruikerOpleiding GebruikerOpleiding1 = new GebruikerOpleiding();
-                GebruikerOpleiding1.GebruikerId = SelectedDeelnemer.Id;
-                GebruikerOpleiding1.OpleidingId = SelectedOpleiding.Id;
 
-                _unitOfWork.GebruikerOpleidingRepo.Toevoegen(GebruikerOpleiding1);
-                int oke = _unitOfWork.Save();
-                if (oke > 0)
+                bool AlEerderGevolgd = false;
+
+                // eerst nog even checken of de selectedDeelnemer dat opleidingstype al niet eerder gevolgd heeft. 
+                // 1. maak een lijst van alle opleidingen van dat opleidingstype
+                Opleidingen2 = new ObservableCollection<Opleiding>(_unitOfWork.OpleidingRepo.Ophalen().Where(y => y.OpleidingTypeId == SelectedOpleiding.OpleidingTypeId));
+
+                // 2. maak lijst1 van gebruikersopleiding waar selectedGebruiker.gebruikerid = gebruiker.id
+                GebruikerOpleidingen = new ObservableCollection<GebruikerOpleiding>(_unitOfWork.GebruikerOpleidingRepo.Ophalen(x => x.GebruikerId == SelectedDeelnemer.Id));
+
+                // 3. loop door beide lijsten en als er een kruispunt is.. al eerder gevolgd
+
+                foreach (var item in Opleidingen2)
                 {
-                    MessageBox.Show("Opleiding toegevoegd voor user.");
-                    Deelnemer = "";
-                    SelectedDeelnemer = null;
-                    GezochteDeelnemers = null;
-                    SelectedOpleiding = null;
+                    foreach (var item2 in GebruikerOpleidingen)
+                    {
+                        if (item.Id == item2.OpleidingId)
+                        {
+                            AlEerderGevolgd = true;
+                        }
+                    }
+                }
+
+
+                // 4. bestaat er een opleiding waarvan  (opleidingstype = opleidingstypeNr)  en  (opleiding.id zit in de lijst2) ?
+                // indien ja, message opleiding reeds gevolgd,  indien neen, opleiding toevoegen
+                if (AlEerderGevolgd)
+                {
+                    MessageBox.Show("Persoon heeft die opleiding ooit al gevolgd.");
                 }
                 else
                 {
-                    MessageBox.Show("er ging iets mis.");
+                    GebruikerOpleiding GebruikerOpleiding1 = new GebruikerOpleiding();
+                    GebruikerOpleiding1.GebruikerId = SelectedDeelnemer.Id;
+                    GebruikerOpleiding1.OpleidingId = SelectedOpleiding.Id;
+
+                    _unitOfWork.GebruikerOpleidingRepo.Toevoegen(GebruikerOpleiding1);
+                    int oke = _unitOfWork.Save();
+                    if (oke > 0)
+                    {
+                        MessageBox.Show("Opleiding toegevoegd voor user.");
+                        Deelnemer = "";
+                        SelectedDeelnemer = null;
+                        GezochteDeelnemers = null;
+                        SelectedOpleiding = null;
+                    }
+                    else
+                    {
+                        MessageBox.Show("er ging iets mis.");
+                    }
                 }
 
             }
