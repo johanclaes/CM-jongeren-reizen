@@ -43,7 +43,6 @@ namespace wpf.ViewModels
             set
             {
                 _selectedLand1 = value;
-                // IsBestemmingAanmaken = true;
                 NotifyPropertyChanged();
             }
         }
@@ -152,7 +151,7 @@ namespace wpf.ViewModels
         {
             switch (parameter.ToString())
             {
-                case "MaakBestemming": return (BestemmingRecord.Naam != null) && (BestemmingRecord.Capaciteit != 0) && (SelectedBestemming == null);
+                case "MaakBestemming": return (SelectedBestemmingsType != null) && (SelectedBestemming == null);
                 case "UpdateBestemming": return SelectedBestemming != null;
                 case "VeldenLeegmaken": return true;
                 case "BestemmingstypeToevoegen": return NieuwBestemmingtype != null;
@@ -263,11 +262,11 @@ namespace wpf.ViewModels
         {
             SelectedBestemmingsType = null;
             SelectedLand1 = null;
-            BestemmingRecord = null;
             BestemmingRecord = new Bestemming();
+            BestemmingRecord.Capaciteit = 0;
             SelectedLand2 = null;
             NieuwBestemmingtype = null;
-
+            FoutmeldingBestemming = "";
         }
         public void BestemmingstypeToevoegen()
         {

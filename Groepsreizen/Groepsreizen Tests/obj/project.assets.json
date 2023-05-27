@@ -7498,11 +7498,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\fb922\\Desktop\\agile\\project\\CM-jongeren-final3\\CM-jongeren-reizen\\Groepsreizen\\Groepsreizen Tests\\Groepsreizen Tests.csproj",
+      "projectUniqueName": "C:\\Users\\fb922\\Desktop\\agile\\project\\CM-jongeren-final4\\CM-jongeren-reizen\\Groepsreizen\\Groepsreizen Tests\\Groepsreizen Tests.csproj",
       "projectName": "Groepsreizen Tests",
-      "projectPath": "C:\\Users\\fb922\\Desktop\\agile\\project\\CM-jongeren-final3\\CM-jongeren-reizen\\Groepsreizen\\Groepsreizen Tests\\Groepsreizen Tests.csproj",
+      "projectPath": "C:\\Users\\fb922\\Desktop\\agile\\project\\CM-jongeren-final4\\CM-jongeren-reizen\\Groepsreizen\\Groepsreizen Tests\\Groepsreizen Tests.csproj",
       "packagesPath": "C:\\Users\\fb922\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\fb922\\Desktop\\agile\\project\\CM-jongeren-final3\\CM-jongeren-reizen\\Groepsreizen\\Groepsreizen Tests\\obj\\",
+      "outputPath": "C:\\Users\\fb922\\Desktop\\agile\\project\\CM-jongeren-final4\\CM-jongeren-reizen\\Groepsreizen\\Groepsreizen Tests\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\fb922\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -7519,8 +7519,8 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "projectReferences": {
-            "C:\\Users\\fb922\\Desktop\\agile\\project\\CM-jongeren-final3\\CM-jongeren-reizen\\Groepsreizen\\wpf\\wpf.csproj": {
-              "projectPath": "C:\\Users\\fb922\\Desktop\\agile\\project\\CM-jongeren-final3\\CM-jongeren-reizen\\Groepsreizen\\wpf\\wpf.csproj"
+            "C:\\Users\\fb922\\Desktop\\agile\\project\\CM-jongeren-final4\\CM-jongeren-reizen\\Groepsreizen\\wpf\\wpf.csproj": {
+              "projectPath": "C:\\Users\\fb922\\Desktop\\agile\\project\\CM-jongeren-final4\\CM-jongeren-reizen\\Groepsreizen\\wpf\\wpf.csproj"
             }
           }
         }

@@ -12,9 +12,10 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "script", "script", "{BD21952A-5F8F-4BE3-AB98-D16D12426798}"
 	ProjectSection(SolutionItems) = preProject
 		..\Documentatie\Groepsreizen.sql = ..\Documentatie\Groepsreizen.sql
+		GroepsReizen2.sql = GroepsReizen2.sql
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Groepsreizen Tests", "Groepsreizen Tests\Groepsreizen Tests.csproj", "{E5CFD75F-42D7-49C5-B42C-332D6FFA418A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Groepsreizen Tests", "Groepsreizen Tests\Groepsreizen Tests.csproj", "{E5CFD75F-42D7-49C5-B42C-332D6FFA418A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

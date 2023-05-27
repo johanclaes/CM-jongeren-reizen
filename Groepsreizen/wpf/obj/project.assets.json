@@ -3737,11 +3737,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\fb922\\Desktop\\agile\\project\\CM-jongeren-final3\\CM-jongeren-reizen\\Groepsreizen\\wpf\\wpf.csproj",
+      "projectUniqueName": "C:\\Users\\fb922\\Desktop\\agile\\project\\CM-jongeren-final4\\CM-jongeren-reizen\\Groepsreizen\\wpf\\wpf.csproj",
       "projectName": "wpf",
-      "projectPath": "C:\\Users\\fb922\\Desktop\\agile\\project\\CM-jongeren-final3\\CM-jongeren-reizen\\Groepsreizen\\wpf\\wpf.csproj",
+      "projectPath": "C:\\Users\\fb922\\Desktop\\agile\\project\\CM-jongeren-final4\\CM-jongeren-reizen\\Groepsreizen\\wpf\\wpf.csproj",
       "packagesPath": "C:\\Users\\fb922\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\fb922\\Desktop\\agile\\project\\CM-jongeren-final3\\CM-jongeren-reizen\\Groepsreizen\\wpf\\obj\\",
+      "outputPath": "C:\\Users\\fb922\\Desktop\\agile\\project\\CM-jongeren-final4\\CM-jongeren-reizen\\Groepsreizen\\wpf\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\fb922\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -3758,11 +3758,11 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "projectReferences": {
-            "C:\\Users\\fb922\\Desktop\\agile\\project\\CM-jongeren-final3\\CM-jongeren-reizen\\Groepsreizen\\dal\\dal.csproj": {
-              "projectPath": "C:\\Users\\fb922\\Desktop\\agile\\project\\CM-jongeren-final3\\CM-jongeren-reizen\\Groepsreizen\\dal\\dal.csproj"
+            "C:\\Users\\fb922\\Desktop\\agile\\project\\CM-jongeren-final4\\CM-jongeren-reizen\\Groepsreizen\\dal\\dal.csproj": {
+              "projectPath": "C:\\Users\\fb922\\Desktop\\agile\\project\\CM-jongeren-final4\\CM-jongeren-reizen\\Groepsreizen\\dal\\dal.csproj"
             },
-            "C:\\Users\\fb922\\Desktop\\agile\\project\\CM-jongeren-final3\\CM-jongeren-reizen\\Groepsreizen\\models\\models.csproj": {
-              "projectPath": "C:\\Users\\fb922\\Desktop\\agile\\project\\CM-jongeren-final3\\CM-jongeren-reizen\\Groepsreizen\\models\\models.csproj"
+            "C:\\Users\\fb922\\Desktop\\agile\\project\\CM-jongeren-final4\\CM-jongeren-reizen\\Groepsreizen\\models\\models.csproj": {
+              "projectPath": "C:\\Users\\fb922\\Desktop\\agile\\project\\CM-jongeren-final4\\CM-jongeren-reizen\\Groepsreizen\\models\\models.csproj"
             }
           }
         }

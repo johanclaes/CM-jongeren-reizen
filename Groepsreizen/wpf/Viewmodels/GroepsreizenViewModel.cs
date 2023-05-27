@@ -51,6 +51,19 @@ namespace wpf.ViewModels
             }
         }
 
+        private ObservableCollection<Gebruiker> _gezochteGebruikers;
+
+        public ObservableCollection<Gebruiker> GezochteGebruikers
+        {
+            get { return _gezochteGebruikers; }
+            set
+            {
+                _gezochteGebruikers = value;
+                NotifyPropertyChanged();
+            }
+        }
+
+
         public Groepsreis GeselecteerdeReis
         {
             get { return _geselecteerdeReis; }
@@ -269,36 +282,33 @@ namespace wpf.ViewModels
         {
             if (NaamMonitor != null)
             {
-                //OpleidingsType = _unitOfWork.OpleidingTypeRepo.Ophalen(x => x.Naam.Contains(NaamMonitor)).FirstOrDefault();
-                //Opleidingen = new ObservableCollection<Opleiding>(_unitOfWork.OpleidingRepo.Ophalen(x => x.OpleidingTypeId.Equals(OpleidingsType.Id)));
-                //GebruikerOpleiding = new ObservableCollection<GebruikerOpleiding>(_unitOfWork.GebruikerOpleidingRepo.Ophalen());
-                //Gebruikers = new ObservableCollection<Gebruiker>()
-                //List<int> PKOpleidingLijst = new List<int>();
-                //foreach (var item in Opleidingen)
-                //{
-                //    if(item.OpleidingTypeId == OpleidingsType.Id)
-                //    {
-                //        PKOpleidingLijst.Add(item.Id);
-                //    }
-                //}
-                //foreach (var item in GebruikerOpleiding)
-                //{
-                //    if (PKOpleidingLijst.Contains(item.OpleidingId))
-                //    {
-                //        Gebruiker monitor = new Gebruiker();
-                //        monitor = _unitOfWork.GebruikerRepo.Ophalen(x => x.Id.Equals(item.GebruikerId)).FirstOrDefault();
-                //        Gebruikers.Add(monitor); 
-                //    }
-                //}
-                //Gebruikers = new ObservableCollection<Gebruiker>(_unitOfWork.GebruikerRepo.Ophalen(x => x.Id.Equals(GebruikerOpleiding)));
-                OpleidingsTypes = new ObservableCollection<OpleidingType>(_unitOfWork.OpleidingTypeRepo.Ophalen());
                 OpleidingsType = _unitOfWork.OpleidingTypeRepo.Ophalen(x => x.Naam.Contains(NaamMonitor)).FirstOrDefault();
-                Opleidingen = new ObservableCollection<Opleiding>(_unitOfWork.OpleidingRepo.Ophalen());
-                Opleidingen = new ObservableCollection<Opleiding>(_unitOfWork.OpleidingRepo.Ophalen(x => x.OpleidingTypeId == OpleidingsType.Id));
-                Gebruikers = new ObservableCollection<Gebruiker>(_unitOfWork.GebruikerRepo.Ophalen());
+                Opleidingen = new ObservableCollection<Opleiding>(_unitOfWork.OpleidingRepo.Ophalen(x => x.OpleidingTypeId.Equals(OpleidingsType.Id)));
+
+
+                List<int> PKOpleidingLijst = new List<int>();
+                foreach (var item in Opleidingen)                           // we lussen door alle opleiding en maken lijst van PK van gezochte cucsus
+                {
+                    if (item.OpleidingTypeId == OpleidingsType.Id)
+                    {
+                        PKOpleidingLijst.Add(item.Id);
+                    }
+                }
                 GebruikerOpleiding = new ObservableCollection<GebruikerOpleiding>(_unitOfWork.GebruikerOpleidingRepo.Ophalen());
-                GebruikerOpleiding = new ObservableCollection<GebruikerOpleiding>(_unitOfWork.GebruikerOpleidingRepo.Ophalen().Where(x => x.Opleiding.OpleidingTypeId == OpleidingsType.Id));
-                
+                // nu gaan we door alle gebruikeropleidingen zoeken .. en als opleidingsid in de lijst PKOpleiding zit,
+                // dan copieren we gebruikerid in een nieuwe lijst van int
+
+                GezochteGebruikers = new ObservableCollection<Gebruiker>();
+                foreach (var item in GebruikerOpleiding)
+                {
+                    if (PKOpleidingLijst.Contains(item.OpleidingId))
+                    {
+                        Gebruiker monitor = new Gebruiker();
+                        monitor = _unitOfWork.GebruikerRepo.Ophalen(x => x.Id.Equals(item.GebruikerId)).FirstOrDefault();
+                        GezochteGebruikers.Add(monitor);
+                    }
+                }
+
             }
         }
         public void VoegMonitorToe() { MessageBox.Show("test3"); }
