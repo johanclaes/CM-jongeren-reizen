@@ -19,24 +19,37 @@ namespace wpf.ViewModels
         private ObservableCollection<Groepsreis> _gezochteReizen;
         private Groepsreis _geselecteerdeReis;
         private Groepsreis _groepsreisRecord;
-        private string _errorsGroepsreizen;
         private string _naamMonitor;
-        private ObservableCollection<Gebruiker> _monitoren;
+        private ObservableCollection<Monitor> _monitoren;
         private ObservableCollection<Gebruiker> _hoofdmonitoren;
-        private Gebruiker _selectedHoofdmonitoren;
+        private Gebruiker _geselecteerdeHoofdmonitor;
         private ObservableCollection<Bestemming> _bestemmingen;
         private Bestemming _geselecteerdeBestemming;
         private OpleidingType _opleidingType;
-        private ObservableCollection<OpleidingType> _opleidingTypes;
         private ObservableCollection<Opleiding> _opleidingen;
         private ObservableCollection<GebruikerOpleiding> _gebruikerOpleiding;
         private ObservableCollection<Gebruiker> _gebruikers;
+        private Gebruiker _geselecteerdeGebruiker;
+        private Monitor _monitorRecord;
+        private string _foutmeldingen;
+        private Gebruiker _geselecteerdeMonitor;
+        private ObservableCollection<Gebruiker> _gezochteGebruikers;
+
         public string NaamReis
         {
             get { return _naamReis; }
             set
             {
                 _naamReis = value;
+                NotifyPropertyChanged();
+            }
+        }
+        public string Foutmeldingen
+        {
+            get { return _foutmeldingen; }
+            set
+            {
+                _foutmeldingen = value;
                 NotifyPropertyChanged();
             }
         }
@@ -51,26 +64,26 @@ namespace wpf.ViewModels
             }
         }
 
-        private ObservableCollection<Gebruiker> _gezochteGebruikers;
-
-        public ObservableCollection<Gebruiker> GezochteGebruikers
-        {
-            get { return _gezochteGebruikers; }
-            set
-            {
-                _gezochteGebruikers = value;
-                NotifyPropertyChanged();
-            }
-        }
-
-
         public Groepsreis GeselecteerdeReis
         {
             get { return _geselecteerdeReis; }
             set
             {
                 _geselecteerdeReis = value;
-                GroepsreisRecordInstellen();
+                GroepsreisRecord = GeselecteerdeReis;
+                GeselecteerdeBestemming = GeselecteerdeReis.Bestemming;
+                Monitoren = new ObservableCollection<Monitor>(_unitOfWork.MonitorRepo.Ophalen().Where(x => x.GroepsreisId.Equals(GeselecteerdeReis.Id)));
+                foreach (var item in Monitoren)
+                {
+                    if (item.Gebruiker.Hoofdmonitorbrevet == true)
+                    {
+                        Hoofdmonitoren.Add(item.Gebruiker);
+                    }
+                    if (item.Hoofdmonitor == true)
+                    {
+                        GeselecteerdeHoofdmonitor = item.Gebruiker;
+                    }
+                }
                 NotifyPropertyChanged();
             }
         }
@@ -81,16 +94,6 @@ namespace wpf.ViewModels
             set
             {
                 _groepsreisRecord = value;
-                NotifyPropertyChanged();
-            }
-        }
-
-        public string ErrorsGroepsreizen
-        {
-            get { return _errorsGroepsreizen; }
-            set
-            {
-                _errorsGroepsreizen = value;
                 NotifyPropertyChanged();
             }
         }
@@ -115,12 +118,12 @@ namespace wpf.ViewModels
             }
         }
 
-        public Gebruiker SelectedHoofdmonitor
+        public Gebruiker GeselecteerdeHoofdmonitor
         {
-            get { return _selectedHoofdmonitoren; }
+            get { return _geselecteerdeHoofdmonitor; }
             set
             {
-                _selectedHoofdmonitoren = value;
+                _geselecteerdeHoofdmonitor = value;
                 NotifyPropertyChanged();
             }
         }
@@ -148,21 +151,12 @@ namespace wpf.ViewModels
                 NotifyPropertyChanged();
             }
         }
-        public ObservableCollection<Gebruiker> Monitoren
+        public ObservableCollection<Monitor> Monitoren
         {
             get { return _monitoren; }
             set
             {
                 _monitoren = value;
-                NotifyPropertyChanged();
-            }
-        }
-        public ObservableCollection<OpleidingType> OpleidingsTypes
-        {
-            get { return _opleidingTypes; }
-            set
-            {
-                _opleidingTypes = value;
                 NotifyPropertyChanged();
             }
         }
@@ -212,6 +206,54 @@ namespace wpf.ViewModels
                 NotifyPropertyChanged();
             }
         }
+        public Gebruiker GeselecteerdeGebruiker
+        {
+            get
+            {
+                return _geselecteerdeGebruiker;
+            }
+            set
+            {
+                _geselecteerdeGebruiker = value;
+                NotifyPropertyChanged();
+            }
+        }
+        public Monitor MonitorRecord
+        {
+            get
+            {
+                return _monitorRecord;
+            }
+            set
+            {
+                _monitorRecord = value;
+                NotifyPropertyChanged();
+            }
+        }
+        public Gebruiker GeselecteerdeMonitor
+        {
+            get
+            {
+                return _geselecteerdeMonitor;
+            }
+            set
+            {
+                _geselecteerdeMonitor = value;
+                NotifyPropertyChanged();
+            }
+        }
+        public ObservableCollection<Gebruiker> GezochteGebruikers
+        {
+            get
+            {
+                return _gezochteGebruikers;
+            }
+            set
+            {
+                _gezochteGebruikers = value;
+                NotifyPropertyChanged();
+            }
+        }
 
         public override string this[string columnName]
         {
@@ -228,11 +270,12 @@ namespace wpf.ViewModels
                 case "ZoekReis": return true;
                 case "UpdateReis": return true;
                 case "MaakNieuweReis": return true;
-                case "MaakVeldenLeeg": return true;
+                case "FormulierLeegmaken": return true;
                 case "ZoekMonitor": return true;
                 case "ZoekMonitorViaOpleiding": return true;
                 case "VoegMonitorToe": return true;
                 case "VerwijderMonitor": return true;
+                case "HoofdmonitorToevoegen": return true;
             }
             return true;
         }
@@ -244,11 +287,12 @@ namespace wpf.ViewModels
                 case "ZoekReis": ZoekReis(); break;
                 case "UpdateReis": UpdateReis(); break;
                 case "MaakNieuweReis": MaakNieuweReis(); break;
-                case "MaakVeldenLeeg": MaakVeldenLeeg(); break;
+                case "FormulierLeegmaken": FormulierLeegmaken(); break;
                 case "ZoekMonitor": ZoekMonitor(); break;
                 case "ZoekMonitorViaOpleiding": ZoekMonitorViaOpleiding(); break;
                 case "VoegMonitorToe": VoegMonitorToe(); break;
                 case "VerwijderMonitor": VerwijderMonitor(); break;
+                case "HoofdmonitorToevoegen": VoegHoofdmonitorToe(); break;
             }
         }
 
@@ -260,21 +304,53 @@ namespace wpf.ViewModels
             }
             else
             {
-
+                Foutmeldingen = "Geef een naam van een reis in!";
             }
         }
-        public void UpdateReis() { }
-        public void MaakNieuweReis() { }
-        public void MaakVeldenLeeg() { }
+        public void UpdateReis()
+        {
+            if (GeselecteerdeReis != null)
+            {
+                _unitOfWork.GroepsreisRepo.ToevoegenOfAanpassen(GroepsreisRecord);
+                int oke = _unitOfWork.Save();
+
+                FoutmeldingNaSave(oke, "De reis is niet aangepast!", "De reis is aangepast!");
+            }
+            else
+            {
+                Foutmeldingen = "Eerst een reis selecteren!";
+            }
+        }
+        public void MaakNieuweReis()
+        {
+            GroepsreisRecord = new Groepsreis();
+
+            if (GeselecteerdeBestemming != null)
+            {
+                GroepsreisRecord.BestemmingId = GeselecteerdeBestemming.Id;
+                if (GroepsreisRecord.IsGeldig())
+                {
+                    _unitOfWork.GroepsreisRepo.Toevoegen(GroepsreisRecord);
+                    int oke = _unitOfWork.Save();
+
+                    FoutmeldingNaSave(oke, "De reis is niet toegevoegd!", "De reis is toegevoegd!");
+                }
+            }
+            else
+            {
+                Foutmeldingen = "Kies eerst een bestemming!";
+            }
+
+        }
         public void ZoekMonitor()
         {
             if (NaamMonitor != null)
             {
-                Monitoren = new ObservableCollection<Gebruiker>(_unitOfWork.GebruikerRepo.Ophalen(x => x.Monitorbrevet == true));
+                GezochteGebruikers = new ObservableCollection<Gebruiker>(_unitOfWork.GebruikerRepo.Ophalen(x => x.Monitorbrevet == true));
             }
             else
             {
-
+                Foutmeldingen = "Vul eerst een naam in!";
             }
         }
 
@@ -282,51 +358,131 @@ namespace wpf.ViewModels
         {
             if (NaamMonitor != null)
             {
-                OpleidingsType = _unitOfWork.OpleidingTypeRepo.Ophalen(x => x.Naam.Contains(NaamMonitor)).FirstOrDefault();
-                Opleidingen = new ObservableCollection<Opleiding>(_unitOfWork.OpleidingRepo.Ophalen(x => x.OpleidingTypeId.Equals(OpleidingsType.Id)));
-
-
-                List<int> PKOpleidingLijst = new List<int>();
-                foreach (var item in Opleidingen)                           // we lussen door alle opleiding en maken lijst van PK van gezochte cucsus
+                if (NaamMonitor != null)
                 {
-                    if (item.OpleidingTypeId == OpleidingsType.Id)
-                    {
-                        PKOpleidingLijst.Add(item.Id);
-                    }
-                }
-                GebruikerOpleiding = new ObservableCollection<GebruikerOpleiding>(_unitOfWork.GebruikerOpleidingRepo.Ophalen());
-                // nu gaan we door alle gebruikeropleidingen zoeken .. en als opleidingsid in de lijst PKOpleiding zit,
-                // dan copieren we gebruikerid in een nieuwe lijst van int
+                    OpleidingsType = _unitOfWork.OpleidingTypeRepo.Ophalen(x => x.Naam.Contains(NaamMonitor)).FirstOrDefault();
+                    Opleidingen = new ObservableCollection<Opleiding>(_unitOfWork.OpleidingRepo.Ophalen(x => x.OpleidingTypeId.Equals(OpleidingsType.Id)));
 
-                GezochteGebruikers = new ObservableCollection<Gebruiker>();
-                foreach (var item in GebruikerOpleiding)
-                {
-                    if (PKOpleidingLijst.Contains(item.OpleidingId))
-                    {
-                        Gebruiker monitor = new Gebruiker();
-                        monitor = _unitOfWork.GebruikerRepo.Ophalen(x => x.Id.Equals(item.GebruikerId)).FirstOrDefault();
-                        GezochteGebruikers.Add(monitor);
-                    }
-                }
 
+
+
+                    List<int> PKOpleidingLijst = new List<int>();
+                    foreach (var item in Opleidingen)                           // we lussen door alle opleiding en maken lijst van PK van gezochte cucsus
+                    {
+                        if (item.OpleidingTypeId == OpleidingsType.Id)
+                        {
+                            PKOpleidingLijst.Add(item.Id);
+                        }
+                    }
+                    GebruikerOpleiding = new ObservableCollection<GebruikerOpleiding>(_unitOfWork.GebruikerOpleidingRepo.Ophalen());
+
+
+
+                    GezochteGebruikers = new ObservableCollection<Gebruiker>();
+                    foreach (var item in GebruikerOpleiding)
+                    {
+                        if (PKOpleidingLijst.Contains(item.OpleidingId))
+                        {
+                            Gebruiker monitor = new Gebruiker();
+                            monitor = _unitOfWork.GebruikerRepo.Ophalen(x => x.Id.Equals(item.GebruikerId)).FirstOrDefault();
+                            GezochteGebruikers.Add(monitor);
+                        }
+                    }
+
+
+
+                }
             }
         }
-        public void VoegMonitorToe() { MessageBox.Show("test3"); }
-        public void VerwijderMonitor() { }
-        public void GroepsreisRecordInstellen()
+        public void VoegMonitorToe()
         {
+            if (GeselecteerdeGebruiker != null && GeselecteerdeReis != null)
+            {
+                MonitorRecord = new Monitor();
+                MonitorRecord.GebruikerId = GeselecteerdeGebruiker.Id;
+                MonitorRecord.GroepsreisId = GeselecteerdeReis.Id;
+                MonitorRecord.Hoofdmonitor = false;
+            }
+            if (GeselecteerdeGebruiker.Hoofdmonitorbrevet == true)
+            {
+                if (Hoofdmonitoren != null)
+                {
+                    Hoofdmonitoren.Add(GeselecteerdeGebruiker);
+                }
+                else
+                {
+                    Hoofdmonitoren = new ObservableCollection<Gebruiker>();
+                    Hoofdmonitoren.Add(GeselecteerdeGebruiker);
+                }
+            }
+            if (MonitorRecord.IsGeldig())
+            {
+                _unitOfWork.MonitorRepo.Toevoegen(MonitorRecord);
+                int oke = _unitOfWork.Save();
+
+                FoutmeldingNaSave(oke, "De Monitor is niet toegevoegd!", "De monitor is toegevoegd!");
+            }
             if (GeselecteerdeReis != null)
             {
-                GroepsreisRecord = GeselecteerdeReis;
+                Monitoren = new ObservableCollection<Monitor>(_unitOfWork.MonitorRepo.Ophalen().Where(x => x.GroepsreisId.Equals(GeselecteerdeReis.Id)));
+            }
+
+        }
+        public void VerwijderMonitor()
+        {
+            if (GeselecteerdeMonitor != null)
+            {
+                _unitOfWork.MonitorRepo.Verwijderen(GeselecteerdeMonitor);
+                int oke = _unitOfWork.Save();
+                FoutmeldingNaSave(oke, "De monitor is niet verwijderd!", "De monitor is verwijderd!");
             }
             else
             {
-                GroepsreisRecord = new Groepsreis();
+                Foutmeldingen = "Er is geen monitor geselecteerd";
+            }
+
+        }
+        public void VoegHoofdmonitorToe()
+        {
+            if (GeselecteerdeHoofdmonitor != null)
+            {
+                Monitor hoofdmonitor = _unitOfWork.MonitorRepo.Ophalen(x => x.GebruikerId == GeselecteerdeHoofdmonitor.Id).FirstOrDefault();
+                hoofdmonitor.Hoofdmonitor = true;
+                _unitOfWork.MonitorRepo.Aanpassen(hoofdmonitor);
+                int oke = _unitOfWork.Save();
+                FoutmeldingNaSave(oke, "De hoofdmonitor is niet aangepast!", "De hoofdmonitor is aangepast!");
+            }
+            else
+            {
+                Foutmeldingen = "Eerst een hoofdmonitor kiezen!";
             }
         }
         public GroepsreizenViewModel()
         {
             Bestemmingen = new ObservableCollection<Bestemming>(_unitOfWork.BestemmingRepo.Ophalen());
+            Foutmeldingen = "";
+        }
+        private void FoutmeldingNaSave(int ok, string foutmelding, string succesmelding)
+        {
+            if (ok > 0)
+            {
+                Foutmeldingen = "";
+            }
+            else
+            {
+                Foutmeldingen = foutmelding;
+            }
+        }
+        public void FormulierLeegmaken()
+        {
+            GeselecteerdeReis = null;
+            GeselecteerdeGebruiker = null;
+            GeselecteerdeMonitor = null;
+            GezochteGebruikers = null;
+            GroepsreisRecord = null;
+            MonitorRecord = null;
+            GezochteReizen = null;
+            Foutmeldingen = "";
         }
     }
 }

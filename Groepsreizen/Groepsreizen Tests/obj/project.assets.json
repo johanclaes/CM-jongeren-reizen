@@ -7493,19 +7493,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\fb922\\.nuget\\packages\\": {}
+    "C:\\Users\\lende\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\fb922\\Desktop\\agile\\project\\CM-jongeren-final4\\CM-jongeren-reizen\\Groepsreizen\\Groepsreizen Tests\\Groepsreizen Tests.csproj",
+      "projectUniqueName": "C:\\Users\\lende\\Documents\\thomasmore\\jaar 2\\agile en testing\\project4\\CM-jongeren-reizen\\Groepsreizen\\Groepsreizen Tests\\Groepsreizen Tests.csproj",
       "projectName": "Groepsreizen Tests",
-      "projectPath": "C:\\Users\\fb922\\Desktop\\agile\\project\\CM-jongeren-final4\\CM-jongeren-reizen\\Groepsreizen\\Groepsreizen Tests\\Groepsreizen Tests.csproj",
-      "packagesPath": "C:\\Users\\fb922\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\fb922\\Desktop\\agile\\project\\CM-jongeren-final4\\CM-jongeren-reizen\\Groepsreizen\\Groepsreizen Tests\\obj\\",
+      "projectPath": "C:\\Users\\lende\\Documents\\thomasmore\\jaar 2\\agile en testing\\project4\\CM-jongeren-reizen\\Groepsreizen\\Groepsreizen Tests\\Groepsreizen Tests.csproj",
+      "packagesPath": "C:\\Users\\lende\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\lende\\Documents\\thomasmore\\jaar 2\\agile en testing\\project4\\CM-jongeren-reizen\\Groepsreizen\\Groepsreizen Tests\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\fb922\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\lende\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -7519,8 +7519,8 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "projectReferences": {
-            "C:\\Users\\fb922\\Desktop\\agile\\project\\CM-jongeren-final4\\CM-jongeren-reizen\\Groepsreizen\\wpf\\wpf.csproj": {
-              "projectPath": "C:\\Users\\fb922\\Desktop\\agile\\project\\CM-jongeren-final4\\CM-jongeren-reizen\\Groepsreizen\\wpf\\wpf.csproj"
+            "C:\\Users\\lende\\Documents\\thomasmore\\jaar 2\\agile en testing\\project4\\CM-jongeren-reizen\\Groepsreizen\\wpf\\wpf.csproj": {
+              "projectPath": "C:\\Users\\lende\\Documents\\thomasmore\\jaar 2\\agile en testing\\project4\\CM-jongeren-reizen\\Groepsreizen\\wpf\\wpf.csproj"
             }
           }
         }
@@ -7584,7 +7584,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.105\\RuntimeIdentifierGraph.json"
       }
     }
   }
