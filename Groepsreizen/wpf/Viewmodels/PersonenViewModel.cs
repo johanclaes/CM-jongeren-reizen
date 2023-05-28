@@ -76,7 +76,9 @@ namespace wpf.ViewModels
 
         public PersonenViewModel() 
         {
-            //GebruikerRecord = new Gebruiker();
+            
+            GebruikerRecord = new Gebruiker();
+            GebruikerRecord.Geboortedatum = DateTime.Today;
             Foutmeldingen = "";
         }
 
@@ -116,17 +118,16 @@ namespace wpf.ViewModels
         public void ZoekGebruikers()
         {
             if (string.IsNullOrWhiteSpace(NaamGebruiker))
-                Gebruikers = new ObservableCollection<Gebruiker>(_unitOfWork.GebruikerRepo.Ophalen());
+                Gebruikers = new ObservableCollection<Gebruiker>(_unitOfWork.GebruikerRepo.Ophalen().OrderBy(x => x.Naam));
             else
-                Gebruikers = new ObservableCollection<Gebruiker>(_unitOfWork.GebruikerRepo.Ophalen(x => x.Naam.Contains(NaamGebruiker) || x.Voornaam.Contains(NaamGebruiker)));
+                Gebruikers = new ObservableCollection<Gebruiker>(_unitOfWork.GebruikerRepo.Ophalen(x => x.Naam.Contains(NaamGebruiker) || x.Voornaam.Contains(NaamGebruiker)).OrderBy(x => x.Naam));
         }
 
         public void GebruikerAanmaken()
         {
-            GebruikerRecord = new Gebruiker();
-
             if (GebruikerRecord.IsGeldig())
             {
+                
                 _unitOfWork.GebruikerRepo.Toevoegen(GebruikerRecord);
                 int oke = _unitOfWork.Save();
 
@@ -174,7 +175,7 @@ namespace wpf.ViewModels
             }
             else
             {
-                //GebruikerRecord = new Gebruiker();
+                GebruikerRecord = new Gebruiker();
             }
         }
 
@@ -184,7 +185,7 @@ namespace wpf.ViewModels
             {
                 FormulierLeegmaken();
                 ZoekGebruikers();
-                //MessageBox.Show(succesmelding);
+                MessageBox.Show(succesmelding);
             }
             else
             {

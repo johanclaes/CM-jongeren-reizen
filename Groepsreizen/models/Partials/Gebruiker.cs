@@ -15,11 +15,6 @@ namespace models
             return $"{Voornaam} {Naam} - {Geboortedatum.ToShortDateString()}";
         }
 
-        public string ToStringNaam() 
-        {
-            return $"{Voornaam} {Naam}";
-        }
-
         public override string this[string columnName]
         {
             get
@@ -32,9 +27,9 @@ namespace models
                 {
                     return "Voornaam mag niet leeg zijn.";
                 }
-                if (columnName == "Geboortedatum" && string.IsNullOrWhiteSpace(Geboortedatum.ToString()))
+                if (columnName == "Geboortedatum" && Geboortedatum > DateTime.Now)
                 {
-                    return "Geboortedatum moet ingevuld zijn.";
+                    return "Geboortedatum moet in het verleden liggen.";
                 }
                 if (columnName == "Email" && string.IsNullOrWhiteSpace(Email))
                 {

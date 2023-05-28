@@ -11,14 +11,13 @@ namespace Groepsreizen_Tests.ViewModels
     public class PersonenViewModelTests
     {
         PersonenViewModel personenViewModel = new PersonenViewModel();
-        InschrijvingenViewModel inschrijvingenViewModel = new InschrijvingenViewModel();
 
         [Test]
         public void GebruikersZoekenTest() 
         {
-            inschrijvingenViewModel.ZoekGebruikers();
+            personenViewModel.ZoekGebruikers();
 
-            Assert.That(inschrijvingenViewModel.Gebruikers, Is.Not.Null);
+            Assert.That(personenViewModel.Gebruikers, Is.Not.Null);
         }
     }
 }
