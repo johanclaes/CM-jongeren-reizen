@@ -75,14 +75,11 @@ namespace wpf.ViewModels
                 Monitoren = new ObservableCollection<Monitor>(_unitOfWork.MonitorRepo.Ophalen().Where(x => x.GroepsreisId.Equals(GeselecteerdeReis.Id)));
                 foreach (var item in Monitoren)
                 {
-                    if (item.Gebruiker.Hoofdmonitorbrevet == true)
-                    {
-                        Hoofdmonitoren.Add(item.Gebruiker);
-                    }
-                    if (item.Hoofdmonitor == true)
-                    {
-                        GeselecteerdeHoofdmonitor = item.Gebruiker;
-                    }
+                    Gebruiker gebruiker9 = new Gebruiker();
+                    gebruiker9 = _unitOfWork.GebruikerRepo.Ophalen().Where(x => x.Id.Equals(item.Id)).FirstOrDefault();
+					Hoofdmonitoren.Add(gebruiker9);
+
+					
                 }
                 NotifyPropertyChanged();
             }
@@ -296,6 +293,21 @@ namespace wpf.ViewModels
             }
         }
 
+        // constructor ==============================================
+        public GroepsreizenViewModel()
+        {
+			MonitorRecord = new Monitor();
+            Hoofdmonitoren = new ObservableCollection<Gebruiker>();
+			Bestemmingen = new ObservableCollection<Bestemming>(_unitOfWork.BestemmingRepo.Ophalen());
+			Foutmeldingen = "";
+		}
+
+		
+
+
+
+        // de vele knoppen ==========================================
+
         public void ZoekReis()
         {
             if (!string.IsNullOrEmpty(NaamReis))
@@ -457,11 +469,7 @@ namespace wpf.ViewModels
                 Foutmeldingen = "Eerst een hoofdmonitor kiezen!";
             }
         }
-        public GroepsreizenViewModel()
-        {
-            Bestemmingen = new ObservableCollection<Bestemming>(_unitOfWork.BestemmingRepo.Ophalen());
-            Foutmeldingen = "";
-        }
+        
         private void FoutmeldingNaSave(int ok, string foutmelding, string succesmelding)
         {
             if (ok > 0)

@@ -301,6 +301,7 @@ namespace wpf.ViewModels
             Startdatum = DateTime.Today;
             Einddatum = DateTime.Today;
         }
+        // de druk-knoppen ======================================
 
         public void OpleidingAanmaken()
         {
