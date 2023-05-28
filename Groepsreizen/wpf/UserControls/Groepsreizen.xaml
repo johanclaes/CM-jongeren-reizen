@@ -24,12 +24,12 @@
             <Button Name="btnZoekReis" Command="{Binding}" CommandParameter="ZoekReis" Width="200" Margin="5">Maak lijst obv zoekterm</Button>
         </StackPanel>
 
-        <ListBox Name="lstGezochteReizen" ItemsSource="{Binding GezochteReizen}" SelectedItem="{Binding SelectedReis}" Background="Beige" Grid.Row="1" Grid.Column="0" Margin="5"></ListBox>
+        <ListBox Name="lstGezochteReizen" ItemsSource="{Binding GezochteReizen}" SelectedItem="{Binding GeselecteerdeReis}" Background="Beige" Grid.Row="1" Grid.Column="0" Margin="5"></ListBox>
 
         <StackPanel Grid.Row="2" Grid.Column="0">
             <Button Name="btnUpdateReis" Command="{Binding}" CommandParameter="UpdateReis" Width="200" Margin="5">Update Geselecteerde reis</Button>
             <Button Name="btnMaakNieuweReis" Command="{Binding}" CommandParameter="MaakNieuweReis" Width="200" Margin="5">Maak Nieuwe reis</Button>
-            <Button Name="btnMaakVeldenLeegGroepsreis" Command="{Binding}" CommandParameter="MaakVeldenLeeg" Width="200" Margin="5">Maak alle velden leeg.</Button>
+            <Button Name="btnMaakVeldenLeegGroepsreis" Command="{Binding}" CommandParameter="FormulierLeegmaken" Width="200" Margin="5">Maak alle velden leeg.</Button>
         </StackPanel>
 
         <Grid Grid.Row="0" Grid.Column="1" Grid.RowSpan="2">
@@ -49,21 +49,21 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <TextBlock Grid.Row="0" Grid.Column="0">Naam:</TextBlock>
-            <TextBox Name="txtNaamGroepsreis" Text="{Binding GroepsreisRecord.Naam}" Grid.Row="0" Grid.Column="1"></TextBox>
+            <TextBox Name="txtNaamGroepsreis" Text="{Binding GroepsreisRecord.Naam, ValidatesOnDataErrors=True}" Grid.Row="0" Grid.Column="1"></TextBox>
             <TextBlock Grid.Row="1" Grid.Column="0">DeelnamePrijs:</TextBlock>
-            <TextBox Name="txtDeelnameprijs" Text="{Binding GroepsreisRecord.Deelneemprijs}" Grid.Row="1" Grid.Column="1"></TextBox>
+            <TextBox Name="txtDeelnameprijs" Text="{Binding GroepsreisRecord.Deelneemprijs, ValidatesOnDataErrors=True}" Grid.Row="1" Grid.Column="1"></TextBox>
             <TextBlock Grid.Row="2" Grid.Column="0">Thema:</TextBlock>
-            <TextBox Name="txtThema" Text="{Binding Thema}" Grid.Row="2" Grid.Column="1"></TextBox>
+            <TextBox Name="txtThema" Text="{Binding GroepsreisRecord.Thema, ValidatesOnDataErrors=True}" Grid.Row="2" Grid.Column="1"></TextBox>
             <TextBlock Grid.Row="3" Grid.Column="0">Bestemming:</TextBlock>
-            <ComboBox Name="cmbBestemmingGroepsreis" ItemsSource="{Binding Bestemmingen}" SelectedItem="{Binding SelectedBestemming}" Grid.Row="3" Grid.Column="1"></ComboBox>
+            <ComboBox Name="cmbBestemmingGroepsreis" ItemsSource="{Binding Bestemmingen}" SelectedItem="{Binding GeselecteerdeBestemming}" Grid.Row="3" Grid.Column="1"></ComboBox>
             <TextBlock Grid.Row="4" Grid.Column="0">Startdatum:</TextBlock>
-            <TextBox Name="txtStartdatum" Text="{Binding GroepsreisRecord.Startdatum}" Grid.Row="4" Grid.Column="1"></TextBox>
+            <DatePicker Name="txtStartdatum" Text="{Binding GroepsreisRecord.Startdatum, ValidatesOnDataErrors=True, Mode=TwoWay}" Grid.Row="4" Grid.Column="1"></DatePicker>
             <TextBlock Grid.Row="5" Grid.Column="0">Einddatum:</TextBlock>
-            <TextBox Name="txtEinddatum" Text="{Binding GroepsreisRecord.Einddatum}" Grid.Row="5" Grid.Column="1"></TextBox>
+            <DatePicker Name="txtEinddatum" Text="{Binding GroepsreisRecord.Einddatum, ValidatesOnDataErrors=True, Mode=TwoWay}" Grid.Row="5" Grid.Column="1"></DatePicker>
             <TextBlock Grid.Row="6" Grid.Column="0">MinimumLeeftijd:</TextBlock>
-            <TextBox Name="txtMinimumLeeftijd" Text="{Binding GroepsreisRecord.Minimumleeftijd}" Grid.Row="6" Grid.Column="1"></TextBox>
+            <TextBox Name="txtMinimumLeeftijd" Text="{Binding GroepsreisRecord.Minimumleeftijd, ValidatesOnDataErrors=True}" Grid.Row="6" Grid.Column="1"></TextBox>
             <TextBlock Grid.Row="7" Grid.Column="0">MaximumLeeftijd:</TextBlock>
-            <TextBox Name="txtMaximumLeeftijd" Text="{Binding GroepsreisRecord.Maximumleeftijd}" Grid.Row="7" Grid.Column="1"></TextBox>
+            <TextBox Name="txtMaximumLeeftijd" Text="{Binding GroepsreisRecord.Maximumleeftijd, ValidatesOnDataErrors=True}" Grid.Row="7" Grid.Column="1"></TextBox>
             <CheckBox Name="cbVolzet" IsChecked="{Binding GroepsreisRecord.PlaatsenVrij}" Grid.Row="8" Grid.Column="0">Volzet</CheckBox>
             <CheckBox Name="cbInschrijvingGestopt" IsChecked="{Binding GroepsreisRecord.InschrijvingGestopt}" Grid.Row="8" Grid.Column="1">Inschrijving Gestopt</CheckBox>
         </Grid>
@@ -78,13 +78,14 @@
                         <Button Name="btnZoekMonitor" Command="{Binding}" CommandParameter="ZoekMonitor" Margin="1">Zoek op naam</Button>
                         <Button Name="btnZoekViaOpleiding" Command="{Binding}" CommandParameter="ZoekMonitorViaOpleiding" Margin="1" >Via opleiding</Button>
                     </StackPanel>
-                    <ListBox Name="lstMonitoren" ItemsSource="{Binding GezochteGebruikers}" SelectedItem="{Binding SelectedGebruiker}" Background="Beige" Height="80" Margin="5"/>
+                    <ListBox Name="lstMonitoren" ItemsSource="{Binding GezochteGebruikers}" SelectedItem="{Binding GeselecteerdeGebruiker}" Background="Beige" Height="55" Margin="5"/>
                     <Button Name="btnVoegMonitortoe" Command="{Binding}" CommandParameter="VoegMonitorToe">Voeg toe aan monitorlijst</Button>
-                    <ListBox Name="lstMonitorenGroepsreis" Background="Beige" Height="80" Margin="5"/>
+                    <ListBox Name="lstMonitorenGroepsreis" Background="Beige" Height="55" Margin="5"/>
                     <Button Name="btnVerwijderMonitorGroepsreis" Command="{Binding}" CommandParameter="VerwijderMonitor">Verwijder van monitorlijst</Button>
                     <GroupBox  Margin="5" Header="HoofdMonitor Selecteren">
-                        <ComboBox Name="cmbHoofdmonitor" ItemsSource="{Binding Hoofdmonitoren}" SelectedItem="{Binding SelectedHoofdmonitor}" Margin="5"></ComboBox>
+                        <ComboBox Name="cmbHoofdmonitor" ItemsSource="{Binding Hoofdmonitoren}" SelectedItem="{Binding GeselecteerdeHoofdmonitor}" Margin="5"></ComboBox>
                     </GroupBox>
+                    <Button Name="btnHoofdmonitorToevoegen" Command="{Binding}" CommandParameter="HoofdmonitorToevoegen">Hoofdmonitor toevoegen</Button>
                 </StackPanel>
 
             </GroupBox>
