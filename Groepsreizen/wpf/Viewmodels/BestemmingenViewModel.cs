@@ -197,11 +197,11 @@ namespace wpf.ViewModels
         public void MaakBestemming()
         {
             Bestemming Bestemming1 = new Bestemming();
-            // Bestemmingstype Bestemmingstype2 = new Bestemmingstype();
 
             Bestemming1.Bestemmingstype = SelectedBestemmingsType;
             Bestemming1.Land = SelectedLand1;
-            Bestemming1.Naam = BestemmingRecord.Naam;
+			// BestemmingRecord = new Bestemming();
+			Bestemming1.Naam = BestemmingRecord.Naam;
             Bestemming1.Gemeente = BestemmingRecord.Gemeente;
             Bestemming1.Straat = BestemmingRecord.Straat;
             Bestemming1.Capaciteit = BestemmingRecord.Capaciteit;
