@@ -35,18 +35,26 @@ namespace Groepsreizen_Tests.Views
 				var Aanmelden = window.FindFirstDescendant(x => x.ByAutomationId("Aanmelden")).AsButton();
 				Aanmelden.Click();
 
-				System.Threading.Thread.Sleep(5);
-				var windowpersonen = app.GetMainWindow(automation);
-				var personen = windowpersonen.FindFirstDescendant(x => x.ByAutomationId("Personen")).AsButton();
-				personen.Invoke();
+				System.Threading.Thread.Sleep(1000);
+				var windowopleiding = app.GetMainWindow(automation);
+				var opleidingen7 = windowopleiding.FindFirstDescendant(x => x.ByAutomationId("Opleidingen")).AsButton();
+				opleidingen7.Invoke();
+				
+				System.Threading.Thread.Sleep(1000);
+				var windowopleiding2 = app.GetMainWindow(automation);
 
-				//System.Threading.Thread.Sleep(5);
-				//var windowpersonen = app.GetMainWindow(automation);
-				//var personen = windowpersonen.FindFirstDescendant(x => x.ByAutomationId("Bestemmingen")).AsButton();
-				//personen.Invoke();
+				var OpleidingMaand = windowopleiding2.FindFirstDescendant(x => x.ByAutomationId("cmbMaand")).AsComboBox();
+				var OpleidingJaar = windowopleiding2.FindFirstDescendant(x => x.ByAutomationId("cmbJaar")).AsComboBox();
+				var ZoekCursus = windowopleiding2.FindFirstDescendant(x => x.ByAutomationId("btnOpleidingOpvragen")).AsButton();
+				var LijstCursussen = windowopleiding2.FindFirstDescendant(x => x.ByAutomationId("lstOpleidingen")).AsListBox();
 
+				OpleidingMaand.Select("Juni");
+				OpleidingJaar.Select("2023");
+				System.Threading.Thread.Sleep(1000);
+				ZoekCursus.Click();
+				int AantalCursussen = LijstCursussen.Items.Count();
 
-
+				Assert.That(AantalCursussen, Is.AtLeast(2));
 
 			}
 

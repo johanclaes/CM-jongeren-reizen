@@ -31,11 +31,11 @@
 
         <StackPanel Grid.Row="0" Grid.Column="1" Margin="10">
             <StackPanel Orientation="Horizontal">
-                <ComboBox Name="cmbMaand" ItemsSource="{Binding Maanden}" SelectedItem="{Binding SelectedMaand}" Width="70" Margin="5"></ComboBox>
-                <ComboBox Name="cmbJaar" ItemsSource="{Binding Jaren}" SelectedItem="{Binding SelectedJaar}" Width="50" Margin="5"></ComboBox>
+                <ComboBox Name="cmbMaand" ItemsSource="{Binding Maanden}" SelectedItem="{Binding SelectedMaand}" AutomationProperties.AutomationId="Maanden" Width="70" Margin="5"></ComboBox>
+                <ComboBox Name="cmbJaar" ItemsSource="{Binding Jaren}" SelectedItem="{Binding SelectedJaar}" AutomationProperties.AutomationId="Jaren" Width="50" Margin="5"></ComboBox>
             </StackPanel>
-            <Button Name="btnOpleidingOpvragen" Command="{Binding}" CommandParameter="OpleidingOpvragen" Content="Opleiding opvragen" Margin="5" />
-            <ListBox Name="lstOpleidingen" ItemsSource="{Binding Opleidingen}" SelectedItem="{Binding SelectedOpleiding}" Background="Beige" Height="150" Margin="5"/>
+            <Button Name="btnOpleidingOpvragen" Command="{Binding}" CommandParameter="OpleidingOpvragen" Content="Opleiding opvragen" AutomationProperties.AutomationId="OpleidingOpvragen" Margin="5" />
+            <ListBox Name="lstOpleidingen" ItemsSource="{Binding Opleidingen}" SelectedItem="{Binding SelectedOpleiding}" AutomationProperties.AutomationId="lstOpleidingen" Background="Beige" Height="150" Margin="5"/>
         </StackPanel>
 
         <GroupBox Grid.Row="1" Grid.Column="1" Header="Nieuw Type Opleiding" Background="LightBlue" Margin="10">

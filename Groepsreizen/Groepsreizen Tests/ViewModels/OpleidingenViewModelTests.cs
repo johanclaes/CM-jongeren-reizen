@@ -48,7 +48,7 @@ namespace Groepsreizen_Tests.ViewModels
 		[Test]
 		public void BestemmingsTypeToevoegenEnTellen()
 		{
-			// we proberen nieuw bestemmingstype toe te voegen, maar dit moet foutmelding geven
+			// we proberen nieuw bestemmingstype toe te voegen, maar dit moet foutmelding geven (moet minstens 3 karakters zijn)
 
 			// Arrange
 			bestemmingenViewModel.NieuwBestemmingtype = "AB";

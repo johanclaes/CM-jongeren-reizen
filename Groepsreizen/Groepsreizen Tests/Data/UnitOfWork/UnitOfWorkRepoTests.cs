@@ -57,12 +57,27 @@ namespace Groepsreizen_Tests.Data.UnitOfWork
 	public class UnitOfWorkRepoTests2
 	{
 		private IUnitOfWork unitOfWork2 = A.Fake<IUnitOfWork>();
-		private Bestemmingstype bestemming8 = A.Fake<Bestemmingstype>();
+		private Bestemmingstype bestemmingstype8 = A.Fake<Bestemmingstype>();
+		private Bestemming bestemming5 = A.Fake<Bestemming>();
 
-		[SetUp]
-		public void Setup()
+
+		// we gaan testen dat als capaciteit 0 is, dat dit een error geeft
+		[Test]
+		public void TestBestemmingsType()
 		{
+			// Arrange
+			bestemming5.Bestemmingstype = bestemmingstype8;
+			bestemming5.Land = "belgie";
+			bestemming5.Naam = "testnaam";
+			bestemming5.Gemeente = "Geel";
+			bestemming5.Straat = "kerkstraat";
+			bestemming5.Capaciteit = 10;
 
+			// Act
+			bool IsHetGeldig = bestemming5.Error == string.Empty ? true : false;
+
+			// Assert
+			Assert.IsTrue(IsHetGeldig);
 		}
 
 		[Test]
@@ -79,8 +94,6 @@ namespace Groepsreizen_Tests.Data.UnitOfWork
 			Assert.IsInstanceOf<ObservableCollection<Bestemmingstype>>(Bestemmingstypes2);
 		}
 
-		[Test]
-		public void abc() { }
 
 	}
 }
