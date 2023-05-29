@@ -109,6 +109,7 @@ namespace wpf.ViewModels
             {
                 _geselecteerdLand = value;
                 Gemeentes = new ObservableCollection<string>(_unitOfWork.BestemmingRepo.Ophalen(x => x.Land == GeselecteerdLand).Select(y => y.Gemeente).Distinct());
+                GeselecteerdeIngeschrevenReis = null;
                 NotifyPropertyChanged();
             }
         }
@@ -130,6 +131,7 @@ namespace wpf.ViewModels
             {
                 _geselecteerdeGemeente = value;
                 GezochteReizen = new ObservableCollection<Groepsreis>(_unitOfWork.GroepsreisRepo.Ophalen(x => x.Bestemming.Land == GeselecteerdLand && x.Bestemming.Gemeente == GeselecteerdeGemeente));
+                GeselecteerdeIngeschrevenReis = null;
                 NotifyPropertyChanged();
             }
         }
@@ -150,6 +152,7 @@ namespace wpf.ViewModels
             set
             {
                 _geselecteerdeReis = value;
+                GeselecteerdeIngeschrevenReis = null;
                 NotifyPropertyChanged();
             }
         }
@@ -172,7 +175,7 @@ namespace wpf.ViewModels
             switch (parameter.ToString())
             {
                 case "ZoekGebruikers": return true;
-                case "MaakReservering": return GeselecteerdeGebruiker != null && GeselecteerdeReis != null;
+                case "MaakReservering": return GeselecteerdeGebruiker != null && GeselecteerdeReis != null && GeselecteerdeIngeschrevenReis == null;
                 case "ReserveerBetaling": return GeselecteerdeIngeschrevenReis != null;
                 case "AnnuleerInschrijving": return GeselecteerdeIngeschrevenReis != null;
             }
@@ -193,9 +196,9 @@ namespace wpf.ViewModels
         public void ZoekGebruikers() 
         {
             if (string.IsNullOrWhiteSpace(NaamGebruiker))
-                Gebruikers = new ObservableCollection<Gebruiker>(_unitOfWork.GebruikerRepo.Ophalen());
+                Gebruikers = new ObservableCollection<Gebruiker>(_unitOfWork.GebruikerRepo.Ophalen().OrderBy(x => x.Naam));
             else
-                Gebruikers = new ObservableCollection<Gebruiker>(_unitOfWork.GebruikerRepo.Ophalen(x => x.Naam.Contains(NaamGebruiker) || x.Voornaam.Contains(NaamGebruiker)));
+                Gebruikers = new ObservableCollection<Gebruiker>(_unitOfWork.GebruikerRepo.Ophalen(x => x.Naam.Contains(NaamGebruiker) || x.Voornaam.Contains(NaamGebruiker)).OrderBy(x => x.Naam));
         }
         public void MaakReservering()
         {
@@ -203,16 +206,25 @@ namespace wpf.ViewModels
             Gebruiker gebruiker = GeselecteerdeGebruiker;
             var inschrijvingen = new ObservableCollection<Inschrijving>(_unitOfWork.InschrijvingRepo.Ophalen(x => x.Groepsreis == groepsreis && x.Gebruiker == gebruiker));
 
-            if (inschrijvingen.Count == 0)
+            int leeftijd = DateTime.Today.Year - gebruiker.Geboortedatum.Year;
+
+            if (leeftijd < groepsreis.Minimumleeftijd || leeftijd > groepsreis.Maximumleeftijd)
             {
-                Inschrijving inschrijving = new Inschrijving() { Groepsreis = groepsreis, Gebruiker = gebruiker, Betaald = false };
-                _unitOfWork.InschrijvingRepo.Toevoegen(inschrijving);
-                int oke = _unitOfWork.Save();
-                FoutmeldingNaSave(oke, "Er liep iets mis.", "De persoon is ingeschreven voor de groepsreis!");
+                MessageBox.Show("De gebruiker heeft niet de juiste leeftijd voor de groepsreis!");
             }
             else
-                MessageBox.Show("De gebruiker is al ingeschreven voor deze reis!", "Foutmelding", MessageBoxButton.OK, MessageBoxImage.Error);
-   
+            {
+                if (inschrijvingen.Count == 0)
+                {
+                    Inschrijving inschrijving = new Inschrijving() { Groepsreis = groepsreis, Gebruiker = gebruiker, Betaald = false };
+                    _unitOfWork.InschrijvingRepo.Toevoegen(inschrijving);
+                    int oke = _unitOfWork.Save();
+                    FoutmeldingNaSave(oke, "Er liep iets mis.", "De persoon is ingeschreven voor de groepsreis!");
+                }
+                else
+                    MessageBox.Show("De gebruiker is al ingeschreven voor deze reis!", "Foutmelding", MessageBoxButton.OK, MessageBoxImage.Error);
+
+            }
         }
         public void ReserveerBetaling()
         {
