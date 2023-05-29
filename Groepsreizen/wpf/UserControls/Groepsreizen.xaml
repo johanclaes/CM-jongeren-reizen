@@ -43,6 +43,8 @@
                 <RowDefinition/>
                 <RowDefinition/>
                 <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
@@ -64,8 +66,12 @@
             <TextBox Name="txtMinimumLeeftijd" Text="{Binding GroepsreisRecord.Minimumleeftijd, ValidatesOnDataErrors=True}" Grid.Row="6" Grid.Column="1"></TextBox>
             <TextBlock Grid.Row="7" Grid.Column="0">MaximumLeeftijd:</TextBlock>
             <TextBox Name="txtMaximumLeeftijd" Text="{Binding GroepsreisRecord.Maximumleeftijd, ValidatesOnDataErrors=True}" Grid.Row="7" Grid.Column="1"></TextBox>
-            <CheckBox Name="cbVolzet" IsChecked="{Binding GroepsreisRecord.PlaatsenVrij}" Grid.Row="8" Grid.Column="0">Volzet</CheckBox>
-            <CheckBox Name="cbInschrijvingGestopt" IsChecked="{Binding GroepsreisRecord.InschrijvingGestopt}" Grid.Row="8" Grid.Column="1">Inschrijving Gestopt</CheckBox>
+            <TextBlock Grid.Row="8" Grid.Column="0">Budget</TextBlock>
+            <TextBox x:Name="txtBudget" Grid.Row="8" Grid.Column="1" Text="{Binding GroepsreisRecord.Budget, ValidatesOnDataErrors=True}"></TextBox>
+            <TextBlock Grid.Row="9" Grid.Column="0">Overschot budget</TextBlock>
+            <TextBox x:Name="txtOverschotBudget" Grid.Row="9" Grid.Column="1" Text="{Binding GroepsreisRecord.OverschotBudget, ValidatesOnDataErrors=True}"></TextBox>
+            <CheckBox Name="cbVolzet" IsChecked="{Binding GroepsreisRecord.PlaatsenVrij}" Grid.Row="10" Grid.Column="0">Volzet</CheckBox>
+            <CheckBox Name="cbInschrijvingGestopt" IsChecked="{Binding GroepsreisRecord.InschrijvingGestopt}" Grid.Row="10" Grid.Column="1">Inschrijving Gestopt</CheckBox>
         </Grid>
 
         <Label Background="LightCyan" Content="{Binding Foutmeldingen}" Grid.Row="2" Grid.Column="1" Margin="2" Visibility="Visible"></Label>

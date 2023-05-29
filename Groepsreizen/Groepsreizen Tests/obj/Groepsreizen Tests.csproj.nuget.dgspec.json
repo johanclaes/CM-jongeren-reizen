@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\lende\\Documents\\thomasmore\\jaar 2\\agile en testing\\project5\\CM-jongeren-reizen\\Groepsreizen\\Groepsreizen Tests\\Groepsreizen Tests.csproj": {}
+    "C:\\Users\\lende\\Documents\\thomasmore\\jaar 2\\agile en testing\\project\\CM-jongeren-reizen\\Groepsreizen\\Groepsreizen Tests\\Groepsreizen Tests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\lende\\Documents\\thomasmore\\jaar 2\\agile en testing\\project5\\CM-jongeren-reizen\\Groepsreizen\\dal\\dal.csproj": {
+    "C:\\Users\\lende\\Documents\\thomasmore\\jaar 2\\agile en testing\\project\\CM-jongeren-reizen\\Groepsreizen\\dal\\dal.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lende\\Documents\\thomasmore\\jaar 2\\agile en testing\\project5\\CM-jongeren-reizen\\Groepsreizen\\dal\\dal.csproj",
+        "projectUniqueName": "C:\\Users\\lende\\Documents\\thomasmore\\jaar 2\\agile en testing\\project\\CM-jongeren-reizen\\Groepsreizen\\dal\\dal.csproj",
         "projectName": "dal",
-        "projectPath": "C:\\Users\\lende\\Documents\\thomasmore\\jaar 2\\agile en testing\\project5\\CM-jongeren-reizen\\Groepsreizen\\dal\\dal.csproj",
+        "projectPath": "C:\\Users\\lende\\Documents\\thomasmore\\jaar 2\\agile en testing\\project\\CM-jongeren-reizen\\Groepsreizen\\dal\\dal.csproj",
         "packagesPath": "C:\\Users\\lende\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lende\\Documents\\thomasmore\\jaar 2\\agile en testing\\project5\\CM-jongeren-reizen\\Groepsreizen\\dal\\obj\\",
+        "outputPath": "C:\\Users\\lende\\Documents\\thomasmore\\jaar 2\\agile en testing\\project\\CM-jongeren-reizen\\Groepsreizen\\dal\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\lende\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\lende\\Documents\\thomasmore\\jaar 2\\agile en testing\\project5\\CM-jongeren-reizen\\Groepsreizen\\models\\models.csproj": {
-                "projectPath": "C:\\Users\\lende\\Documents\\thomasmore\\jaar 2\\agile en testing\\project5\\CM-jongeren-reizen\\Groepsreizen\\models\\models.csproj"
+              "C:\\Users\\lende\\Documents\\thomasmore\\jaar 2\\agile en testing\\project\\CM-jongeren-reizen\\Groepsreizen\\models\\models.csproj": {
+                "projectPath": "C:\\Users\\lende\\Documents\\thomasmore\\jaar 2\\agile en testing\\project\\CM-jongeren-reizen\\Groepsreizen\\models\\models.csproj"
               }
             }
           }
@@ -79,14 +79,14 @@
         }
       }
     },
-    "C:\\Users\\lende\\Documents\\thomasmore\\jaar 2\\agile en testing\\project5\\CM-jongeren-reizen\\Groepsreizen\\Groepsreizen Tests\\Groepsreizen Tests.csproj": {
+    "C:\\Users\\lende\\Documents\\thomasmore\\jaar 2\\agile en testing\\project\\CM-jongeren-reizen\\Groepsreizen\\Groepsreizen Tests\\Groepsreizen Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lende\\Documents\\thomasmore\\jaar 2\\agile en testing\\project5\\CM-jongeren-reizen\\Groepsreizen\\Groepsreizen Tests\\Groepsreizen Tests.csproj",
+        "projectUniqueName": "C:\\Users\\lende\\Documents\\thomasmore\\jaar 2\\agile en testing\\project\\CM-jongeren-reizen\\Groepsreizen\\Groepsreizen Tests\\Groepsreizen Tests.csproj",
         "projectName": "Groepsreizen Tests",
-        "projectPath": "C:\\Users\\lende\\Documents\\thomasmore\\jaar 2\\agile en testing\\project5\\CM-jongeren-reizen\\Groepsreizen\\Groepsreizen Tests\\Groepsreizen Tests.csproj",
+        "projectPath": "C:\\Users\\lende\\Documents\\thomasmore\\jaar 2\\agile en testing\\project\\CM-jongeren-reizen\\Groepsreizen\\Groepsreizen Tests\\Groepsreizen Tests.csproj",
         "packagesPath": "C:\\Users\\lende\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lende\\Documents\\thomasmore\\jaar 2\\agile en testing\\project5\\CM-jongeren-reizen\\Groepsreizen\\Groepsreizen Tests\\obj\\",
+        "outputPath": "C:\\Users\\lende\\Documents\\thomasmore\\jaar 2\\agile en testing\\project\\CM-jongeren-reizen\\Groepsreizen\\Groepsreizen Tests\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\lende\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -103,8 +103,8 @@
           "net6.0-windows7.0": {
             "targetAlias": "net6.0-windows",
             "projectReferences": {
-              "C:\\Users\\lende\\Documents\\thomasmore\\jaar 2\\agile en testing\\project5\\CM-jongeren-reizen\\Groepsreizen\\wpf\\wpf.csproj": {
-                "projectPath": "C:\\Users\\lende\\Documents\\thomasmore\\jaar 2\\agile en testing\\project5\\CM-jongeren-reizen\\Groepsreizen\\wpf\\wpf.csproj"
+              "C:\\Users\\lende\\Documents\\thomasmore\\jaar 2\\agile en testing\\project\\CM-jongeren-reizen\\Groepsreizen\\wpf\\wpf.csproj": {
+                "projectPath": "C:\\Users\\lende\\Documents\\thomasmore\\jaar 2\\agile en testing\\project\\CM-jongeren-reizen\\Groepsreizen\\wpf\\wpf.csproj"
               }
             }
           }
@@ -172,14 +172,14 @@
         }
       }
     },
-    "C:\\Users\\lende\\Documents\\thomasmore\\jaar 2\\agile en testing\\project5\\CM-jongeren-reizen\\Groepsreizen\\models\\models.csproj": {
+    "C:\\Users\\lende\\Documents\\thomasmore\\jaar 2\\agile en testing\\project\\CM-jongeren-reizen\\Groepsreizen\\models\\models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lende\\Documents\\thomasmore\\jaar 2\\agile en testing\\project5\\CM-jongeren-reizen\\Groepsreizen\\models\\models.csproj",
+        "projectUniqueName": "C:\\Users\\lende\\Documents\\thomasmore\\jaar 2\\agile en testing\\project\\CM-jongeren-reizen\\Groepsreizen\\models\\models.csproj",
         "projectName": "models",
-        "projectPath": "C:\\Users\\lende\\Documents\\thomasmore\\jaar 2\\agile en testing\\project5\\CM-jongeren-reizen\\Groepsreizen\\models\\models.csproj",
+        "projectPath": "C:\\Users\\lende\\Documents\\thomasmore\\jaar 2\\agile en testing\\project\\CM-jongeren-reizen\\Groepsreizen\\models\\models.csproj",
         "packagesPath": "C:\\Users\\lende\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lende\\Documents\\thomasmore\\jaar 2\\agile en testing\\project5\\CM-jongeren-reizen\\Groepsreizen\\models\\obj\\",
+        "outputPath": "C:\\Users\\lende\\Documents\\thomasmore\\jaar 2\\agile en testing\\project\\CM-jongeren-reizen\\Groepsreizen\\models\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\lende\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -243,14 +243,14 @@
         }
       }
     },
-    "C:\\Users\\lende\\Documents\\thomasmore\\jaar 2\\agile en testing\\project5\\CM-jongeren-reizen\\Groepsreizen\\wpf\\wpf.csproj": {
+    "C:\\Users\\lende\\Documents\\thomasmore\\jaar 2\\agile en testing\\project\\CM-jongeren-reizen\\Groepsreizen\\wpf\\wpf.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lende\\Documents\\thomasmore\\jaar 2\\agile en testing\\project5\\CM-jongeren-reizen\\Groepsreizen\\wpf\\wpf.csproj",
+        "projectUniqueName": "C:\\Users\\lende\\Documents\\thomasmore\\jaar 2\\agile en testing\\project\\CM-jongeren-reizen\\Groepsreizen\\wpf\\wpf.csproj",
         "projectName": "wpf",
-        "projectPath": "C:\\Users\\lende\\Documents\\thomasmore\\jaar 2\\agile en testing\\project5\\CM-jongeren-reizen\\Groepsreizen\\wpf\\wpf.csproj",
+        "projectPath": "C:\\Users\\lende\\Documents\\thomasmore\\jaar 2\\agile en testing\\project\\CM-jongeren-reizen\\Groepsreizen\\wpf\\wpf.csproj",
         "packagesPath": "C:\\Users\\lende\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lende\\Documents\\thomasmore\\jaar 2\\agile en testing\\project5\\CM-jongeren-reizen\\Groepsreizen\\wpf\\obj\\",
+        "outputPath": "C:\\Users\\lende\\Documents\\thomasmore\\jaar 2\\agile en testing\\project\\CM-jongeren-reizen\\Groepsreizen\\wpf\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\lende\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -267,11 +267,11 @@
           "net6.0-windows7.0": {
             "targetAlias": "net6.0-windows",
             "projectReferences": {
-              "C:\\Users\\lende\\Documents\\thomasmore\\jaar 2\\agile en testing\\project5\\CM-jongeren-reizen\\Groepsreizen\\dal\\dal.csproj": {
-                "projectPath": "C:\\Users\\lende\\Documents\\thomasmore\\jaar 2\\agile en testing\\project5\\CM-jongeren-reizen\\Groepsreizen\\dal\\dal.csproj"
+              "C:\\Users\\lende\\Documents\\thomasmore\\jaar 2\\agile en testing\\project\\CM-jongeren-reizen\\Groepsreizen\\dal\\dal.csproj": {
+                "projectPath": "C:\\Users\\lende\\Documents\\thomasmore\\jaar 2\\agile en testing\\project\\CM-jongeren-reizen\\Groepsreizen\\dal\\dal.csproj"
               },
-              "C:\\Users\\lende\\Documents\\thomasmore\\jaar 2\\agile en testing\\project5\\CM-jongeren-reizen\\Groepsreizen\\models\\models.csproj": {
-                "projectPath": "C:\\Users\\lende\\Documents\\thomasmore\\jaar 2\\agile en testing\\project5\\CM-jongeren-reizen\\Groepsreizen\\models\\models.csproj"
+              "C:\\Users\\lende\\Documents\\thomasmore\\jaar 2\\agile en testing\\project\\CM-jongeren-reizen\\Groepsreizen\\models\\models.csproj": {
+                "projectPath": "C:\\Users\\lende\\Documents\\thomasmore\\jaar 2\\agile en testing\\project\\CM-jongeren-reizen\\Groepsreizen\\models\\models.csproj"
               }
             }
           }
