@@ -25,10 +25,10 @@ namespace dal
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            //optionsBuilder.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB;Database=TestAT;Trusted_Connection=True;");
+            optionsBuilder.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB;Database=Reizen;Trusted_Connection=True;");
             //optionsBuilder.UseSqlServer(@"Data Source = groepsreizenagiletesting.database.windows.net; Initial Catalog = GroepsreizenAgileEnTesting; User ID = groepsreizen; Password = AgileTesting123; Connect Timeout = 30; Encrypt = True; TrustServerCertificate = False; ApplicationIntent = ReadWrite; MultiSubnetFailover = False");
             // optionsBuilder.UseSqlServer(@"Data Source = groepsreizenagiletesting.database.windows.net; Initial Catalog = gevordprogagiletest; User ID = groepsreizen; Password = AgileTesting123; Connect Timeout = 30; Encrypt = True; TrustServerCertificate = False; ApplicationIntent = ReadWrite; MultiSubnetFailover = False");
-            optionsBuilder.UseSqlServer(@"Data Source=mssql027.db.hosting;User ID=ID401440_reizen;Password=R31z3nnn55;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False");
+            //optionsBuilder.UseSqlServer(@"Data Source=mssql027.db.hosting;User ID=ID401440_reizen;Password=R31z3nnn55;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False");
 
         }
     }

@@ -377,7 +377,7 @@ namespace dal.Migrations
             modelBuilder.Entity("models.Monitor", b =>
                 {
                     b.HasOne("models.Gebruiker", "Gebruiker")
-                        .WithMany()
+                        .WithMany("Monitoren")
                         .HasForeignKey("GebruikerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -419,6 +419,8 @@ namespace dal.Migrations
                     b.Navigation("GebruikerOpleidingen");
 
                     b.Navigation("Inschrijvingen");
+
+                    b.Navigation("Monitoren");
                 });
 
             modelBuilder.Entity("models.Groepsreis", b =>

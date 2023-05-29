@@ -48,5 +48,6 @@ namespace models
         //Navigatieproperties
         public List<GebruikerOpleiding> GebruikerOpleidingen { get; set; }
         public List<Inschrijving> Inschrijvingen { get; set; }
+        public List<Monitor> Monitoren { get; set; }
     }
 }
