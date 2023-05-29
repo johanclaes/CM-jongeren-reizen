@@ -12,6 +12,7 @@ using models;
 
 namespace Groepsreizen_Tests.Data.UnitOfWork
 {
+	//Christophe
 	[TestFixture]
 	public class UnitOfWorkRepoTests
 	{
@@ -42,7 +43,6 @@ namespace Groepsreizen_Tests.Data.UnitOfWork
 		[Test]
 		public void GebruikerVerwijderenTest()
 		{
-			// we proberen een gebruiker "Chris" te deleten, die niet in de database zit
 			Gebruiker Gebruiker;
 
 			Gebruiker = unitOfWork.GebruikerRepo.Ophalen(x => x.Voornaam.Contains("yy")).FirstOrDefault();

@@ -16,6 +16,7 @@ namespace Groepsreizen_Tests.Views
     [TestFixture]
     public class PersonenWindowTests
     {
+        //Christophe
         [Test]
         public void GebruikerAanmakenTest()
         {

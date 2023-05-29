@@ -11,7 +11,7 @@ namespace models
     {
         public override string ToString()
         {
-            return $"{Naam} - {Bestemming.ToString()} - {Startdatum.ToShortDateString()} tot {Einddatum.ToShortDateString()}";
+            return $"{Naam} - {Bestemming.ToString()} - {Minimumleeftijd} tot {Maximumleeftijd} jaar - {Startdatum.ToShortDateString()} tot {Einddatum.ToShortDateString()}";
         }
 
         public override string this[string columnName]

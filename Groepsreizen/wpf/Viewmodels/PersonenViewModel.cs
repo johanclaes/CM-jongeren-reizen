@@ -76,7 +76,7 @@ namespace wpf.ViewModels
 
         public PersonenViewModel() 
         {
-            //GebruikerRecord = new Gebruiker();
+            GebruikerRecord = new Gebruiker();
             Foutmeldingen = "";
         }
 
@@ -93,7 +93,7 @@ namespace wpf.ViewModels
             switch (parameter.ToString())
             {
                 case "ZoekGebruikers": return true;
-                case "GebruikerAanmaken": return true;
+                case "GebruikerAanmaken": return GeselecteerdeGebruiker == null;
                 case "GebruikerAanpassen": return GeselecteerdeGebruiker != null;
                 case "GebruikerVerwijderen": return GeselecteerdeGebruiker != null;
                 case "FormulierLeegmaken": return true;
@@ -116,15 +116,13 @@ namespace wpf.ViewModels
         public void ZoekGebruikers()
         {
             if (string.IsNullOrWhiteSpace(NaamGebruiker))
-                Gebruikers = new ObservableCollection<Gebruiker>(_unitOfWork.GebruikerRepo.Ophalen());
+                Gebruikers = new ObservableCollection<Gebruiker>(_unitOfWork.GebruikerRepo.Ophalen().OrderBy(x => x.Naam));
             else
-                Gebruikers = new ObservableCollection<Gebruiker>(_unitOfWork.GebruikerRepo.Ophalen(x => x.Naam.Contains(NaamGebruiker) || x.Voornaam.Contains(NaamGebruiker)));
+                Gebruikers = new ObservableCollection<Gebruiker>(_unitOfWork.GebruikerRepo.Ophalen(x => x.Naam.Contains(NaamGebruiker) || x.Voornaam.Contains(NaamGebruiker)).OrderBy(x => x.Naam));
         }
 
         public void GebruikerAanmaken()
         {
-            GebruikerRecord = new Gebruiker();
-
             if (GebruikerRecord.IsGeldig())
             {
                 _unitOfWork.GebruikerRepo.Toevoegen(GebruikerRecord);
@@ -174,7 +172,7 @@ namespace wpf.ViewModels
             }
             else
             {
-                //GebruikerRecord = new Gebruiker();
+                GebruikerRecord = new Gebruiker();
             }
         }
 
