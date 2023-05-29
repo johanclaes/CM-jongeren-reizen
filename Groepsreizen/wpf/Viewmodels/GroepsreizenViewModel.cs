@@ -32,7 +32,7 @@ namespace wpf.ViewModels
         private Gebruiker _geselecteerdeGebruiker;
         private Monitor _monitorRecord;
         private string _foutmeldingen;
-        private Gebruiker _geselecteerdeMonitor;
+        private Monitor _geselecteerdeMonitor;
         private ObservableCollection<Gebruiker> _gezochteGebruikers;
 
         public string NaamReis
@@ -75,11 +75,12 @@ namespace wpf.ViewModels
                 Monitoren = new ObservableCollection<Monitor>(_unitOfWork.MonitorRepo.Ophalen().Where(x => x.GroepsreisId.Equals(GeselecteerdeReis.Id)));
                 foreach (var item in Monitoren)
                 {
-                    Gebruiker gebruiker9 = new Gebruiker();
-                    gebruiker9 = _unitOfWork.GebruikerRepo.Ophalen().Where(x => x.Id.Equals(item.Id)).FirstOrDefault();
-					Hoofdmonitoren.Add(gebruiker9);
-
-					
+                    Gebruiker gebruiker = new Gebruiker();
+                    gebruiker = _unitOfWork.GebruikerRepo.Ophalen().Where(x => x.Id.Equals(item.GebruikerId)).FirstOrDefault();
+                    if (gebruiker.Hoofdmonitorbrevet == true)
+                    {
+                        Hoofdmonitoren.Add(gebruiker);
+                    }
                 }
                 NotifyPropertyChanged();
             }
@@ -227,7 +228,7 @@ namespace wpf.ViewModels
                 NotifyPropertyChanged();
             }
         }
-        public Gebruiker GeselecteerdeMonitor
+        public Monitor GeselecteerdeMonitor
         {
             get
             {
@@ -293,20 +294,22 @@ namespace wpf.ViewModels
             }
         }
 
-        // constructor ==============================================
+        // constructor 
         public GroepsreizenViewModel()
         {
-			MonitorRecord = new Monitor();
+            GroepsreisRecord = new Groepsreis();
+            GroepsreisRecord.Startdatum = DateTime.Now;
+            GroepsreisRecord.Einddatum = DateTime.Now;
             Hoofdmonitoren = new ObservableCollection<Gebruiker>();
-			Bestemmingen = new ObservableCollection<Bestemming>(_unitOfWork.BestemmingRepo.Ophalen());
-			Foutmeldingen = "";
-		}
-
-		
+            Bestemmingen = new ObservableCollection<Bestemming>(_unitOfWork.BestemmingRepo.Ophalen());
+            Foutmeldingen = "";
+        }
 
 
 
-        // de vele knoppen ==========================================
+
+
+        // de vele knoppen
 
         public void ZoekReis()
         {
@@ -335,7 +338,6 @@ namespace wpf.ViewModels
         }
         public void MaakNieuweReis()
         {
-            GroepsreisRecord = new Groepsreis();
 
             if (GeselecteerdeBestemming != null)
             {
@@ -358,11 +360,11 @@ namespace wpf.ViewModels
         {
             if (NaamMonitor != null)
             {
-                GezochteGebruikers = new ObservableCollection<Gebruiker>(_unitOfWork.GebruikerRepo.Ophalen(x => x.Monitorbrevet == true));
+                GezochteGebruikers = new ObservableCollection<Gebruiker>(_unitOfWork.GebruikerRepo.Ophalen(x => x.Monitorbrevet == true && (x.Naam.Contains(NaamMonitor) || x.Voornaam.Contains(NaamMonitor))));
             }
             else
             {
-                Foutmeldingen = "Vul eerst een naam in!";
+                GezochteGebruikers = new ObservableCollection<Gebruiker>(_unitOfWork.GebruikerRepo.Ophalen(x => x.Monitorbrevet == true));
             }
         }
 
@@ -438,6 +440,7 @@ namespace wpf.ViewModels
             {
                 Monitoren = new ObservableCollection<Monitor>(_unitOfWork.MonitorRepo.Ophalen().Where(x => x.GroepsreisId.Equals(GeselecteerdeReis.Id)));
             }
+            GeselecteerdeGebruiker = null;
 
         }
         public void VerwijderMonitor()
@@ -447,6 +450,7 @@ namespace wpf.ViewModels
                 _unitOfWork.MonitorRepo.Verwijderen(GeselecteerdeMonitor);
                 int oke = _unitOfWork.Save();
                 FoutmeldingNaSave(oke, "De monitor is niet verwijderd!", "De monitor is verwijderd!");
+                Monitoren = new ObservableCollection<Monitor>(_unitOfWork.MonitorRepo.Ophalen().Where(x => x.GroepsreisId.Equals(GeselecteerdeReis.Id)));
             }
             else
             {
@@ -458,23 +462,34 @@ namespace wpf.ViewModels
         {
             if (GeselecteerdeHoofdmonitor != null)
             {
-                Monitor hoofdmonitor = _unitOfWork.MonitorRepo.Ophalen(x => x.GebruikerId == GeselecteerdeHoofdmonitor.Id).FirstOrDefault();
-                hoofdmonitor.Hoofdmonitor = true;
-                _unitOfWork.MonitorRepo.Aanpassen(hoofdmonitor);
-                int oke = _unitOfWork.Save();
-                FoutmeldingNaSave(oke, "De hoofdmonitor is niet aangepast!", "De hoofdmonitor is aangepast!");
+                Foutmeldingen = "";
+                foreach (var item in Monitoren)
+                {
+                    if (item.Hoofdmonitor == true)
+                    {
+                        item.Hoofdmonitor = false;
+                        _unitOfWork.MonitorRepo.Aanpassen(item);
+                        int correct = _unitOfWork.Save();
+                        FoutmeldingNaSave(correct, "De hoofdmonitor is niet aangepast!", "De hoofdmonitor is aangepast!");
+                    }
+                }
+                    Monitor hoofdmonitor = _unitOfWork.MonitorRepo.Ophalen(x => x.GebruikerId == GeselecteerdeHoofdmonitor.Id).FirstOrDefault();
+                    hoofdmonitor.Hoofdmonitor = true;
+                    _unitOfWork.MonitorRepo.Aanpassen(hoofdmonitor);
+                    int oke = _unitOfWork.Save();
+                    FoutmeldingNaSave(oke, "De hoofdmonitor is niet aangepast!", "De hoofdmonitor is aangepast!");
             }
             else
             {
                 Foutmeldingen = "Eerst een hoofdmonitor kiezen!";
             }
         }
-        
+
         private void FoutmeldingNaSave(int ok, string foutmelding, string succesmelding)
         {
             if (ok > 0)
             {
-                Foutmeldingen = "";
+                Foutmeldingen = succesmelding;
             }
             else
             {
