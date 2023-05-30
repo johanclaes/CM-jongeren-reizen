@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "jLr3chISF548w5fKZpFULbN1T/zq+Y9/w0ajyKiUC3Kumw5XSobfO5zPE5fZOV+QCeuLE2PW9SvrE42gnboiGg==",
+  "dgSpecHash": "e3xvjKXXS3Ka/QV0FKcH6l4SXu+WZGhBM3EnTYdTICw/grBjpkwnID58DqLqDlOkh0EFWywVH+xWwieSb0wCHg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\lende\\Documents\\thomasmore\\jaar 2\\agile en testing\\project1\\CM-jongeren-reizen\\Groepsreizen\\dal\\dal.csproj",
+  "projectFilePath": "C:\\Users\\lende\\Documents\\thomasmore\\jaar 2\\agile en testing\\project2\\CM-jongeren-reizen\\Groepsreizen\\dal\\dal.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\lende\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\lende\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

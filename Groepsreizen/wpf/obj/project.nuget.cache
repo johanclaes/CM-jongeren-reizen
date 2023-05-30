@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "co8Qqk57O6eekn5Fr+j4b9/nmEbK1CJyg6wWX82la5NY/nHWmj9ULetaERQuIIQeGYRP+8ZLpMAWmTHz2BGU7Q==",
+  "dgSpecHash": "ZFMu2MRVKso2UpL3btfd54FGxKOC38cJjz70ekrle9tmZwQQUUg8wsNQqT9FhGNokxt+UtwgOkouzm9w+A2cgQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\lende\\Documents\\thomasmore\\jaar 2\\agile en testing\\project1\\CM-jongeren-reizen\\Groepsreizen\\wpf\\wpf.csproj",
+  "projectFilePath": "C:\\Users\\lende\\Documents\\thomasmore\\jaar 2\\agile en testing\\project2\\CM-jongeren-reizen\\Groepsreizen\\wpf\\wpf.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\lende\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\lende\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

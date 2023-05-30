@@ -78,10 +78,10 @@ namespace wpf.Viewmodels
                 if (GebruikerRecord.Webadmin == true)
                 {
                     IsTrue = true; 
-                    var vm = new MainViewModel();
-                    var view = new MainWindow();
-                    view.DataContext = vm;
-                    view.Show();
+                    //var vm = new MainViewModel();
+                    //var view = new MainWindow();
+                    //view.DataContext = vm;
+                    //view.Show();
                     
                 }
             }
