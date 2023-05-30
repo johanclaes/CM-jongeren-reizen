@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\lende\\Documents\\thomasmore\\jaar 2\\agile en testing\\project1\\CM-jongeren-reizen\\Groepsreizen\\models\\models.csproj": {}
+    "C:\\Users\\lende\\Documents\\thomasmore\\jaar 2\\agile en testing\\project2\\CM-jongeren-reizen\\Groepsreizen\\models\\models.csproj": {}
   },
   "projects": {
-    "C:\\Users\\lende\\Documents\\thomasmore\\jaar 2\\agile en testing\\project1\\CM-jongeren-reizen\\Groepsreizen\\models\\models.csproj": {
+    "C:\\Users\\lende\\Documents\\thomasmore\\jaar 2\\agile en testing\\project2\\CM-jongeren-reizen\\Groepsreizen\\models\\models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lende\\Documents\\thomasmore\\jaar 2\\agile en testing\\project1\\CM-jongeren-reizen\\Groepsreizen\\models\\models.csproj",
+        "projectUniqueName": "C:\\Users\\lende\\Documents\\thomasmore\\jaar 2\\agile en testing\\project2\\CM-jongeren-reizen\\Groepsreizen\\models\\models.csproj",
         "projectName": "models",
-        "projectPath": "C:\\Users\\lende\\Documents\\thomasmore\\jaar 2\\agile en testing\\project1\\CM-jongeren-reizen\\Groepsreizen\\models\\models.csproj",
+        "projectPath": "C:\\Users\\lende\\Documents\\thomasmore\\jaar 2\\agile en testing\\project2\\CM-jongeren-reizen\\Groepsreizen\\models\\models.csproj",
         "packagesPath": "C:\\Users\\lende\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lende\\Documents\\thomasmore\\jaar 2\\agile en testing\\project1\\CM-jongeren-reizen\\Groepsreizen\\models\\obj\\",
+        "outputPath": "C:\\Users\\lende\\Documents\\thomasmore\\jaar 2\\agile en testing\\project2\\CM-jongeren-reizen\\Groepsreizen\\models\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\lende\\AppData\\Roaming\\NuGet\\NuGet.Config",

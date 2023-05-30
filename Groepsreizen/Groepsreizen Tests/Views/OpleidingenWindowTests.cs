@@ -22,7 +22,7 @@ namespace Groepsreizen_Tests.Views
 		{
 			// var app = Application.Launch("C:\\Thomas More 2de jaar\\Agile en testing\\Project\\CM-jongeren-reizen\\Groepsreizen\\wpf\\bin\\Debug\\net6.0-windows\\wpf.exe");
 
-			var app = Application.Launch("C:\\Users\\fb922\\Desktop\\agile\\project\\CM-jongeren-final4\\CM-jongeren-reizen\\Groepsreizen\\wpf\\bin\\Debug\\net6.0-windows\\wpf.exe");
+			var app = Application.Launch("\"C:\\\\Users\\\\lende\\\\Documents\\\\thomasmore\\\\jaar 2\\\\agile en testing\\\\project1\\\\CM-jongeren-reizen\\\\Groepsreizen\\\\wpf\\\\bin\\\\Debug\\\\net6.0-windows\\\\wpf.exe\"");
 
 			// var app = System.Windows.Application.
 
@@ -43,14 +43,15 @@ namespace Groepsreizen_Tests.Views
 				System.Threading.Thread.Sleep(1000);
 				var windowopleiding2 = app.GetMainWindow(automation);
 
-				var OpleidingMaand = windowopleiding2.FindFirstDescendant(x => x.ByAutomationId("cmbMaand")).AsComboBox();
-				var OpleidingJaar = windowopleiding2.FindFirstDescendant(x => x.ByAutomationId("cmbJaar")).AsComboBox();
-				var ZoekCursus = windowopleiding2.FindFirstDescendant(x => x.ByAutomationId("btnOpleidingOpvragen")).AsButton();
+				var OpleidingMaand = windowopleiding2.FindFirstDescendant(x => x.ByAutomationId("Maanden")).AsComboBox();
+				var OpleidingJaar = windowopleiding2.FindFirstDescendant(x => x.ByAutomationId("Jaren")).AsComboBox();
+				var ZoekCursus = windowopleiding2.FindFirstDescendant(x => x.ByAutomationId("OpleidingOpvragen")).AsButton();
 				var LijstCursussen = windowopleiding2.FindFirstDescendant(x => x.ByAutomationId("lstOpleidingen")).AsListBox();
 
 				OpleidingMaand.Select("Juni");
 				OpleidingJaar.Select("2023");
 				System.Threading.Thread.Sleep(1000);
+				ZoekCursus.Click();
 				ZoekCursus.Click();
 				int AantalCursussen = LijstCursussen.Items.Count();
 
