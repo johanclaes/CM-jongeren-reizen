@@ -19,9 +19,14 @@ namespace wpf.Viewmodels
     {
         private Gebruiker _gebruiker;
         private IUnitOfWork _unitOfWork = new UnitOfWork(new GroepsreizenContext());
-
+        private bool _isTrue;
         public override string this[string columnName] => throw new NotImplementedException();
 
+        public bool IsTrue
+        {
+            get => _isTrue;
+            set => _isTrue = value;
+        }
         public Gebruiker GebruikerRecord
         {
             get { return _gebruiker; }
@@ -72,10 +77,12 @@ namespace wpf.Viewmodels
             {
                 if (GebruikerRecord.Webadmin == true)
                 {
+                    IsTrue = true; 
                     var vm = new MainViewModel();
                     var view = new MainWindow();
                     view.DataContext = vm;
                     view.Show();
+                    
                 }
             }
         }

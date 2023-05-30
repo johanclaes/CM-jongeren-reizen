@@ -45,6 +45,7 @@
 
 
             <Button
+                x:Name="Aanmelden"
                 Content="Aanmelden"
                 IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
                 Style="{StaticResource MaterialDesignRaisedLightButton}"
