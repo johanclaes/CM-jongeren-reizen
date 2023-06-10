@@ -71,17 +71,28 @@ namespace wpf.ViewModels
             {
                 _geselecteerdeReis = value;
                 GroepsreisRecord = GeselecteerdeReis;
-                GeselecteerdeBestemming = GeselecteerdeReis.Bestemming;
-                Monitoren = new ObservableCollection<Monitor>(_unitOfWork.MonitorRepo.Ophalen().Where(x => x.GroepsreisId.Equals(GeselecteerdeReis.Id)));
-                foreach (var item in Monitoren)
+                if (GeselecteerdeReis != null)
                 {
-                    Gebruiker gebruiker = new Gebruiker();
-                    gebruiker = _unitOfWork.GebruikerRepo.Ophalen().Where(x => x.Id.Equals(item.GebruikerId)).FirstOrDefault();
-                    if (gebruiker.Hoofdmonitorbrevet == true)
+                    GeselecteerdeBestemming = GeselecteerdeReis.Bestemming;
+                        // Monitoren om de listbox op te vullen
+                    Monitoren = new ObservableCollection<Monitor>(_unitOfWork.MonitorRepo.Ophalen().Where(x => x.GroepsreisId.Equals(GeselecteerdeReis.Id)));
+                    Hoofdmonitoren = new ObservableCollection<Gebruiker>();
+                    foreach (var item in Monitoren)                         // hoofdmonitoren om de combobox list op te vullen
                     {
-                        Hoofdmonitoren.Add(gebruiker);
+                        Gebruiker gebruiker = new Gebruiker();
+                        gebruiker = _unitOfWork.GebruikerRepo.Ophalen().Where(x => x.Id.Equals(item.GebruikerId)).FirstOrDefault();
+                        if (gebruiker.Hoofdmonitorbrevet == true)
+                        {
+                            Hoofdmonitoren.Add(gebruiker);
+                        }
+                        if (item.Hoofdmonitor)                              // de selectie in combobox invullen
+                        {
+                            GeselecteerdeHoofdmonitor = gebruiker;
+                        }
                     }
+                    
                 }
+               
                 NotifyPropertyChanged();
             }
         }
@@ -266,14 +277,14 @@ namespace wpf.ViewModels
             switch (parameter.ToString())
             {
                 case "ZoekReis": return true;
-                case "UpdateReis": return true;
+                case "UpdateReis": return GroepsreisRecord != null;
                 case "MaakNieuweReis": return true;
                 case "FormulierLeegmaken": return true;
-                case "ZoekMonitor": return true;
-                case "ZoekMonitorViaOpleiding": return true;
-                case "VoegMonitorToe": return true;
-                case "VerwijderMonitor": return true;
-                case "HoofdmonitorToevoegen": return true;
+                case "ZoekMonitor": return NaamMonitor != string.Empty;
+                case "ZoekMonitorViaOpleiding": return NaamMonitor != string.Empty;
+                case "VoegMonitorToe": return GeselecteerdeGebruiker != null;
+                case "VerwijderMonitor": return GeselecteerdeMonitor != null;
+                case "HoofdmonitorToevoegen": return GeselecteerdeHoofdmonitor != null;
             }
             return true;
         }
@@ -470,7 +481,7 @@ namespace wpf.ViewModels
                         item.Hoofdmonitor = false;
                         _unitOfWork.MonitorRepo.Aanpassen(item);
                         int correct = _unitOfWork.Save();
-                        FoutmeldingNaSave(correct, "De hoofdmonitor is niet aangepast!", "De hoofdmonitor is aangepast!");
+                        FoutmeldingNaSave(correct, "De hoofdmonitor = niet aangepast!", "De hoofdmonitor = aangepast!");
                     }
                 }
                     Monitor hoofdmonitor = _unitOfWork.MonitorRepo.Ophalen(x => x.GebruikerId == GeselecteerdeHoofdmonitor.Id).FirstOrDefault();
@@ -505,7 +516,12 @@ namespace wpf.ViewModels
             GroepsreisRecord = null;
             MonitorRecord = null;
             GezochteReizen = null;
-            Foutmeldingen = "";
+            Foutmeldingen = string.Empty;
+            NaamReis = string.Empty;
+            Monitoren = null;
+            Hoofdmonitoren = null;
+            GeselecteerdeHoofdmonitor = null;
+            GeselecteerdeBestemming = null;
         }
     }
 }

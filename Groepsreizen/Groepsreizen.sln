@@ -11,7 +11,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "wpf", "wpf\wpf.csproj", "{7
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "script", "script", "{BD21952A-5F8F-4BE3-AB98-D16D12426798}"
 	ProjectSection(SolutionItems) = preProject
-		..\Documentatie\Groepsreizen.sql = ..\Documentatie\Groepsreizen.sql
 		GroepsReizen2.sql = GroepsReizen2.sql
 	EndProjectSection
 EndProject

@@ -35,7 +35,7 @@ namespace Groepsreizen_Tests.Views
 				var Aanmelden = window.FindFirstDescendant(x => x.ByAutomationId("Aanmelden")).AsButton();
 				Aanmelden.Click();
 
-				System.Threading.Thread.Sleep(1000);
+                System.Threading.Thread.Sleep(1000);
 				var windowopleiding = app.GetMainWindow(automation);
 				var opleidingen7 = windowopleiding.FindFirstDescendant(x => x.ByAutomationId("Opleidingen")).AsButton();
 				opleidingen7.Invoke();
