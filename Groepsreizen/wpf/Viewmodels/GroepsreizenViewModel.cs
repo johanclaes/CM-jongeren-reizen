@@ -69,6 +69,7 @@ namespace wpf.ViewModels
             get { return _geselecteerdeReis; }
             set
             {
+                Foutmeldingen = string.Empty;
                 _geselecteerdeReis = value;
                 GroepsreisRecord = GeselecteerdeReis;
                 if (GeselecteerdeReis != null)
@@ -305,7 +306,7 @@ namespace wpf.ViewModels
             }
         }
 
-        // constructor 
+        // constructor ===================================================================================================
         public GroepsreizenViewModel()
         {
             GroepsreisRecord = new Groepsreis();
@@ -316,7 +317,7 @@ namespace wpf.ViewModels
             Foutmeldingen = "";
         }
 
-        // de vele knoppen
+        // de vele knoppen ===============================================================================================
 
         public void ZoekReis()
         {
