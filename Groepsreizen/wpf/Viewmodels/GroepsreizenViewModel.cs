@@ -278,8 +278,8 @@ namespace wpf.ViewModels
             switch (parameter.ToString())
             {
                 case "ZoekReis": return true;
-                case "UpdateReis": return GroepsreisRecord != null;
-                case "MaakNieuweReis": return true;
+                case "UpdateReis": return (GroepsreisRecord.Naam != null) && (GroepsreisRecord.Deelneemprijs != 0);
+                case "MaakNieuweReis": return (GroepsreisRecord.Naam != null) && (GroepsreisRecord.Deelneemprijs != 0);
                 case "FormulierLeegmaken": return true;
                 case "ZoekMonitor": return NaamMonitor != string.Empty;
                 case "ZoekMonitorViaOpleiding": return NaamMonitor != string.Empty;
