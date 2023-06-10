@@ -182,7 +182,7 @@ namespace wpf.ViewModels
             {
                 FormulierLeegmaken();
                 ZoekGebruikers();
-                //MessageBox.Show(succesmelding);
+                MessageBox.Show(succesmelding);
             }
             else
             {

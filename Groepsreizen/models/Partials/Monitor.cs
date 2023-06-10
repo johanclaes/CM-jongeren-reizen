@@ -12,7 +12,7 @@ namespace models
     {
         public override string ToString()
         {
-            return $"{Gebruiker.Naam} {Gebruiker.Voornaam}";
+            return $"{Gebruiker.Voornaam} {Gebruiker.Naam}";
         }
 
         public override string this[string columnName]

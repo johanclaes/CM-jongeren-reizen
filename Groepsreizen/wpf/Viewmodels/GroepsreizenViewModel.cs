@@ -316,10 +316,6 @@ namespace wpf.ViewModels
             Foutmeldingen = "";
         }
 
-
-
-
-
         // de vele knoppen
 
         public void ZoekReis()
@@ -352,13 +348,22 @@ namespace wpf.ViewModels
 
             if (GeselecteerdeBestemming != null)
             {
+                
                 GroepsreisRecord.BestemmingId = GeselecteerdeBestemming.Id;
                 if (GroepsreisRecord.IsGeldig())
                 {
                     _unitOfWork.GroepsreisRepo.Toevoegen(GroepsreisRecord);
                     int oke = _unitOfWork.Save();
+                    if (oke > 0 )
+                    {
+                        MessageBox.Show("De reis is toegevoegd.");
+                        FormulierLeegmaken();
+                    }
 
-                    FoutmeldingNaSave(oke, "De reis is niet toegevoegd!", "De reis is toegevoegd!");
+                }
+                else
+                {
+                    Foutmeldingen = "Meer invullen !";
                 }
             }
             else
@@ -421,37 +426,56 @@ namespace wpf.ViewModels
         }
         public void VoegMonitorToe()
         {
+            Foutmeldingen = string.Empty;
             if (GeselecteerdeGebruiker != null && GeselecteerdeReis != null)
             {
                 MonitorRecord = new Monitor();
                 MonitorRecord.GebruikerId = GeselecteerdeGebruiker.Id;
                 MonitorRecord.GroepsreisId = GeselecteerdeReis.Id;
                 MonitorRecord.Hoofdmonitor = false;
-            }
-            if (GeselecteerdeGebruiker.Hoofdmonitorbrevet == true)
-            {
-                if (Hoofdmonitoren != null)
+                if (MonitorRecord.IsGeldig())
                 {
-                    Hoofdmonitoren.Add(GeselecteerdeGebruiker);
-                }
-                else
-                {
-                    Hoofdmonitoren = new ObservableCollection<Gebruiker>();
-                    Hoofdmonitoren.Add(GeselecteerdeGebruiker);
-                }
-            }
-            if (MonitorRecord.IsGeldig())
-            {
-                _unitOfWork.MonitorRepo.Toevoegen(MonitorRecord);
-                int oke = _unitOfWork.Save();
+                    List<int> PKlist = new List<int>();
+                    foreach (var item in Monitoren)
+                    {
+                        PKlist.Add(item.GebruikerId);
+                    }
 
-                FoutmeldingNaSave(oke, "De Monitor is niet toegevoegd!", "De monitor is toegevoegd!");
-            }
-            if (GeselecteerdeReis != null)
+                    if (PKlist.Contains(MonitorRecord.GebruikerId))                      // we gaan een monitor geen 2 keer toevoegen. Monitoren.Contains(MonitorRecord)
+                    {
+                        Foutmeldingen = "persoon is reeds monitor voor deze reis:";
+                    }
+                    else
+                    {
+                        if (Hoofdmonitoren != null)
+                        {
+                            if (GeselecteerdeGebruiker.Hoofdmonitorbrevet == true)
+                            {
+                                Hoofdmonitoren.Add(GeselecteerdeGebruiker);
+                            }
+                        }
+                        else
+                        {
+                            Hoofdmonitoren = new ObservableCollection<Gebruiker>();
+                            Hoofdmonitoren.Add(GeselecteerdeGebruiker);
+                        }
+                        _unitOfWork.MonitorRepo.Toevoegen(MonitorRecord);
+                        int oke = _unitOfWork.Save();
+
+                        MessageBox.Show("monitor is toegevoegd:");
+                        GeselecteerdeGebruiker = null;
+                        Foutmeldingen = "";
+                        GezochteGebruikers = null;
+                        NaamMonitor = string.Empty;
+                    }
+                            // we doen een refresh van monitor-listbox
+                    Monitoren = new ObservableCollection<Monitor>(_unitOfWork.MonitorRepo.Ophalen().Where(x => x.GroepsreisId.Equals(GeselecteerdeReis.Id)));
+                }
+
+            } else 
             {
-                Monitoren = new ObservableCollection<Monitor>(_unitOfWork.MonitorRepo.Ophalen().Where(x => x.GroepsreisId.Equals(GeselecteerdeReis.Id)));
+                Foutmeldingen = "selecteer gebruiker en reis:";
             }
-            GeselecteerdeGebruiker = null;
 
         }
         public void VerwijderMonitor()
@@ -478,17 +502,27 @@ namespace wpf.ViewModels
                 {
                     if (item.Hoofdmonitor == true)
                     {
-                        item.Hoofdmonitor = false;
+                        item.Hoofdmonitor = false;                          // we zetten voor iedereen dat ze geen hoofdmonitor zijn. 
                         _unitOfWork.MonitorRepo.Aanpassen(item);
                         int correct = _unitOfWork.Save();
-                        FoutmeldingNaSave(correct, "De hoofdmonitor = niet aangepast!", "De hoofdmonitor = aangepast!");
+                        
                     }
                 }
-                    Monitor hoofdmonitor = _unitOfWork.MonitorRepo.Ophalen(x => x.GebruikerId == GeselecteerdeHoofdmonitor.Id).FirstOrDefault();
-                    hoofdmonitor.Hoofdmonitor = true;
-                    _unitOfWork.MonitorRepo.Aanpassen(hoofdmonitor);
-                    int oke = _unitOfWork.Save();
-                    FoutmeldingNaSave(oke, "De hoofdmonitor is niet aangepast!", "De hoofdmonitor is aangepast!");
+                Monitor hoofdmonitor; 
+                List<Monitor> lijstmonitors = _unitOfWork.MonitorRepo.Ophalen(x => x.GebruikerId == GeselecteerdeHoofdmonitor.Id).ToList();
+                foreach (var item in lijstmonitors)
+                    { 
+                            if (item.GroepsreisId == GeselecteerdeReis.Id) 
+                                {
+                                 hoofdmonitor = item;
+                                hoofdmonitor.Hoofdmonitor = true;
+                                _unitOfWork.MonitorRepo.Aanpassen(hoofdmonitor);
+                                int oke = _unitOfWork.Save();
+                                FoutmeldingNaSave(oke, "De hoofdmonitor is niet aangepast!", "De hoofdmonitor is aangepast!");
+                    }
+                }
+                    
+                    
             }
             else
             {
@@ -513,7 +547,6 @@ namespace wpf.ViewModels
             GeselecteerdeGebruiker = null;
             GeselecteerdeMonitor = null;
             GezochteGebruikers = null;
-            GroepsreisRecord = null;
             MonitorRecord = null;
             GezochteReizen = null;
             Foutmeldingen = string.Empty;
@@ -522,6 +555,10 @@ namespace wpf.ViewModels
             Hoofdmonitoren = null;
             GeselecteerdeHoofdmonitor = null;
             GeselecteerdeBestemming = null;
+            GroepsreisRecord = new Groepsreis();
+            GroepsreisRecord.Startdatum = DateTime.Now;
+            GroepsreisRecord.Einddatum = DateTime.Now;
+            GroepsreisRecord.Naam = "blabla";                       // to delete
         }
     }
 }
