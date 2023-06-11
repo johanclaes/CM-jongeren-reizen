@@ -11,7 +11,9 @@ namespace models
     {
         public override string ToString()
         {
-            return $"{Naam} - {Bestemming.ToString()} - {Minimumleeftijd} tot {Maximumleeftijd} jaar - {Startdatum.ToShortDateString()} tot {Einddatum.ToShortDateString()}";
+            int aantal = (Inschrijvingen == null) ? 0 : Inschrijvingen.Count;
+            
+            return $"{Naam} - {Bestemming.ToString()} - {Minimumleeftijd} tot {Maximumleeftijd} jaar - {Startdatum.ToShortDateString()} tot {Einddatum.ToShortDateString()} - {Bestemming.Capaciteit - aantal} plaats(en) vrij";
         }
 
         public override string this[string columnName]
