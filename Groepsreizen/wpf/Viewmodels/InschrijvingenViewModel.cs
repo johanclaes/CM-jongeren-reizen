@@ -223,16 +223,16 @@ namespace wpf.ViewModels
 
             int leeftijd = DateTime.Today.Year - gebruiker.Geboortedatum.Year;
 
-            int aantal = (Inschrijvingen == null) ? 0 : Inschrijvingen.Count;
+            int aantal = (groepsreis.Inschrijvingen == null) ? 0 : groepsreis.Inschrijvingen.Count;
             groepsreis.InschrijvingGestopt = (aantal == groepsreis.Bestemming.Capaciteit) ? true : false;
 
             if (groepsreis.InschrijvingGestopt)
-                MessageBox.Show("Deze groepsreis is helaas volzet!");
+                MessageBox.Show("Deze groepsreis is helaas volzet!", "Foutmelding", MessageBoxButton.OK, MessageBoxImage.Error);
             else
             {
                 if (leeftijd < groepsreis.Minimumleeftijd || leeftijd > groepsreis.Maximumleeftijd)
                 {
-                    MessageBox.Show("De gebruiker heeft niet de juiste leeftijd voor de groepsreis!");
+                    MessageBox.Show("De gebruiker heeft niet de juiste leeftijd voor de groepsreis!", "Foutmelding", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
                 else
                 {
@@ -254,7 +254,7 @@ namespace wpf.ViewModels
         {
             if (GeselecteerdeIngeschrevenReis.Betaald)
             {
-                MessageBox.Show("Deze reis is al betaald!");
+                MessageBox.Show("Deze reis is al betaald!", "Foutmelding", MessageBoxButton.OK, MessageBoxImage.Error);
             }
             else
             {
@@ -283,7 +283,7 @@ namespace wpf.ViewModels
             }
             else
             {
-                MessageBox.Show(foutmelding);
+                MessageBox.Show(foutmelding, "Foutmelding", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
