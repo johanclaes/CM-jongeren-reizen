@@ -19,6 +19,15 @@ namespace models
         {
             get
             {
+                if (columnName == "Naam" && string.IsNullOrWhiteSpace(Naam))
+                {
+                    return "Opleidingstype moet ingevuld zijn.";
+                }
+
+                if (columnName == "Naam" && Naam.Length <= 3)
+                {
+                    return "Het opleidingstype moet minstens 3 karakters bevatten.";
+                }
 
                 return "";
             }

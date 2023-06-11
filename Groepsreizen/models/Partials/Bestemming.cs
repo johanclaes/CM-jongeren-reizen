@@ -38,14 +38,7 @@ namespace models
                 {
                     return "Capaciteit moet groter dan 0 zijn.";
                 }
-                if (columnName == "Fotonaam" && string.IsNullOrWhiteSpace(Fotonaam))
-                {
-                    return "Fotonaam moet ingevuld zijn.";
-                }
-                //if (columnName == "BestemmingstypeId" && BestemmingstypeId <= 0)
-                //{
-                //    return "Bestemmingstype moet ingevuld zijn.";
-                //}
+                
 
                 return "";
             }

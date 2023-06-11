@@ -174,10 +174,10 @@ namespace wpf.ViewModels
 
                     foreach (var item in GebruikerOpleidingen)
                     {
-                        // MessageBox.Show(item.GebruikerId.ToString());
-                        Gebruiker abc = new Gebruiker();
-                        abc = (_unitOfWork.GebruikerRepo.Ophalen(x => x.Id == item.GebruikerId)).FirstOrDefault();
-                        Deelnemers.Add(abc);
+                        
+                        Gebruiker gebruiker6 = new Gebruiker();
+                        gebruiker6 = (_unitOfWork.GebruikerRepo.Ophalen(x => x.Id == item.GebruikerId)).FirstOrDefault();
+                        Deelnemers.Add(gebruiker6);
                     }
 
                 }
@@ -308,17 +308,17 @@ namespace wpf.ViewModels
             // er wordt een lijst gemaakt (meestal grootte 1) van opleidingtype obv in combobox geselecteerd type
             var opleidingsstypes = new ObservableCollection<OpleidingType>(_unitOfWork.OpleidingTypeRepo.Ophalen(x => x.Naam.Contains(SelectedSoortOpleiding)));
 
-            if (opleidingsstypes.Count() == 0)
+            if (opleidingsstypes.Count == 0)
             {
                 ErrorOpleiding = "Kies opleidingstype.";
             }
             else
             {
-                if (Startdatum < Einddatum)
-                {
-                    // er wordt opleiding aangemaakt verwijzend naar opleidingstype
-                    models.Opleiding Opleiding1 = new models.Opleiding() { OpleidingTypeId = opleidingsstypes.FirstOrDefault().Id, Startdatum = Startdatum, Einddatum = Einddatum };
+                // er wordt opleiding aangemaakt verwijzend naar opleidingstype
+                models.Opleiding Opleiding1 = new models.Opleiding() { OpleidingTypeId = opleidingsstypes.FirstOrDefault().Id, Startdatum = Startdatum, Einddatum = Einddatum };
 
+                if (Opleiding1.Error == string.Empty)
+                {
                     ErrorOpleiding = "";
                     _unitOfWork.OpleidingRepo.Toevoegen(Opleiding1);
                     int oke = _unitOfWork.Save();
@@ -336,9 +336,8 @@ namespace wpf.ViewModels
                 }
                 else
                 {
-                    ErrorOpleiding = "Begindatum liefst voor einddatum.";
+                    ErrorOpleiding = Opleiding1.Error;
                 }
-
 
             }
 
@@ -375,35 +374,25 @@ namespace wpf.ViewModels
             models.OpleidingType Opleidingtype1 = new models.OpleidingType();
             Opleidingtype1.Naam = SoortOpleiding;
 
-            if (Opleidingtype1.Naam != null)
+            if (Opleidingtype1.Error == string.Empty)
             {
-                // testing of nieuw opleidingstype minstens 3 karakters heeft
-                if (Opleidingtype1.Naam.Length < 3)
+                ErrorOpleiding = "";
+                _unitOfWork.OpleidingTypeRepo.Toevoegen(Opleidingtype1);
+                int oke = _unitOfWork.Save();
+                if (oke > 0)
                 {
-                    ErrorOpleiding = "Opleidingstype minstens 3 karakters";
+                    MessageBox.Show("Het opleidingstype is toegevoegd.");
+                    SoortOpleiding = "";
                 }
                 else
                 {
-                    ErrorOpleiding = "";
-                    _unitOfWork.OpleidingTypeRepo.Toevoegen(Opleidingtype1);
-                    int oke = _unitOfWork.Save();
-                    if (oke > 0)
-                    {
-                        MessageBox.Show("Het opleidingstype is toegevoegd.");
-                        SoortOpleiding = "";
-                    }
-                    else
-                    {
-                        MessageBox.Show("Het opleidingstype is niet toegevoegd.");
-                    }
+                    MessageBox.Show("Het opleidingstype is niet toegevoegd.");
                 }
             }
             else
             {
-                ErrorOpleiding = "Opleidingstype invullen!";
+                ErrorOpleiding = Opleidingtype1.Error;
             }
-
-
 
         }
         public void ZoekDeelnemer()
@@ -495,7 +484,7 @@ namespace wpf.ViewModels
 
             if (SelectedDeelnemerDelete != null && SelectedOpleiding != null)
             {
-                int PKselectedDeelnemer = SelectedDeelnemerDelete.Id;               // we bepalen de primary key vna de user
+                int PKselectedDeelnemer = SelectedDeelnemerDelete.Id;               // we bepalen de primary key van de user
                 int PKselectedOpleiding = SelectedOpleiding.Id;
 
                 GebruikerOpleiding Gebruikeropleiding5 = new GebruikerOpleiding();

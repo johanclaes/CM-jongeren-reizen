@@ -207,6 +207,8 @@ namespace wpf.ViewModels
             Bestemming1.Capaciteit = BestemmingRecord.Capaciteit;
             Bestemming1.Fotonaam = "test.png";                      // de verwijzing naar de foto zit in de db, voorlopig doen we er niks mee
 
+
+
             if (Bestemming1.Error != string.Empty)                  // check of alle velden zijn ingevuld.
             {
                 FoutmeldingBestemming = Bestemming1.Error;
@@ -243,14 +245,24 @@ namespace wpf.ViewModels
                 Bestemming.Capaciteit = BestemmingRecord.Capaciteit;
                 Bestemming.Fotonaam = BestemmingRecord.Fotonaam;
 
-                _unitOfWork.BestemmingRepo.ToevoegenOfAanpassen(BestemmingRecord);
-                int oke = _unitOfWork.Save();
+                if (Bestemming.Error == string.Empty) 
+                    {
+                    _unitOfWork.BestemmingRepo.ToevoegenOfAanpassen(BestemmingRecord);
+                    int oke = _unitOfWork.Save();
 
-                if (oke > 0)
-                { MessageBox.Show("Bestemming is aangepast!"); VeldenLeegmaken(); BestemmingRecord = new Bestemming(); }
-                else
-                { MessageBox.Show("Bestemming NIET aangepast!"); };
-
+                    if (oke > 0)
+                        { 
+                        MessageBox.Show("Bestemming is aangepast!"); 
+                        VeldenLeegmaken(); 
+                        BestemmingRecord = new Bestemming(); 
+                        }
+                    else
+                        { MessageBox.Show("Bestemming NIET aangepast!"); };
+                } 
+                else 
+                {
+                    FoutmeldingBestemming = Bestemming.Error;
+                }
 
             }
             else
@@ -273,34 +285,27 @@ namespace wpf.ViewModels
             Bestemmingstype Bestemmingstype1 = new Bestemmingstype();
             Bestemmingstype1.Naam = NieuwBestemmingtype;
 
-            if (Bestemmingstype1.Naam != null)
+            if (Bestemmingstype1.Error == string.Empty)
             {
-                // testing of nieuw bestemmingstype minstens 3 karakters heeft
-                if (Bestemmingstype1.Naam.Length < 3)
+                FoutmeldingBestemming = "";
+                _unitOfWork.BestemmingstypeRepo.Toevoegen(Bestemmingstype1);
+                int oke = _unitOfWork.Save();
+                if (oke > 0)
                 {
-                    FoutmeldingBestemming = "Bestemmingstype minstens 3 karakters";
+                    MessageBox.Show("Het bestemmingstype is toegevoegd.");
+                    NieuwBestemmingtype = "";
+                    FoutmeldingBestemming = "";
                 }
                 else
                 {
-                    FoutmeldingBestemming = "";
-                    _unitOfWork.BestemmingstypeRepo.Toevoegen(Bestemmingstype1);
-                    int oke = _unitOfWork.Save();
-                    if (oke > 0)
-                    {
-                        MessageBox.Show("Het bestemmingstype is toegevoegd.");
-                        NieuwBestemmingtype = "";
-                        FoutmeldingBestemming = "";
-                    }
-                    else
-                    {
-                        MessageBox.Show("Het bestemmingstype is niet toegevoegd.");
-                    }
+                    FoutmeldingBestemming = "Het bestemmingstype is niet toegevoegd.";
                 }
             }
             else
             {
-                FoutmeldingBestemming = "Gelieve iets in te vullen.";
+                FoutmeldingBestemming = Bestemmingstype1.Error;
             }
+
 
         }
     }

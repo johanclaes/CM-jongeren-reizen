@@ -74,7 +74,9 @@
             <CheckBox Name="cbInschrijvingGestopt" IsChecked="{Binding GroepsreisRecord.InschrijvingGestopt}" Grid.Row="10" Grid.Column="1">Inschrijving Gestopt</CheckBox>
         </Grid>
 
-        <Label Background="LightCyan" Content="{Binding Foutmeldingen}" Grid.Row="2" Grid.Column="1" Margin="2" Visibility="Visible"></Label>
+        <Label Background="LightCyan"  Grid.Row="2" Grid.Column="1" Margin="2" Visibility="Visible">
+            <TextBlock Text="{Binding Foutmeldingen}" TextWrapping="Wrap" ></TextBlock>
+        </Label>
 
         <Grid Grid.Row="0" Grid.Column="2" Margin="4" Grid.RowSpan="3">
             <GroupBox Header="Monitoren Selecteren">
