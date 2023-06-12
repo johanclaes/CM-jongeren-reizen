@@ -12,6 +12,7 @@ using dal.Data.UnitOfWork;
 using dal;
 using models;
 using wpf.ViewModels;
+using System.Windows;
 
 namespace wpf.Viewmodels
 {
@@ -19,14 +20,9 @@ namespace wpf.Viewmodels
     {
         private Gebruiker _gebruiker;
         private IUnitOfWork _unitOfWork = new UnitOfWork(new GroepsreizenContext());
-        private bool _isTrue;
+        private string _foutmelding;
         public override string this[string columnName] => throw new NotImplementedException();
 
-        public bool IsTrue
-        {
-            get => _isTrue;
-            set => _isTrue = value;
-        }
         public Gebruiker GebruikerRecord
         {
             get { return _gebruiker; }
@@ -58,31 +54,47 @@ namespace wpf.Viewmodels
                 NotifyPropertyChanged();
             }
         }
+        public string Foutmelding
+        {
+            get { return _foutmelding; }
+            set
+            {
+                _foutmelding = value;
+                NotifyPropertyChanged();
+            }
+        }
 
         //gebruiker zoeken
         public void LoginCommand()
         {
-            if (string.IsNullOrWhiteSpace(Email))
-            {
-                GebruikerRecord = new Gebruiker();
-            }
 
+                GebruikerRecord = _unitOfWork.GebruikerRepo.Ophalen(x => x.Email == Email).FirstOrDefault();
+
+            if (GebruikerRecord == null)
+            {
+                Foutmelding = "De gebruiker is niet gevonden";
+            }
             else
             {
-                GebruikerRecord = _unitOfWork.GebruikerRepo.Ophalen(x => x.Email == Email).FirstOrDefault();
-            }
-
-
-            if (GebruikerRecord.Email == Email && GebruikerRecord.Paswoord == Password)
-            {
-                if (GebruikerRecord.Webadmin == true)
+                if (GebruikerRecord.Email == Email && GebruikerRecord.Paswoord == Password)
                 {
-                    IsTrue = true; 
-                    //var vm = new MainViewModel();
-                    //var view = new MainWindow();
-                    //view.DataContext = vm;
-                    //view.Show();
-                    
+                    if (GebruikerRecord.Webadmin == true)
+                    {
+                        var vm = new MainViewModel();
+                        var view = new MainWindow();
+                        view.DataContext = vm;
+                        App.Current.Windows[0].Visibility = Visibility.Collapsed;
+                        view.Show();
+                        
+                    }
+                    else
+                    {
+                        Foutmelding = "De gebruiker is geen admin.";
+                    }
+                }
+                else
+                {
+                    Foutmelding = "Het wachtwoord is niet correct.";
                 }
             }
         }

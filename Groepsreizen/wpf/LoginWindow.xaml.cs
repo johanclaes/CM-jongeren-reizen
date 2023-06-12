@@ -25,12 +25,5 @@ namespace wpf
         {
             InitializeComponent();
         }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-           MainWindow window = new MainWindow();
-            this.Visibility = Visibility.Collapsed;
-            window.Show();
-        }
     }
 }

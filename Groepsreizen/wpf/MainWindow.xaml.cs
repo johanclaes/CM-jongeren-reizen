@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using wpf.UserControls;
+using wpf.Viewmodels;
 using wpf.ViewModels;
 
 namespace wpf
@@ -78,7 +79,11 @@ namespace wpf
 
         private void btnUitloggen_Click(object sender, RoutedEventArgs e)
         {
-            App.Current.Shutdown();
+            var view = new LoginWindow();
+            var vm = new LoginViewModel();
+            view.DataContext = vm;
+            this.Visibility = Visibility.Hidden;
+            view.Show();
         }
     }
 }
