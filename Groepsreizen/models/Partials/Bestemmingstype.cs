@@ -21,7 +21,12 @@ namespace models
             {
                 if (columnName == "Naam" && string.IsNullOrWhiteSpace(Naam))
                 {
-                    return "Naam moet ingevuld zijn.";
+                    return "Bestemmingstype moet ingevuld zijn.";
+                }
+
+                if (columnName == "Naam" && Naam.Length <= 3)
+                {
+                    return "Bestemmingstype moet minstens 3 karakters.";
                 }
 
                 return "";

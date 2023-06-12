@@ -3510,19 +3510,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\lende\\.nuget\\packages\\": {}
+    "C:\\Users\\fb922\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\lende\\Documents\\thomasmore\\jaar 2\\agile en testing\\project\\CM-jongeren-reizen\\Groepsreizen\\models\\models.csproj",
+      "projectUniqueName": "C:\\Users\\fb922\\Desktop\\agile\\project\\CM-jongeren-final10\\CM-jongeren-reizen\\Groepsreizen\\models\\models.csproj",
       "projectName": "models",
-      "projectPath": "C:\\Users\\lende\\Documents\\thomasmore\\jaar 2\\agile en testing\\project\\CM-jongeren-reizen\\Groepsreizen\\models\\models.csproj",
-      "packagesPath": "C:\\Users\\lende\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\lende\\Documents\\thomasmore\\jaar 2\\agile en testing\\project\\CM-jongeren-reizen\\Groepsreizen\\models\\obj\\",
+      "projectPath": "C:\\Users\\fb922\\Desktop\\agile\\project\\CM-jongeren-final10\\CM-jongeren-reizen\\Groepsreizen\\models\\models.csproj",
+      "packagesPath": "C:\\Users\\fb922\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\fb922\\Desktop\\agile\\project\\CM-jongeren-final10\\CM-jongeren-reizen\\Groepsreizen\\models\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\lende\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\fb922\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3579,7 +3579,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.105\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
       }
     }
   }

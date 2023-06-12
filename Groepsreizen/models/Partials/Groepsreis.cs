@@ -13,7 +13,7 @@ namespace models
         {
             int aantal = (Inschrijvingen == null) ? 0 : Inschrijvingen.Count;
             
-            return $"{Naam} - {Bestemming.ToString()} - {Minimumleeftijd} tot {Maximumleeftijd} jaar - {Startdatum.ToShortDateString()} tot {Einddatum.ToShortDateString()} - {Bestemming.Capaciteit - aantal} plaats(en) vrij";
+            return $"{Naam} - {Bestemming.ToString()} - {Startdatum.ToShortDateString()} ";
         }
 
         public override string this[string columnName]
@@ -39,6 +39,10 @@ namespace models
                 if (columnName == "Einddatum" && string.IsNullOrWhiteSpace(Einddatum.ToString()))
                 {
                     return "Einddatum moet ingevuld zijn.";
+                }
+                if (columnName == "Einddatum" && Einddatum < Startdatum )
+                {
+                    return "Einddatum moet na de begindatum liggen";
                 }
                 if (columnName == "MinimumLeeftijd" && Minimumleeftijd <= 0)
                 {

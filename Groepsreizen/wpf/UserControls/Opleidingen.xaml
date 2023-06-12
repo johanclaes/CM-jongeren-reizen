@@ -64,7 +64,8 @@
         </StackPanel>
 
 
-        <Label Name="lblErrorOpleiding" Content="{Binding ErrorOpleiding}" Grid.Row="1" Grid.Column="3" Background="LightCyan" Visibility="Visible" Margin="10"></Label>
-
+        <Label Name="lblErrorOpleiding" Grid.Row="1" Grid.Column="3" Background="LightCyan" Visibility="Visible" Margin="10">
+            <TextBlock Text="{Binding ErrorOpleiding}" TextWrapping="Wrap" ></TextBlock>
+        </Label>
     </Grid>
 </UserControl>

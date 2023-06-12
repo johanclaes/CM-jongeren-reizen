@@ -62,8 +62,10 @@
             </StackPanel>
         </GroupBox>
 
-        <Label Name="lblErrorBestemmingen" Content="{Binding FoutmeldingBestemming}" Background="LightCyan" Grid.Row="1" Grid.Column="2" Margin="20" Visibility="Visible"></Label>
-
+        <Label Name="lblErrorBestemmingen"  Background="LightCyan" Grid.Row="1" Grid.Column="2" 
+               Margin="20" Visibility="Visible">
+            <TextBlock Text="{Binding FoutmeldingBestemming}" TextWrapping="Wrap" ></TextBlock>
+        </Label>
     </Grid>
 </UserControl>
 

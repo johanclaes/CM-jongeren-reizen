@@ -18,6 +18,11 @@ namespace models
         {
             get
             {
+                if (columnName == "Startdatum" && Startdatum > Einddatum)
+                {
+                    return "Begindatum moet voor Einddatum.";
+                }
+
                 return "";
             }
         }

@@ -81,6 +81,8 @@
         </StackPanel>
 
 
-        <Label x:Name="lblErrorPersoon" Content="{Binding Foutmeldingen}" Grid.Row="1" Grid.Column="2" Background="LightCyan" Visibility="Visible" Margin="20"></Label>
+        <Label x:Name="lblErrorPersoon" Grid.Row="1" Grid.Column="2" Background="LightCyan" Visibility="Visible" Margin="20">
+            <TextBlock Text="{Binding Foutmeldingen}" TextWrapping="Wrap" ></TextBlock>
+        </Label>
     </Grid>
 </UserControl>
