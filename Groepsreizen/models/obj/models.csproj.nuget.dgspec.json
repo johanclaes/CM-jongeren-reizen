@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Thomas More 2de jaar\\Agile en testing\\Project\\CM-jongeren-reizen\\Groepsreizen\\models\\models.csproj": {}
+    "C:\\Users\\lende\\Documents\\thomasmore\\jaar 2\\agile en testing\\project\\CM-jongeren-reizen\\Groepsreizen\\models\\models.csproj": {}
   },
   "projects": {
-    "C:\\Thomas More 2de jaar\\Agile en testing\\Project\\CM-jongeren-reizen\\Groepsreizen\\models\\models.csproj": {
+    "C:\\Users\\lende\\Documents\\thomasmore\\jaar 2\\agile en testing\\project\\CM-jongeren-reizen\\Groepsreizen\\models\\models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Thomas More 2de jaar\\Agile en testing\\Project\\CM-jongeren-reizen\\Groepsreizen\\models\\models.csproj",
+        "projectUniqueName": "C:\\Users\\lende\\Documents\\thomasmore\\jaar 2\\agile en testing\\project\\CM-jongeren-reizen\\Groepsreizen\\models\\models.csproj",
         "projectName": "models",
-        "projectPath": "C:\\Thomas More 2de jaar\\Agile en testing\\Project\\CM-jongeren-reizen\\Groepsreizen\\models\\models.csproj",
-        "packagesPath": "C:\\Users\\chris\\.nuget\\packages\\",
-        "outputPath": "C:\\Thomas More 2de jaar\\Agile en testing\\Project\\CM-jongeren-reizen\\Groepsreizen\\models\\obj\\",
+        "projectPath": "C:\\Users\\lende\\Documents\\thomasmore\\jaar 2\\agile en testing\\project\\CM-jongeren-reizen\\Groepsreizen\\models\\models.csproj",
+        "packagesPath": "C:\\Users\\lende\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\lende\\Documents\\thomasmore\\jaar 2\\agile en testing\\project\\CM-jongeren-reizen\\Groepsreizen\\models\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\chris\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\lende\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -71,7 +71,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.105\\RuntimeIdentifierGraph.json"
         }
       }
     }
