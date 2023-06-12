@@ -503,14 +503,15 @@ namespace wpf.ViewModels
                 {
                     if (item.Hoofdmonitor == true)
                     {
-                        item.Hoofdmonitor = false;                          // we zetten voor iedereen dat ze geen hoofdmonitor zijn. 
+                        item.Hoofdmonitor = false;                          // we zetten voor alle monitoren dat ze geen hoofdmonitor zijn. 
                         _unitOfWork.MonitorRepo.Aanpassen(item);
                         int correct = _unitOfWork.Save();
                         
                     }
                 }
-                Monitor hoofdmonitor; 
+                Monitor hoofdmonitor;                                       // alle monitors ophalen waar persoon monitor is
                 List<Monitor> lijstmonitors = _unitOfWork.MonitorRepo.Ophalen(x => x.GebruikerId == GeselecteerdeHoofdmonitor.Id).ToList();
+                                                                            // door deze lijst lopen en de juiste op hoofdmonitor zetten.
                 foreach (var item in lijstmonitors)
                     { 
                             if (item.GroepsreisId == GeselecteerdeReis.Id) 

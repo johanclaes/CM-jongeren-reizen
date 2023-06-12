@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 using models.Partials;
 using Microsoft.Toolkit.Collections;
 using System.Windows;
+using wpf.UserControls;
+using Microsoft.IdentityModel.Tokens;
 
 namespace wpf.ViewModels
 {
@@ -23,6 +25,7 @@ namespace wpf.ViewModels
         private ObservableCollection<Groepsreis> _groepsreizen;
         private ObservableCollection<Inschrijving> _ingeschrevenReizen;
         private Inschrijving _geselecteerdeIngeschrevenReis;
+        private ObservableCollection<Inschrijving> _inschrijvingen;
         private ObservableCollection<string> _landen;
         private string _geselecteerdLand;
         private ObservableCollection<string> _gemeentes;
@@ -92,6 +95,16 @@ namespace wpf.ViewModels
             }
         }
 
+        public ObservableCollection<Inschrijving> Inschrijvingen
+        {
+            get { return _inschrijvingen; }
+            set
+            {
+                _inschrijvingen = value;
+                NotifyPropertyChanged();
+            }
+        }
+
         public ObservableCollection<string> Landen
         {
             get { return _landen; }
@@ -107,6 +120,7 @@ namespace wpf.ViewModels
             get { return _geselecteerdLand; }
             set
             {
+                Inschrijvingen = new ObservableCollection<Inschrijving>(_unitOfWork.InschrijvingRepo.Ophalen());
                 _geselecteerdLand = value;
                 Gemeentes = new ObservableCollection<string>(_unitOfWork.BestemmingRepo.Ophalen(x => x.Land == GeselecteerdLand).Select(y => y.Gemeente).Distinct());
                 GeselecteerdeIngeschrevenReis = null;
@@ -129,6 +143,7 @@ namespace wpf.ViewModels
             get { return _geselecteerdeGemeente; }
             set
             {
+                Inschrijvingen = new ObservableCollection<Inschrijving>(_unitOfWork.InschrijvingRepo.Ophalen());
                 _geselecteerdeGemeente = value;
                 GezochteReizen = new ObservableCollection<Groepsreis>(_unitOfWork.GroepsreisRepo.Ophalen(x => x.Bestemming.Land == GeselecteerdLand && x.Bestemming.Gemeente == GeselecteerdeGemeente));
                 GeselecteerdeIngeschrevenReis = null;
@@ -157,7 +172,7 @@ namespace wpf.ViewModels
             }
         }
 
-        public InschrijvingenViewModel() 
+        public InschrijvingenViewModel()
         {
             Landen = new ObservableCollection<string>(_unitOfWork.BestemmingRepo.Ophalen().Select(x => x.Land).Distinct());
         }
@@ -193,7 +208,7 @@ namespace wpf.ViewModels
             }
         }
 
-        public void ZoekGebruikers() 
+        public void ZoekGebruikers()
         {
             if (string.IsNullOrWhiteSpace(NaamGebruiker))
                 Gebruikers = new ObservableCollection<Gebruiker>(_unitOfWork.GebruikerRepo.Ophalen().OrderBy(x => x.Naam));
@@ -208,29 +223,38 @@ namespace wpf.ViewModels
 
             int leeftijd = DateTime.Today.Year - gebruiker.Geboortedatum.Year;
 
-            if (leeftijd < groepsreis.Minimumleeftijd || leeftijd > groepsreis.Maximumleeftijd)
-            {
-                MessageBox.Show("De gebruiker heeft niet de juiste leeftijd voor de groepsreis!");
-            }
+            int aantal = (groepsreis.Inschrijvingen == null) ? 0 : groepsreis.Inschrijvingen.Count;
+            groepsreis.InschrijvingGestopt = (aantal == groepsreis.Bestemming.Capaciteit) ? true : false;
+
+            if (groepsreis.InschrijvingGestopt)
+                MessageBox.Show("Deze groepsreis is helaas volzet!", "Foutmelding", MessageBoxButton.OK, MessageBoxImage.Error);
             else
             {
-                if (inschrijvingen.Count == 0)
+                if (leeftijd < groepsreis.Minimumleeftijd || leeftijd > groepsreis.Maximumleeftijd)
                 {
-                    Inschrijving inschrijving = new Inschrijving() { Groepsreis = groepsreis, Gebruiker = gebruiker, Betaald = false };
-                    _unitOfWork.InschrijvingRepo.Toevoegen(inschrijving);
-                    int oke = _unitOfWork.Save();
-                    FoutmeldingNaSave(oke, "Er liep iets mis.", "De persoon is ingeschreven voor de groepsreis!");
+                    MessageBox.Show("De gebruiker heeft niet de juiste leeftijd voor de groepsreis!", "Foutmelding", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
                 else
-                    MessageBox.Show("De gebruiker is al ingeschreven voor deze reis!", "Foutmelding", MessageBoxButton.OK, MessageBoxImage.Error);
-
+                {
+                    if (inschrijvingen.Count == 0)
+                    {
+                        Inschrijving inschrijving = new Inschrijving() { Groepsreis = groepsreis, Gebruiker = gebruiker, Betaald = false };
+                        _unitOfWork.InschrijvingRepo.Toevoegen(inschrijving);
+                        int oke = _unitOfWork.Save();
+                        FoutmeldingNaSave(oke, "Er liep iets mis.", "De persoon is ingeschreven voor de groepsreis!");
+                    }
+                    else
+                        MessageBox.Show("De gebruiker is al ingeschreven voor deze reis!", "Foutmelding", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
             }
+
+            GezochteReizen = new ObservableCollection<Groepsreis>(_unitOfWork.GroepsreisRepo.Ophalen(x => x.Bestemming.Land == GeselecteerdLand && x.Bestemming.Gemeente == GeselecteerdeGemeente));
         }
         public void ReserveerBetaling()
         {
             if (GeselecteerdeIngeschrevenReis.Betaald)
             {
-                MessageBox.Show("Deze reis is al betaald!");
+                MessageBox.Show("Deze reis is al betaald!", "Foutmelding", MessageBoxButton.OK, MessageBoxImage.Error);
             }
             else
             {
@@ -245,6 +269,7 @@ namespace wpf.ViewModels
         {
             _unitOfWork.InschrijvingRepo.Verwijderen(GeselecteerdeIngeschrevenReis.Id);
             int oke = _unitOfWork.Save();
+            GezochteReizen = new ObservableCollection<Groepsreis>(_unitOfWork.GroepsreisRepo.Ophalen(x => x.Bestemming.Land == GeselecteerdLand && x.Bestemming.Gemeente == GeselecteerdeGemeente));
             FoutmeldingNaSave(oke, "Er liep iets mis.", "De inschrijving is geannuleerd!");
         }
 
@@ -258,7 +283,7 @@ namespace wpf.ViewModels
             }
             else
             {
-                MessageBox.Show(foutmelding);
+                MessageBox.Show(foutmelding, "Foutmelding", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
