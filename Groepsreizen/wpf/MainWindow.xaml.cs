@@ -31,14 +31,8 @@ namespace wpf
         private void btnPersonen_Click(object sender, RoutedEventArgs e)
         {
             personen2.DataContext = new PersonenViewModel();
-            //personen2.dateGeboortedatum.DisplayDate = DateTime.Now;
-            personen2.dateGeboortedatum.SelectedDate = DateTime.Now;
             SetActiveUserControl(personen2);
 
-            //var vm = new PersonenViewModel();
-            //var view = new MainWindow();
-            //view.DataContext = vm;
-            //SetActiveUserControl(personen2);
         }
 
         private void btnInschrijvingen_Click(object sender, RoutedEventArgs e)

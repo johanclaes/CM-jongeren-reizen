@@ -934,3 +934,12 @@ C:\Users\lende\Documents\thomasmore\jaar 2\agile en testing\project1\CM-jongeren
 C:\Users\lende\Documents\thomasmore\jaar 2\agile en testing\project1\CM-jongeren-reizen\Groepsreizen\Groepsreizen Tests\obj\Debug\net6.0-windows\Groepsreizen Tests.pdb
 C:\Users\lende\Documents\thomasmore\jaar 2\agile en testing\project1\CM-jongeren-reizen\Groepsreizen\Groepsreizen Tests\obj\Debug\net6.0-windows\Groepsreizen Tests.genruntimeconfig.cache
 C:\Users\lende\Documents\thomasmore\jaar 2\agile en testing\project1\CM-jongeren-reizen\Groepsreizen\Groepsreizen Tests\obj\Debug\net6.0-windows\ref\Groepsreizen Tests.dll
+C:\Users\fb922\Desktop\agile\project\CM-jongeren-final10\CM-jongeren-reizen\Groepsreizen\Groepsreizen Tests\bin\Debug\net6.0-windows\CoverletSourceRootsMapping
+C:\Users\fb922\Desktop\agile\project\CM-jongeren-final10\CM-jongeren-reizen\Groepsreizen\Groepsreizen Tests\obj\Debug\net6.0-windows\Groepsreizen Tests.csproj.AssemblyReference.cache
+C:\Users\fb922\Desktop\agile\project\CM-jongeren-final10\CM-jongeren-reizen\Groepsreizen\Groepsreizen Tests\obj\Debug\net6.0-windows\Groepsreizen Tests.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\fb922\Desktop\agile\project\CM-jongeren-final10\CM-jongeren-reizen\Groepsreizen\Groepsreizen Tests\obj\Debug\net6.0-windows\Groepsreizen Tests.AssemblyInfoInputs.cache
+C:\Users\fb922\Desktop\agile\project\CM-jongeren-final10\CM-jongeren-reizen\Groepsreizen\Groepsreizen Tests\obj\Debug\net6.0-windows\Groepsreizen Tests.AssemblyInfo.cs
+C:\Users\fb922\Desktop\agile\project\CM-jongeren-final10\CM-jongeren-reizen\Groepsreizen\Groepsreizen Tests\obj\Debug\net6.0-windows\Groepsreizen Tests.csproj.CoreCompileInputs.cache
+C:\Users\fb922\Desktop\agile\project\CM-jongeren-final10\CM-jongeren-reizen\Groepsreizen\Groepsreizen Tests\obj\Debug\net6.0-windows\Groepsreizen Tests.dll
+C:\Users\fb922\Desktop\agile\project\CM-jongeren-final10\CM-jongeren-reizen\Groepsreizen\Groepsreizen Tests\obj\Debug\net6.0-windows\refint\Groepsreizen Tests.dll
+C:\Users\fb922\Desktop\agile\project\CM-jongeren-final10\CM-jongeren-reizen\Groepsreizen\Groepsreizen Tests\obj\Debug\net6.0-windows\Groepsreizen Tests.pdb

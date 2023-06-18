@@ -68,7 +68,7 @@ namespace wpf.Viewmodels
         public void LoginCommand()
         {
 
-                GebruikerRecord = _unitOfWork.GebruikerRepo.Ophalen(x => x.Email == Email).FirstOrDefault();
+            GebruikerRecord = _unitOfWork.GebruikerRepo.Ophalen(x => x.Email == Email).FirstOrDefault();
 
             if (GebruikerRecord == null)
             {
